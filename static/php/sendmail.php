@@ -15,4 +15,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Fehler beim Senden der Nachricht.";
     }
 }
-?>
