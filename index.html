@@ -177,18 +177,16 @@
 
     <section id="contact">
         <h2>Kontakt</h2>
-        <form id="contact-form" action="https://getform.io/f/avrrevpa" method="POST" enctype="application/x-www-form-urlencoded">
+        <form id="contact-form" action="sendmail.php" method="post">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
             <label for="email">E-Mail:</label>
             <input type="email" name="email" id="email" required>
             <label for="message">Nachricht:</label>
             <textarea name="message" id="message" placeholder="Ich freue mich auf Ihre Nachricht." required></textarea>
-            <input type="hidden" name="_gotcha" style="display:none !important">
             <button type="submit" title="Absenden Ihrer Nachricht">Senden</button>
         </form>
     </section>
-   
 
     <footer>
         <!-- Social Media-Links -->
