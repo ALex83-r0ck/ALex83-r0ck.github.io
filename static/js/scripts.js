@@ -17,7 +17,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         return;
     }
 
-    // Um das Formular an Formspree zu senden
+    // Um das Formular zu senden
     this.submit(); // Dies sendet das Formular
 
     alert(`Danke für Ihre Nachricht, ${name}! Ich werde mich bald bei Ihnen melden.`);
