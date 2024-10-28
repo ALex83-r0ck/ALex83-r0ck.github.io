@@ -1,5 +1,6 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Verhindert das Standardverhalten des Formulars
+    // Prevent default behavior (this will be handled later)
+    // event.preventDefault(); 
 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -16,27 +17,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         return;
     }
 
-    alert(`Danke für Ihre Nachricht, ${name}! Ich werde mich bald bei Ihnen melden.`);
+    // Um das Formular an Formspree zu senden
+    this.submit(); // Dies sendet das Formular
 
-    // Beispiel für das Senden der Daten an einen Server
-    // fetch('/your-server-endpoint', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ name, email, message }),
-    // })
-    // .then(response => {
-    //     if (response.ok) {
-    //         alert('Nachricht erfolgreich gesendet!');
-    //         this.reset(); // Formular zurücksetzen
-    //     } else {
-    //         alert('Fehler beim Senden der Nachricht. Bitte versuche es später erneut.');
-    //     }
-    // })
-    // .catch(error => {
-    //     alert('Es gab ein Problem mit der Anfrage. Bitte versuche es später erneut.');
-    // });
+    alert(`Danke für Ihre Nachricht, ${name}! Ich werde mich bald bei Ihnen melden.`);
 
     // Formular zurücksetzen
     this.reset();
@@ -64,13 +48,13 @@ document.querySelectorAll('.toggle-details').forEach(button => {
     });
 });
 
+// Overlay-Management
 document.getElementById('image-overlay').addEventListener('click', function() {
     const overlayImage = document.getElementById('overlay-image');
     const profileImage = document.getElementById('profile-image');
     const profileDescription = document.getElementById('profile-description');
     const overlay = document.getElementById('image-overlay');
 
-    // Beim ersten Klick das Overlay und Overlay-Bild ausblenden, Profilbild und Text anzeigen
     overlay.style.display = 'none'; 
     overlayImage.style.display = 'none'; 
     profileImage.style.display = 'block'; 
@@ -84,7 +68,6 @@ document.getElementById('profile-image').addEventListener('click', function() {
     const profileDescription = document.getElementById('profile-description');
     const overlay = document.getElementById('image-overlay');
 
-    // Overlay und Overlay-Bild anzeigen, Profilbild und Text ausblenden
     overlay.style.display = 'flex';
     overlayImage.style.display = 'block';
     profileImage.style.display = 'none';
