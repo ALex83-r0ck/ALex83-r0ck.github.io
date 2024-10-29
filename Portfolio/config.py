@@ -10,8 +10,8 @@ class Config:
     MAIL_SERVER = 'smtp.example.com'
     MAIL_POST = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_USERNAME = os.environ.get('rothe_alexander@t-online.de')
+    MAIL_PASSWORD = os.environ.get('annabell2701')
     
     # Weitere Konfigurationsoptionen, die allgemein gültig sind
     # Beispiel für Uploads:
