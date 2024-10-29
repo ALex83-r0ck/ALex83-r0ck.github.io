@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
-    background-image: url('/static/image/header.jpg');
+    background-image: url('image/header.jpg');
     background-size: cover;
     background-attachment: fixed;
     color: #333;
@@ -22,7 +22,7 @@ h2, h3 {
 
 /* Header Styling */
 header {
-    background-image: url('/static/image/berge.jpg');
+    background-image: url('image/berge.jpg');
     background-size: cover;
     background-position: center;
     color: white;
