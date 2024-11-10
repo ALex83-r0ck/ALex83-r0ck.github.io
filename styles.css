@@ -140,6 +140,18 @@ section {
     cursor: pointer;
 }
 
+#profiel-disciption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .moved {
     transform: translateX(150px, 0);
 }
@@ -213,6 +225,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
+    gap: 20px;
 }
 
 .face-image {
@@ -248,10 +261,38 @@ section {
 .right { transform: rotateY(90deg) translateZ(125px); }
 
 .rotate-button {
-    font-size: 24px;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
+    background-color: #4093c7; 
+    color: white; 
+    border: none; 
+    border-radius: 50px; 
+    padding: 14px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(35, 74, 158, 0.785);
+    margin: 0px 20px 0px 200px;
+
+}
+
+/* Hover-Effekt für die Buttons */
+.rotate-button:hover {
+    background-color: #264e64; 
+    transform: scale(1.1); 
+}
+
+/* Wenn die Buttons deaktiviert sind */
+.rotate-button:disabled {
+    background-color: #b8b8b8; 
+    cursor: not-allowed;
+}
+
+/* Fügen Sie einen Schatteneffekt hinzu */
+.rotate-button {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rotate-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 /* Timeline Styling */
