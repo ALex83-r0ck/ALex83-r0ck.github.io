@@ -40,3 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+let angle = 0;
+
+document.getElementById("left-btn").addEventListener("click", () => {
+    angle -= 90;
+    document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
+});
+
+document.getElementById("right-btn").addEventListener("click", () => {
+    angle += 90;
+    document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
+});

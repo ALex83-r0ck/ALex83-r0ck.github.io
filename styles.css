@@ -108,6 +108,7 @@ section {
     border: 5px solid #007bff;
     animation: pulse 1.5s infinite;
     cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .overlay {
@@ -143,11 +144,6 @@ section {
     transform: translateX(150px, 0);
 }
 
-/* Projektbereich */
-.project {
-    margin-top: 20px;
-}
-
 /* Zertifikats-Container */
 .certificates-container {
     display: flex;
@@ -173,6 +169,89 @@ section {
     margin-top: 8px;
     font-size: 0.9em;
     color: #333;
+}
+
+/* Projekt bereich */
+.project {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+#project-image {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    max-width: 50%;
+    height: auto;
+    border-radius: 80%;
+    box-shadow: 0px 12px 20px rgba(16, 93, 149, 0.931);
+}
+
+.project p {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Würfel */
+
+.cube-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.face-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 12px 20px rgba(16, 93, 149, 0.931);
+}
+
+.cube {	
+    width: 250px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform:rotateY(0deg) rotateX(0deg);
+    transition: transform 0.6s;
+}
+
+.face {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.front { transform: rotateY(0deg) translateZ(125px); }
+.back  { transform: rotateY(180deg) translateZ(125px); }
+.left  { transform: rotateY(-90deg) translateZ(125px); }
+.right { transform: rotateY(90deg) translateZ(125px); }
+
+.rotate-button {
+    font-size: 24px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 /* Timeline Styling */
