@@ -1,31 +1,67 @@
-/* Grundlegendes Styling */
+/* ==================== */
+/* Variablen            */
+/* ==================== */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #58e26d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --white: #fff;
+    --black: #000;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+}
+
+/* ==================== */
+/* Allgemeine Stile     */
+/* ==================== */
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    word-spacing: 1px;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
     background-image: url('image/header.jpg');
     background-size: cover;
     background-attachment: fixed;
-    color: #333;
+    color: var(--text-color);
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
+    margin: 0;
+    box-sizing: initial;
 }
 
 h2, h3 {
     font-family: 'Lato', sans-serif;
-    color: #007bff;
+    color: var(--primary-color);
 }
 
-/* Header Styling */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* ==================== */
+/* Header               */
+/* ==================== */
 header {
     background-image: url('image/berge.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: var(--white);
     padding: 20px 0;
     text-align: center;
     position: relative;
@@ -39,53 +75,53 @@ header::before {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 header h1 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
-nav ul {
+/* ==================== */
+/* Navigation           */
+/* ==================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar ul {
+    display: flex;
     list-style: none;
+    margin: 0;
     padding: 0;
-    text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
-nav ul li {
-    display: inline-block;
+.navbar ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white;
+.navbar ul li a {
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
-nav ul li a:hover {
-    color: #58e26d;
+.navbar ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
-/* Abschnitte Styling */
-section {
-    padding: 20px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd ;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Aboutbereich */
+/* ==================== */
+/* About-Bereich        */
+/* ==================== */
 .about-container {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start
 }
 
 .image-container {
@@ -105,62 +141,35 @@ section {
 #overlay-image {
     cursor: pointer;
     border-radius: 50%;
-    border: 5px solid #007bff;
+    border: 5px solid var(--primary-color);
     animation: pulse 1.5s infinite;
-    cursor: pointer;
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: opacity 0.5s ease;
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
 }
 
-.overlay:hover {
-    opacity: 0.8;
-}
-
-#profile-image {
-    width: 100%;
-    border: 3px solid #007bff;
-    border-radius: 50%;
-    height: 200px;
-    width: 150px;
-    cursor: pointer;
-}
-
-#profiel-disciption {
+#profile-description {
     margin-top: 10px;
     text-align: center;
     font-size: 0.9em;
-    color: #333;
+    color: var(--text-color);
     transition: transform 0.3s ease-in-out;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd ;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
 }
 
-.moved {
-    transform: translateX(150px, 0);
-}
-
-/* Zertifikats-Container */
+/* ==================== */
+/* Zertifikate          */
+/* ==================== */
 .certificates-container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
     gap: 20px;
     justify-content: center;
 }
@@ -168,32 +177,36 @@ section {
 .certificate {
     text-align: center;
     width: 200px;
+    transition: var(--transition);
+}
+
+.certificate:hover {
+    transform: scale(1.05);
 }
 
 .certificate img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
-.certificate p {
-    margin-top: 8px;
-    font-size: 0.9em;
-    color: #333;
-}
 
-/* Projekt bereich */
+/* ==================== */
+/* Projekte             */
+/* ==================== */
 .project {
+    margin: 20px auto;
     margin-top: 20px;
     width: 100%;
     max-width: 800px;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd ;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     padding: 20px;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
+    position: center;
 }
 
 #project-image {
@@ -204,43 +217,29 @@ section {
     height: auto;
     border-radius: 80%;
     box-shadow: 0px 12px 20px rgba(16, 93, 149, 0.931);
+    position: center;
 }
 
-.project p {
-    text-align: center;
-    margin-top: 8px;
-    font-size: 0.9em;
-    color: #333;
+.project:hover {
+    transform: scale(1.01);
 }
 
-/* Würfel */
-
+/* Würfel-Animation */
 .cube-container {
     perspective: 1000px;
     width: 300px;
     height: 300px;
     margin: 0 auto;
-    padding: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    gap: 20px;
 }
 
-.face-image {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 8px;
-    box-shadow: 0px 12px 20px rgba(16, 93, 149, 0.931);
-}
-
-.cube {	
+.cube {
     width: 250px;
     height: 250px;
     position: relative;
     transform-style: preserve-3d;
-    transform:rotateY(0deg) rotateX(0deg);
     transition: transform 0.6s;
 }
 
@@ -248,10 +247,17 @@ section {
     position: absolute;
     width: 250px;
     height: 250px;
-    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.face img {
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 8px;
 }
 
@@ -261,184 +267,196 @@ section {
 .right { transform: rotateY(90deg) translateZ(125px); }
 
 .rotate-button {
-    background-color: #4093c7; 
-    color: white; 
-    border: none; 
-    border-radius: 50px; 
-    padding: 14px 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(35, 74, 158, 0.785);
-    margin: 0px 20px 0px 200px;
-
-}
-
-/* Hover-Effekt für die Buttons */
-.rotate-button:hover {
-    background-color: #264e64; 
-    transform: scale(1.1); 
-}
-
-/* Wenn die Buttons deaktiviert sind */
-.rotate-button:disabled {
-    background-color: #b8b8b8; 
-    cursor: not-allowed;
-}
-
-/* Fügen Sie einen Schatteneffekt hinzu */
-.rotate-button {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    margin: 0 20px;
 }
 
 .rotate-button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    background-color: #264e64;
+    transform: scale(1.1);
 }
 
-/* Timeline Styling */
+/* ==================== */
+/* Timeline             */
+/* ==================== */
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 20px auto;
 }
 
-/* Zeitangabe */
 .timeline-item {
-    display: flex; /* Flexbox für horizontale Anordnung */
-    align-items: flex-start; /* Ausrichtung der Elemente */
-    margin: 20px 0; /* Abstand zwischen den Items */
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
 }
 
 .timeline-date {
-    min-width: 150px; /* Mindestbreite für die Datumsangabe */
+    min-width: 150px;
     font-weight: bold;
-    color: #007bff; /* Farbe der Jahreszahlen */
-    text-align: left; /* Linksbündige Ausrichtung */
+    color: var(--primary-color);
+    text-align: left;
 }
 
-/* Inhalte */
 .timeline-content {
     background-color: #eaeaf3;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Flexibles Wachstum */
-    margin-left: 20px; /* Abstand zur Jahreszahl */
+    box-shadow: var(--shadow);
+    flex: 1;
+    margin-left: 20px;
 }
 
-/* Divider Styling */
 .divider {
-    border-top: 1px solid #007bff; /* Trennlinie */
-    margin: 20px 0; /* Abstand über und unter der Linie */
+    border-top: 1px solid var(--primary-color);
+    margin: 20px 0;
 }
 
-/* Downloadbereich */
-#downloadbereich {
-    text-align: center;
-    margin-top: 40px;
-}
-
-#resüme-download, #reference, #info, #vorab-vertrag {
-    padding: 5px 5px;
-    border: 5px solid #007bff;
-    background-color: #007bff;
-    margin: 5px 0;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-/* Kontaktformular Styling */
-form label {
-    display: block;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer Styling */
+/* ==================== */
+/* Footer               */
+/* ==================== */
 footer {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
     text-align: center;
     font-size: 0.9em;
 }
 
 .social-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .social-links a {
-    color: #f5f5f5;
+    color: var(--white);
     margin-right: 10px;
-    text-decoration: none;
-    transition: color 0.3s;
+    transition: var(--transition);
 }
 
+.social-links a:last-child {
+    margin-right: 0;
+}
 .social-links a:hover {
     color: #84cbf2;
+    transform: translateY(-2px);
 }
 
-.social-links a i:hover {
-    color: #0077b5;
-    color: #333;
-    transition: color 0.3s ease-in-out;
+.social-links svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    transition: var(--transition);
 }
 
-/* Animation */
-@keyframes pulse {
-    50% {
-        box-shadow: 0 0 15px #007bff;
-    }
+footer p {
+    margin: 0;
 }
 
-/* Responsive Design */
+/* ==================== */
+/* Button-Container     */
+/* ==================== */
+.button-container {
+    display: flex;
+    justify-content: center; /* Mittig ausrichten */
+    align-items: center;
+    margin: 20px auto; /* Abstand nach oben und unten */
+}
+
+/* ==================== */
+/* GitHub-Button        */
+/* ==================== */
+.button-icon {
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    width: fit-content;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.button-icon:hover {
+    transform: scale(1.02); /* Leichte Vergrößerung beim Hover */
+    background-color: #fff;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px; /* Weniger Innenabstand */
+}
+
+.icon svg {
+    width: 20px; /* Kleinere SVG-Größe */
+    height: 20px;
+}
+
+.cube {
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+    transform: rotateX(10deg);
+    width: 100px; /* Kleinere Breite */
+    height: 190px; /* Kleinere Höhe */
+    position: absolute;
+}
+
+.button-icon:hover .cube {
+    transform: rotateX(90deg);
+}
+.side {
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    display: flex;
+    font-size: 0.7em; /* Kleinere Schriftgröße */
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    background-color: #222229;
+    color: #fff;
+    border-radius: 3px;
+}
+.top {
+    background: #ff98a2;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 10px, 10px); /* Angepasste Positionierung */
+}
+
+.front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 10px); /* Angepasste Positionierung */
+}
+
+/* ==================== */
+/* Responsive Design    */
+/* ==================== */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
     }
 
     .timeline-item {
-        flex-direction: column; /* Vertikale Anordnung auf kleinen Bildschirmen */
-        align-items: flex-start; /* Linksbündige Ausrichtung */
+        flex-direction: column;
     }
 
     .timeline-date {
-        margin-bottom: 10px; /* Abstand nach unten bei kleinen Bildschirmen */
-    }
-}
-
-@media (max-width: 480px) {
-    .certificate {
-        width: 100%;
+        margin-bottom: 10px;
     }
 }
