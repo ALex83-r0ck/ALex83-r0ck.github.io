@@ -19,28 +19,32 @@ document.querySelectorAll('.toggle-details').forEach(button => {
 // ==================== //
 // Overlay-Management   //
 // ==================== //
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const overlayImage = document.getElementById('overlay-image');
     const profileImage = document.getElementById('profile-image');
     const profileDescription = document.getElementById('profile-description');
-    const overlay = document.getElementById('image-overlay');
+    const imageContainer = document.getElementById('image-container');
 
-    // Overlay öffnen (Profilbild anzeigen)
-    overlay.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlayImage.style.display = 'none';
-        profileImage.style.display = 'block';
-        profileDescription.style.display = 'block';
-    });
+    if (overlayImage && profileImage && profileDescription && imageContainer) {
+        // Beim Klick auf das Overlay-Bild
+        overlayImage.addEventListener('click', () => {
+            overlayImage.style.display = 'none';
+            profileImage.style.display = 'block';
+            profileDescription.style.display = 'block';
+        });
 
-    // Overlay schließen (Profilbild ausblenden)
-    profileImage.addEventListener('click', () => {
-        overlay.style.display = 'flex';
-        overlayImage.style.display = 'block';
-        profileImage.style.display = 'none';
-        profileDescription.style.display = 'none';
-    });
+        // Beim Klick auf das Profilbild (optional - zum Zurückschalten)
+        profileImage.addEventListener('click', () => {
+            overlayImage.style.display = 'block';
+            profileImage.style.display = 'none';
+            profileDescription.style.display = 'none';
+        });
+    } else {
+        console.error('Ein oder mehrere erforderliche Elemente wurden nicht gefunden');
+    }
 });
+
+// Rest des existierenden JavaScript-Codes bleibt unverändert...
 
 // ==================== //
 // Würfel-Animation     //
