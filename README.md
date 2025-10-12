@@ -1,91 +1,82 @@
-# Praktika-Portfolio
+# Alexander Rothe – Portfolio
+Willkommen zu meinem persönlichen Portfolio! Diese Website zeigt meine Projekte, Fähigkeiten und meinen Werdegang als angehender Fachinformatiker für Anwendungsentwicklung. Der Fokus liegt auf Python, KivyMD, Webentwicklung (HTML/CSS/JavaScript) und KI/ML-Experimenten. Verfügbar für Anfragen ab 01.01.2026.
+Inhalt
 
-Dies ist die Portfolio-Website von Alexander Rothe, die seine Projekte, Zertifikate und seinen Lebenslauf zeigt. Dieses Projekt wurde mit Flask als Backend und HTML/CSS/JavaScript als Frontend entwickelt und wird auf GitHub Pages und Heroku gehostet.
+Über das Projekt
+Features
+Technologien
+Installation
+Verwendung
+Projektstruktur
+Kontakt
+Lizenz
 
-## Inhaltsverzeichnis
+Über das Projekt
+Dieses Portfolio ist eine Single-Page-Website, die meine Projekte, meinen Tech-Stack, Zertifikate und meinen Lebenslauf präsentiert. Es ist responsive, unterstützt Dark- und Light-Mode mit dynamischem Bildwechsel im Header und nutzt moderne Webtechnologien für ein ansprechendes Nutzererlebnis. Die Seite ist barrierefrei (WCAG-konform) und enthält interaktive Elemente wie ein Kontaktformular und Scroll-Animationen.
+Features
 
-- [Über das Projekt](#über-das-projekt)
-- [Verwendete Technologien](#verwendete-technologien)
-- [Installation](#installation)
-- [Verwendung](#verwendung)
-- [Deployment](#deployment)
-- [Kontakt](#kontakt)
+Responsive Design: Optimiert für Desktop und Mobile mit Bootstrap 5.
+Dark/Light Mode: Umschaltbarer Modus mit dynamischem Wechsel des Profilbildes.
+Interaktive Elemente: Sticky Availability-Banner, Smooth Scroll, Scroll-Reveal-Animationen für Projekte.
+Kontaktformular: Formspree-Integration für einfache Nachrichten.
+Particles.js: Animierter Hintergrund für visuelle Ästhetik.
+Barrierefreiheit: ARIA-Labels, hoher Kontrast und klare Navigation.
+Projekte: Präsentation von Projekten wie Protolkoli (Lärmprotokoll-App), LernBuddy, VibeVault, Abby und BirthdaySchatz.
 
-## Über das Projekt
+Technologien
 
-Diese Website dient dazu, meine Fähigkeiten und Erfahrungen als Fachinformatiker für Anwendungsentwicklung vorzustellen. Sie enthält Informationen über meine bisherigen Projekte, Zertifikate und meinen Lebenslauf.
+Frontend: HTML5, CSS3, JavaScript (ES6+)
+Frameworks/Libraries: Bootstrap 5, Particles.js, Font Awesome, Bootstrap Icons
+Fonts: Google Fonts (Montserrat, Roboto)
+Backend: Formspree für Kontaktformular
+Tools: Git, GitHub Pages für Deployment
+Sonstiges: WCAG-konforme Farben, LocalStorage für Banner- und Theme-Persistenz
 
-## Verwendete Technologien
+Installation
 
-- Flask
-- HTML
-- CSS
-- JavaScript
-- Heroku
-- GitHub Pages
+Repository klonen:git clone https://github.com/ALex83-r0ck/portfolio.git
 
-## Installation
 
-1. Klone das Repository:
+In das Verzeichnis wechseln:cd portfolio
 
-    ```bash
-    git clone https://github.com/ALEX83-R0CK/ALEX83-R0CK.GITHUB.IO.git
-    ```
 
-2. Navigiere in das Verzeichnis:
+Dateien lokal hosten:
+Verwende einen lokalen Webserver, z.B. mit Python:python -m http.server 8000
 
-    ```bash
-    cd ALEX83-R0CK.GITHUB.IO/backend
-    ```
 
-3. Erstelle und aktiviere eine virtuelle Umgebung:
+Öffne http://localhost:8000 im Browser.
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # für Windows: venv\Scripts\activate
-    ```
 
-4. Installiere die Abhängigkeiten:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+Hinweis: Keine zusätzlichen Abhängigkeiten erforderlich, da alle Ressourcen (Bootstrap, Particles.js, Fonts) über CDNs geladen werden.
+Verwendung
 
-## Verwendung
+Navigation: Nutze die Navbar, um zu den Abschnitten (Über mich, Tech Stack, Projekte, Zertifikate, Lebenslauf, Kontakt) zu springen.
+Dark/Light Mode: Klicke auf den Toggle-Button (🌙/☀️) in der Navbar, um zwischen Dark- und Light-Mode zu wechseln. Das Profilbild passt sich automatisch an.
+Kontaktformular: Fülle das Formular aus, um eine Nachricht zu senden (via Formspree).
+Availability-Banner: Kann mit dem "Schließen"-Button ausgeblendet werden (Status wird in LocalStorage gespeichert).
+Live-Demos: Für abgeschlossene Projekte (z.B. Protolkoli) gibt es Links zu GitHub-Repos und Live-Demos.
 
-1. Starte die Flask-Anwendung:
+Projektstruktur
+portfolio/
+├── image/                  # Bilder (Profilbild, Zertifikate, Projektbilder)
+│   ├── profil1.png         # Light-Mode Profilbild
+│   ├── overlay.png         # Dark-Mode Profilbild
+│   ├── favicon.ico         # Favicon
+│   ├── Designer.png        # Projektbilder
+│   ├── py1_certificate.png # Zertifikate
+│   └── py3.jpg
+├── styles.css              # Benutzerdefinierte CSS-Styles
+├── scripts.js              # JavaScript für Interaktivität
+├── index.html              # Haupt-HTML-Datei
+└── README.md               # Diese Datei
 
-    ```bash
-    python run.py
-    ```
+Kontakt
 
-2. Öffne deinen Browser und gehe zu `http://localhost:5000`, um die Website zu sehen.
+GitHub: ALex83-r0ck
+LinkedIn: Alexander Rothe
+E-Mail: Nutze das Kontaktformular auf der Website.
 
-## Deployment
-
-### GitHub Pages
-
-1. Stelle sicher, dass alle statischen Dateien in deinem GitHub-Repository vorhanden sind.
-2. Gehe zu den Einstellungen deines Repositories und aktiviere GitHub Pages.
-
-### Heroku
-
-1. Melde dich bei Heroku an und erstelle eine neue App.
-2. Füge das Remote-Repository zu deinem Projekt hinzu:
-
-    ```bash
-    heroku git:remote -a dein-heroku-app-name
-    ```
-
-3. Pushe dein Projekt zu Heroku:
-
-    ```bash
-    git push heroku master
-    ```
-
-## Kontakt
-
-Bei Fragen oder Anmerkungen kannst du mich unter folgender E-Mail-Adresse erreichen:
-`rothe_alexander@t-online.de`
-
-Viel Spaß und vielen Dank für das Interesse an meinem Projekt!
+Ich freue mich auf Anfragen ab 01.01.2026!
+Lizenz
+© 2025 Alexander Rothe. Alle Rechte vorbehalten. Der Code und die Inhalte dürfen ohne Erlaubnis nicht kommerziell genutzt werden.

@@ -13,10 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Theme Toggle (Dark/Light)
   const themeToggle = document.getElementById('theme-toggle');
+  const profilePic = document.getElementById('profile-pic');
+  const darkImgSource = document.getElementById('dark-img');
   const applyTheme = (dark) => {
     document.body.classList.toggle('dark-mode', dark);
     themeToggle.innerHTML = dark ? '☀️' : '🌙';
     localStorage.setItem('darkMode', dark ? '1' : '0');
+    // Update profile image based on theme
+    if (profilePic && darkImgSource) {
+      profilePic.src = dark ? darkImgSource.srcset : 'image/profil1.png';
+    }
   };
   applyTheme(localStorage.getItem('darkMode') === '1');
   if (themeToggle) {

@@ -2,14 +2,14 @@
 :root {
   --primary: #007bff;
   --accent: #ff9800;
-  --bg-light: #f7f8fb;
-  --text-light: #1e1e1e; /* Etwas dunkler für besseren Kontrast im Light Mode */
-  --text-muted-light: #606060;
+  --bg-light: #f8fafc;
+  --text-light: #1a202c; /* Dunkler für besseren Kontrast (WCAG-konform) */
+  --text-muted-light: #4a5568;
   --bg-dark: #0f1720;
-  --text-dark: #f1f3f7;
-  --text-muted-dark: #a4b8d3;
-  --card-bg: rgba(255, 255, 255, 0.92);
-  --card-bg-dark: rgba(25, 25, 40, 0.85);
+  --text-dark: #f7fafc; /* Heller für bessere Lesbarkeit */
+  --text-muted-dark: #a0aec0;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-bg-dark: rgba(26, 32, 44, 0.9);
   --radius: 12px;
 }
 
@@ -29,8 +29,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s, color 0.3s;
-  font-size: 1rem; /* Basisgröße für bessere Lesbarkeit */
-  line-height: 1.6; /* Verbesserte Zeilenhöhe für Textblöcke */
+  font-size: 1.05rem; /* Etwas größere Basisgröße */
+  line-height: 1.7; /* Verbesserte Zeilenhöhe */
 }
 
 /* Dark Mode */
@@ -41,10 +41,11 @@ body.dark-mode {
 
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
   color: #ffffff;
+  font-weight: 700;
 }
 
 body.dark-mode p, body.dark-mode li, body.dark-mode span {
-  color: #e0e3e7;
+  color: var(--text-dark);
 }
 
 body.dark-mode .text-muted {
@@ -52,7 +53,7 @@ body.dark-mode .text-muted {
 }
 
 body.dark-mode small {
-  color: #c0c5ce;
+  color: var(--text-muted-dark);
 }
 
 /* Theme Toggle Button */
@@ -95,7 +96,7 @@ body.dark-mode #theme-toggle:hover {
 
 .display-5 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Etwas fetter für Überschriften im Light/Dark Mode */
+  font-weight: 700;
 }
 
 /* Header Layout */
@@ -271,9 +272,9 @@ form input, form textarea {
 }
 
 body.dark-mode form input, body.dark-mode form textarea {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  border-color: #555;
+  background-color: #1a202c;
+  color: var(--text-dark);
+  border-color: #4a5568;
 }
 
 form input:focus, form textarea:focus {
