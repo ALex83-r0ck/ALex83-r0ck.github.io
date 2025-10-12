@@ -1,263 +1,241 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio von Alexander Rothe, Fachinformatiker in Umschulung, mit Projekten, Zertifikaten und Lebenslauf.">
-    <meta name="theme-color" content="#007bff">
-    <meta name="robots" content="index, follow">
-    <title>Alexander Rothe - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Alexander Rothe – Portfolio. Python, KivyMD, Web, KI. Verfügbar ab 01.01.2026." />
+  <title>Alexander Rothe – Anwendungsentwickler (Web & Mobile)</title>
 
-    <link rel="preload" href="image/berge.jpg" as="image">
-    <link rel="preload" href="image/header.jpg" as="image">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Fonts / Icons / CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Herzlich Willkommen auf meiner Portfolio-Website</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Portfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">Wer bin ich?</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#certificates">Zertifikate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projekte</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#lebenslauf">Lebenslauf</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#downloadbereich">Downloadbereich</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <section id="about" class="container py-5 fade-in">
-        <h2 class="text-center mb-5">Wer bin ich?</h2>
-        <div class="row justify-content-center">
-            <div class="col-12 text-center text-center mb-5">
-                <div class="image-container mx-auto" id="image-container">
-                    <img id="overlay-image" src="image/overlay.png" alt="Overlaybild">
-                    <img id="profile-image" src="image/profil1.png" alt="Profilbild" style="display: none;">
-                    <div class="overlay" id="image-overlay">Zum öffnen/schließen Klicken</div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-10 col-xl-8" id="profile-description" class="text-center mx-auto" style="display: none;">
-                <p><strong>Hallo, ich heiße Alexander Rothe, bin 41 Jahre alt, verheiratet und Vater von zwei Kindern. Derzeit absolviere ich eine Umschulung zum Fachinformatiker für Anwendungsentwicklung.</strong></p>
-                <h3>Warum Softwareentwicklung?</h3>
-                <p><strong>Softwareentwicklung</strong> begeistert mich, weil sie mir die Möglichkeit gibt, kreative und effiziente Lösungen für technische Herausforderungen zu entwickeln. Dabei kann ich meine analytischen Fähigkeiten stetig verbessern und mit jeder Zeile Code etwas Neues erschaffen.</p>
-                <h3>Mein technischer Hintergrund</h3>
-                <p>Derzeit konzentriere ich mich vor allem auf <strong>Python</strong>, eine Programmiersprache, mit der ich mich bereits intensiv auseinandergesetzt habe. Besonders begeistert mich die Vielseitigkeit von Python – von der Webentwicklung über Datenanalyse bis hin zu Machine Learning und der Arbeit mit Large Language Models (LLMs).</p>
-                <p>Ich habe bereits begonnen, kleinere Projekte zu entwickeln, wie z.B. eine App mit dem <strong>Kivy/Kivymd-Framework</strong> zur Erfassung von Lärmbelästigungen. Dabei konnte ich wertvolle Erfahrungen in der Softwareentwicklung und Benutzeroberflächengestaltung sammeln.</p>
-                <p>Neben Python habe ich auch <mark>Grundkenntnisse in Java</mark> erworben und ein solides Verständnis für objektorientierte Programmierung entwickelt, was mir hilft, verschiedene Programmierparadigmen zu verstehen und anzuwenden.</p>
-                <p>Zusätzlich vertiefe ich kontinuierlich meine Kenntnisse in <strong>HTML, CSS und JavaScript</strong>, um ein umfassendes Verständnis für Webentwicklung zu erlangen und mich auf moderne Technologien vorzubereiten.</p>
-                <p>Da ich mich aktuell in der Umschulung zum Fachinformatiker für Anwendungsentwicklung befinde, konnte ich bereits einen Notendurchschnitt von <mark><span style="font-size: 1.2em; font-weight: bold; color: #2a9d8f;">2,1</span></mark> erarbeiten. Dieser spiegelt nicht nur mein Engagement und meine Lernbereitschaft wider, sondern auch meine Fähigkeit, mich schnell und gründlich in neue und komplexe Themen einzuarbeiten. Ich bin stets bestrebt, mein Wissen kontinuierlich zu erweitern und mich sowohl fachlich als auch persönlich weiterzuentwickeln.</p>
-                <h3>Besonderes Interesse und das Thema Zertifikate</h3>
-                <p>Ein besonderes Interesse von mir liegt im Bereich der <strong>Large Language Models (LLMs)</strong>, das ich intensiv verfolge. Ich finde die Möglichkeiten, die diese Technologien bieten, faszinierend und möchte mein Wissen in diesem Bereich weiter ausbauen.</p>
-                <p>Um meinen Wissensstand kontinuierlich zu erweitern, habe ich mehrere <strong>Zertifikate auf Sololearn</strong> erworben. Diese Zertifikate sind zwar keine umfassenden Nachweise, zeigen aber meine Lernbereitschaft und Zielstrebigkeit. Ich hinterlege sie, um zu verdeutlichen, dass ich aktiv daran arbeite, mein Wissen sukzessive auszubauen. In Zukunft plane ich, weitere Zertifikate zu erwerben, um stets auf dem Laufenden zu bleiben und meinen technologischen Horizont zu erweitern.</p>
-                <h3>Warum ein Praktikum?</h3>
-                <p>Für mich ist ein Praktikum die perfekte Gelegenheit, mein theoretisches Wissen in echten Projekten anzuwenden und wertvolle praktische Erfahrungen zu sammeln. Besonders motiviert mich die Aussicht, Teil eines erfahrenen Entwicklerteams zu werden, von dessen Expertise zu lernen und gemeinsam an innovativen Lösungen zu arbeiten. Ich freue mich darauf, meine eigenen Fähigkeiten einzubringen, um zum Erfolg des Teams beizutragen und mich zugleich weiterzuentwickeln.</p>
-                <h3>Ziele</h3>
-                <p>Mein Ziel ist es, meine Leidenschaft für <strong>Softwareentwicklung</strong> in einem praktischen beruflichen Umfeld zu leben. Nach Abschluss meiner Umschulung strebe ich an, in einem kreativen, innovativen Team zu arbeiten, das meine fachlichen Fähigkeiten fordert und gleichzeitig fördert. Dabei möchte ich mein Wissen in der Praxis anwenden und kontinuierlich ausbauen. Mein Wunsch ist es, durch ein <strong>Praktikum</strong> den idealen Einstieg in die Branche zu finden, um den Übergang von der Umschulung in den Arbeitsmarkt erfolgreich zu meistern.</p>
-            </div>
+  <!-- Availability Banner -->
+  <div id="availability-banner" class="availability-banner" role="region" aria-label="Verfügbarkeit">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div><strong>Verfügbar ab 01.01.2026</strong> — Interesse? Ich freue mich auf Anfragen.</div>
+      <button id="banner-close" class="btn btn-sm btn-outline-light" aria-label="Banner schließen">Schließen</button>
+    </div>
+  </div>
+
+  <!-- Particles background -->
+  <div id="particles-js" class="particles-bg" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header text-center text-md-start">
+    <div class="container header-flex">
+      <div class="header-text">
+        <h1 class="display-5">Hi, ich bin Alexander Rothe</h1>
+        <p class="lead">Anwendungsentwickler – Python, KivyMD, Web & KI. Verfügbar ab 01.01.2026.</p>
+      </div>
+      <div class="header-photo">
+        <picture>
+          <source srcset="image/overlay.png" media="(prefers-color-scheme: dark)">
+          <img src="image/profil1.png" alt="Profilfoto Alexander Rothe" id="profile-pic" class="img-fluid rounded-circle shadow">
+        </picture>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Alexander Rothe</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigation umschalten">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#about">Über mich</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tech-stack">Tech Stack</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projekte</a></li>
+              <li class="nav-item"><a class="nav-link" href="#certificates">Zertifikate</a></li>
+              <li class="nav-item"><a class="nav-link" href="#lebenslauf">Lebenslauf</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle dark/light mode" data-bs-toggle="tooltip" title="Dark/Light Mode">
+              🌙
+            </button>
+          </div>
         </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mt-5">
+    <!-- About -->
+    <section id="about" class="mb-5">
+      <h2>Über mich</h2>
+      <p><strong>Hi — ich bin Alexander, 42, verheiratet und Vater von zwei Kids.</strong> Aktuell auf der Zielgerade meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung und programmiere leidenschaftlich gern. Ich baue Dinge, die sinnvoll sind — von einfachen Tools bis zu GUI-Apps.</p>
+
+      <h4>Mein technischer Fokus</h4>
+      <p>Ich arbeite hauptsächlich mit <strong>Python</strong> (Desktop-Apps mit <em>Kivy/KivyMD</em>), habe Grundlagen in <strong>Java</strong> und praktische Erfahrung in <strong>HTML/CSS/JavaScript</strong>. Ich experimentiere mit KI/LLMs und setze Tools ein, um schneller zu lernen und produktiver zu sein.</p>
+
+      <h4>Was mich antreibt</h4>
+      <p>Ich lege Wert auf sauberen Code, nutzerfreundliche Oberflächen und praktikable Lösungen. Ich arbeite strukturiert, lerne schnell und gehe Herausforderungen offen an.</p>
     </section>
 
-    <section id="certificates" class="container py-5">
-        <h2 class="text-center">Zertifikate</h2>
-        <p class="text-center">Die von mir erworbenen Zertifikate auf <strong>Sololearn</strong>, wie beispielsweise in <strong>Python</strong> und <strong>Java</strong>, belegen mein Engagement für kontinuierliches Lernen und meine Bereitschaft, mich in neuen Technologien weiterzubilden. Diese Zertifikate mögen zwar keine hohe Aussagekraft besitzen, sie verdeutlichen jedoch meinen Lernwillen und meine Lernbereitschaft, mein Wissen aktiv zu erweitern.</p>
-        <h3 class="text-center">Sololearn</h3>
-        <div class="row g-4">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure class="text-center">
-                    <img src="image/py1_certificate.png" loading="lazy" class="img-fluid certificate-image" alt="Python-Zertifikat von Sololearn">
-                    <figcaption><strong>Python Basics</strong> - Sololearn</figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure class="text-center">
-                    <img src="image/py3.jpg" loading="lazy" class="img-fluid certificate-image" alt="Python-Development-Zertifikat von Sololearn">
-                    <figcaption><strong>Python Development</strong> - Sololearn</figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure class="text-center">
-                    <img src="image/java1_certificate.png" loading="lazy" class="img-fluid certificate-image" alt="Java-Zertifikat von Sololearn">
-                    <figcaption><strong>Java Fundamentals</strong> - Sololearn</figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <figure class="text-center">
-                    <img src="image/tech_certificate.png" loading="lazy" class="img-fluid certificate-image" alt="Webentwicklung-Zertifikat von Sololearn">
-                    <figcaption><strong>Allgemeines Technologie Zertifikat</strong> - Sololearn</figcaption>
-                </figure>
-            </div>
-        </div>
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="mb-5">
+      <h2>Tech Stack</h2>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <span class="badge bg-primary badge-tech" title="Python – Backend & Desktop Apps" aria-label="Python – Backend & Desktop Apps">Python</span>
+        <span class="badge bg-success badge-tech" title="Kotlin – Android & Backend" aria-label="Kotlin – Android & Backend">Kotlin</span>
+        <span class="badge bg-info text-dark badge-tech" title="PHP – Web & Backend" aria-label="PHP – Web & Backend">PHP</span>
+        <span class="badge bg-secondary badge-tech" title="WordPress – CMS & Websites" aria-label="WordPress – CMS & Websites">WordPress</span>
+        <span class="badge bg-warning text-dark badge-tech" title="HTML – Struktur & Content" aria-label="HTML – Struktur & Content">HTML</span>
+        <span class="badge bg-warning text-dark badge-tech" title="CSS – Styling & Layout" aria-label="CSS – Styling & Layout">CSS</span>
+        <span class="badge bg-danger badge-tech" title="JavaScript – Interaktivität" aria-label="JavaScript – Interaktivität">JavaScript</span>
+        <span class="badge bg-dark text-light badge-tech" title="KivyMD – Desktop UI" aria-label="KivyMD – Desktop UI">KivyMD</span>
+        <span class="badge bg-dark text-light badge-tech" title="Jetpack Compose – Android UI" aria-label="Jetpack Compose – Android UI">Jetpack Compose</span>
+        <span class="badge bg-success badge-tech" title="TensorFlow – KI/ML" aria-label="TensorFlow – KI/ML">TensorFlow</span>
+        <span class="badge bg-danger badge-tech" title="PyTorch – KI/ML" aria-label="PyTorch – KI/ML">PyTorch</span>
+        <span class="badge bg-info text-dark badge-tech" title="Flask – Web Apps" aria-label="Flask – Web Apps">Flask</span>
+        <span class="badge bg-secondary badge-tech" title="SQLite/MySQL – Datenbanken" aria-label="SQLite/MySQL – Datenbanken">SQLite/MySQL</span>
+        <span class="badge bg-primary badge-tech" title="JSON – Datenformat" aria-label="JSON – Datenformat">JSON</span>
+        <span class="badge bg-warning text-dark badge-tech" title="XAMPP – lokale Webserver" aria-label="XAMPP – lokale Webserver">XAMPP</span>
+      </div>
+      <p class="small">Ich bin immer offen für neue Technologien um ständig dazu zulernen.</p>
     </section>
 
-    <section id="projects" class="container py-5">
-        <h2 class="text-center">Projekte</h2>
-        <p class="text-center">Hier finden Sie meine bisherigen Projekte. Aktuell gibt es nur ein Projekt, aber weitere werden folgen 😉</p>
-        <div class="project-container">
-            <article class="project">
-                <h3>Projekt 1: Lärmprotokoll-App</h3>
-                <img id="project-image" src="image/Designer.png" loading="lazy" alt="Projekt 1 - Vorschau" class="img-fluid">
-                <h4>Wofür</h4>
-                <p>Diese Lärmprotokoll-App ermöglicht es, Lärmstörungen detailliert zu protokollieren und hilft beim Nachweis in rechtlichen Auseinandersetzungen oder bei Gesprächen mit Vermietern. Sie bietet:</p>
-                <ul>
-                    <li>Benutzerfreundliche Eingabe- und Anzeigeoberfläche</li>
-                    <li>Speicherung in einer SQLite-Datenbank</li>
-                    <li>Automatische Erstellung eines PDF-Protokolls</li>
-                </ul>
-                <p>Eine ausführliche Projektbeschreibung finden Sie auf meinem <strong><a href="https://github.com/ALex83-r0ck/Protolkoli" target="_blank" rel="noopener" title="Link zum GitHub Projekt">GitHub-Profil</a></strong>.</p>
-                <div id="cube-gallery" class="cube-container">
-                    <div class="cube" id="cube">
-                        <div class="face front"><img class="face-image" src="image/Layout.png" loading="lazy" alt="GUI der App"></div>
-                        <div class="face back"><img class="face-image" src="image/auswertung.png" loading="lazy" alt="Code-Snippet"></div>
-                        <div class="face left"><img class="face-image" src="image/Protokoll.png" loading="lazy" alt="PDF-Aufbau"></div>
-                        <div class="face right"><img class="face-image" src="image/Unbenannt1.png" loading="lazy" alt="Fertiges Protokoll"></div>
-                    </div>
-                </div>
-                <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9);">
-                    <div class="lightbox-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; display: flex; justify-content: center; align-items: center;">
-                        <img id="lightbox-image" src="" loading="lazy" alt="Bild im Lightbox-Modus" style="max-width: 100%; max-height: 100%;">
-                    </div>
-                    <button id="close-lightbox" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; color: white; font-size: 2em; cursor: pointer;">&times;</button>
-                    <button id="prev-lightbox" class="lightbox-nav prev">‹</button>
-                    <button id="next-lightbox" class="lightbox-nav next">›</button>
-                </div>
-                <div class="text-center my-3">
-                    <button class="rotate-button" id="left-btn" aria-label="Würfel nach links drehen">&#60;</button>
-                    <button class="rotate-button" id="right-btn" aria-label="Würfel nach rechts drehen">&#62;</button>
-                </div>
-                <div class="text-center mt-3">
-                    <div class="button-icon">
-                        <div class="icon">
-                            <a href="https://github.com/ALex83-r0ck/Protolkoli" target="_blank" rel="noopener" class="btn btn-dark" title="GitHub Projekt ansehen"></a>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="#222229"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
+    <!-- Projects -->
+    <section id="projects" class="mb-5">
+      <h2>Projekte</h2>
+
+      <!-- Protolkoli (fertig) -->
+      <article class="card mb-3">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-4 text-center p-3">
+            <img src="image/Designer.png" alt="Lärmprotokoll-App" class="img-fluid rounded">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Protolkoli — Lärmprotokoll-App</h5>
+              <p class="card-text">Desktop-App in Python/KivyMD zur Erfassung von Lärmstörungen, Speicherung in SQLite und Erzeugung eines PDF-Protokolls. Zeigt UI-Design + Datenverarbeitung in einem Projekt.</p>
+              <p class="mb-1"><strong>Features:</strong> Datenerfassung, PDF-Export, einfache Auswertung.</p>
+              <p class="mb-2"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Protolkoli" target="_blank" rel="noopener">github.com/ALex83-r0ck/Protolkoli</a></p>
+              <a href="https://alex83-r0ck.github.io/Protolkoli" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live-Demo</a>
+            </div>
+          </div>
         </div>
+      </article>
+
+      <!-- LernBuddy (in Entwicklung) -->
+      <article class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">LernBuddy (in Entwicklung)</h5>
+          <p class="card-text">Eigenes Projekt: Lernkarten + Quiz, KI-Tutor für Hilfestellungen und Feedback, Import via Drag & Drop (JSON-Pipeline). Ziel: Lernenden individuell unterstützen.</p>
+          <p class="mb-1"><strong>Status:</strong> aktiv in Entwicklung</p>
+          <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
+        </div>
+      </article>
+
+      <!-- VibeVault (in Entwicklung) -->
+      <article class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">VibeVault (in Entwicklung)</h5>
+          <p class="card-text">Nicotine-Pouch Tracker mit Gamification, KI-Auswertung & Gesundheitsstatistik.</p>
+          <p class="mb-1"><strong>Status:</strong> aktiv in Entwicklung</p>
+          <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
+        </div>
+      </article>
+
+      <!-- Abby (fertig) -->
+      <article class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Abby</h5>
+          <p class="card-text">Python/Pygame-Spiel für meine Tochter – kleine Spielerei & Übungsprojekt.</p>
+          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Abby" target="_blank" rel="noopener noreferrer">github.com/ALex83-r0ck/Abby</a></p>
+          <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
+        </div>
+      </article>
+
+      <!-- BirthdaySchatz (fertig) -->
+      <article class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">BirthdaySchatz</h5>
+          <p class="card-text">Interaktive Geburtstags-App mit Lottie-Animationen, Gutschein-Spiel & Alarmfunktion.</p>
+          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/BirthdaySchatz" target="_blank" rel="noopener noreferrer">github.com/ALex83-r0ck/BirthdaySchatz</a></p>
+          <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
+        </div>
+      </article>
     </section>
 
-    <section id="lebenslauf" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Lebenslauf</h2>
-            <div class="timeline">
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">Dezember 2023 - Aktuell</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Umschulung zum Fachinformatiker für Anwendungsentwicklung</strong> - GFN, Nürnberg</p>
-                        <p>Fokus auf Softwareentwicklung und Programmierung.</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">Februar 2023 - Juli 2023</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Vorbereitungskurs für eine kaufmännische Umschulung</strong> - Deutsche Angestellten-Akademie, Nürnberg</p>
-                        <p>Vorbereitung auf die Umschulung im Bereich kaufmännisch mit EDV.</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">2016 - 2021</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Verschiedene Tätigkeiten als Lager- und Produktionshelfer</strong> - Firmen Innocoat, MEN, Sivantos, Apollo und andere, verschiedene Standorte</p>
-                        <p>Erfahrung in Logistik, Produktion und Koordination bei verschiedenen Unternehmen.</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">2014 - 2015</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Verladeaufsicht</strong> - Media Logistik, Dresden</p>
-                        <p>Verantwortlich für die Überwachung und Koordination von Verladeprozessen.</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">2007 - 2014</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Helfertätigkeiten in der Landschaftspflege</strong> - Demitz-Thumitz</p>
-                        <p>Verschiedene Aufgaben in der Landschaftspflege mit einem Fokus auf Koordination und Teamarbeit.</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">2003 - 2005</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Ausbildung zum Bau- und Metallmaler</strong> - Berufsbildungszentrum Bautzen</p>
-                        <p>Praktische Ausbildung im Baugewerbe (ohne Abschluss).</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="timeline-item row">
-                    <div class="timeline-date col-12 col-md-3">2002 - 2002</div>
-                    <div class="timeline-content col-12 col-md-9">
-                        <p><strong>Qualifizierung ABM Beauftragter für Haustechnik</strong> - GAB, Steinigwolmsdorf</p>
-                        <p>Zusätzliche Kenntnisse in technischen Bereichen der Haustechnik erworben.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Certificates -->
+    <section id="certificates" class="mb-5">
+      <h2>Zertifikate</h2>
+      <p>Ein paar Kurse / Micro-Certificates (z. B. Sololearn) gibt immer was zu lernen.</p>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-3">
+          <figure class="figure">
+            <img src="image/py1_certificate.png" class="figure-img img-fluid rounded" alt="Python Basics">
+            <figcaption class="figure-caption text-center small">Python Basics (Sololearn)</figcaption>
+          </figure>
         </div>
+        <div class="col-sm-6 col-md-3">
+          <figure class="figure">
+            <img src="image/py3.jpg" class="figure-img img-fluid rounded" alt="Python Core">
+            <figcaption class="figure-caption text-center small">Python Core (Sololearn)</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
-    <section id="downloadbereich" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Downloadbereich</h2>
-            <p class="text-center">Hier können Sie meinen Lebenslauf sowie das letzte Arbeitszeugnis aber auch die Info-Seite rund ums Praktikum herunterladen:</p>
-            <div class="d-flex flex-column align-items-center">
-                <a href="documents/Lebenslauf_Alexander_Rothe.pdf" download class="btn btn-primary mb-2" id="resüme-download" title="Download Lebenslauf">Lebenslauf herunterladen</a>
-                <a href="documents/Arbeitszeugnis.pdf" download class="btn btn-primary mb-2" id="reference" title="Download Arbeitszeugnis">Letztes Arbeitszeugnis herunterladen</a>
-                <a href="documents/Informationen für Praktikumsbetriebe_FIAE_GFN GmbH_Stand122022.pdf" download class="btn btn-primary mb-2" id="info" title="Download der Info zum Praktikum">Informationen für den Praktikumsbetrieb</a>
-            </div>
-        </div>
+    <!-- Lebenslauf -->
+    <section id="lebenslauf" class="mb-5">
+      <h2>Lebenslauf (Kurz)</h2>
+      <ul class="list-group list-group-flush mb-3">
+        <li class="list-group-item"><strong>2023–2025:</strong> Umschulung zum Fachinformatiker (Anwendungsentwicklung)</li>
+        <li class="list-group-item"><strong>2016–2021:</strong> Verschiedene Tätigkeiten in Logistik/Produktion</li>
+      </ul>
+      <p class="small text-muted">Detaillierter Lebenslauf auf Anfrage – ich schicke die Datei gerne privat.</p>
     </section>
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <div class="social-links mb-3">
-                <button>
-                    <p>Follow me</p>
-                    <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6/" target="_blank" rel="noopener" title="Weiterleitung zu meinem LinkedIn Profil" class="text-white me-3">
-                        <svg viewBox="2 1 24 24" class="bi bi-whatsapp" fill="#0B92E4" height="20" width="20" xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" id="linkedin" role="img" aria-label="LinkedIn" class="icon" style="fill: #0B92E4;">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-                        </svg>
-                    </a>
-                </button>
-                <button class="btn">
-                    <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener" title="Weiterleitung zu meinem GitHub Profil" class="text-white">
-                        <svg width="60" height="60" fill="#0B92E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="2 1 24 24" id="github">
-                            <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
-                        </svg>
-                    </a>
-                </button>
-            </div>
-            <p>&copy; 2025 Alexander Rothe. Alle Rechte vorbehalten.</p>
+    <!-- Contact -->
+    <section id="contact" class="mb-5">
+      <h2>Kontakt</h2>
+      <form id="contact-form" action="https://formspree.io/f/mwprwpro" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Ihr Name" required aria-required="true">
         </div>
-    </footer>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-Mail</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail" required aria-required="true">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Nachricht</label>
+          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Ihre Nachricht" required aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </form>
+    </section>
+  </main>
 
-    <script src="scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-1">© 2025 Alexander Rothe</p>
+      <div class="social-icons mb-2">
+        <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener" class="btn-icon" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6/" target="_blank" rel="noopener" class="btn-icon" data-bs-toggle="tooltip" title="LinkedIn" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+      <p class="small text-muted">Made with <i class="fas fa-heart text-danger"></i> in Germany</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>

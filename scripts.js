@@ -1,94 +1,94 @@
-// ==================== //
-// Scroll-Animationen   //
-// ==================== //
-document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const isActive = content.style.maxHeight;
-
-        if (isActive) {
-            content.style.maxHeight = null;
-            content.style.opacity = 0;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            content.style.opacity = 1;
-        }
-    });
-});
-
-// ==================== //
-// Overlay-Management   //
-// ==================== //
-document.addEventListener('DOMContentLoaded', function() {
-    const overlayImage = document.getElementById('overlay-image');
-    const profileImage = document.getElementById('profile-image');
-    const profileDescription = document.getElementById('profile-description');
-    const imageContainer = document.getElementById('image-container');
-
-    if (overlayImage && profileImage && profileDescription && imageContainer) {
-        // Beim Klick auf das Overlay-Bild
-        overlayImage.addEventListener('click', () => {
-            overlayImage.style.display = 'none';
-            profileImage.style.display = 'block';
-            profileDescription.style.display = 'block';
-        });
-
-        // Beim Klick auf das Profilbild (optional - zum Zurückschalten)
-        profileImage.addEventListener('click', () => {
-            overlayImage.style.display = 'block';
-            profileImage.style.display = 'none';
-            profileDescription.style.display = 'none';
-        });
-    } else {
-        console.error('Ein oder mehrere erforderliche Elemente wurden nicht gefunden');
-    }
-});
-
-// Rest des existierenden JavaScript-Codes bleibt unverändert...
-
-// ==================== //
-// Würfel-Animation     //
-// ==================== //
-let angle = 0;
-
-document.getElementById("left-btn").addEventListener("click", () => {
-    angle -= 90;
-    document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
-});
-
-document.getElementById("right-btn").addEventListener("click", () => {
-    angle += 90;
-    document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
-});
-
-// ==================== //
-// Lightbox-Management  //
-// ==================== //
 document.addEventListener('DOMContentLoaded', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const closeLightbox = document.getElementById('close-lightbox');
 
-    // Lightbox für Bilder einrichten
-    function setupLightbox(images) {
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                lightboxImage.src = image.src;
-                lightbox.style.display = 'flex';
-            });
-        });
-    }
-
-    // Lightbox für Würfel-Bilder
-    const cubeImages = document.querySelectorAll('.face-image');
-    setupLightbox(cubeImages);
-
-    // Lightbox für Zertifikats-Bilder
-    const certificateImages = document.querySelectorAll('.certificate-image');
-    setupLightbox(certificateImages);
-
-    // Lightbox schließen
-    closeLightbox.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+  // Availability Banner
+  const banner = document.getElementById('availability-banner');
+  const bannerClose = document.getElementById('banner-close');
+  if (banner && bannerClose) {
+    banner.style.display = localStorage.getItem('bannerClosed') === '1' ? 'none' : 'block';
+    bannerClose.addEventListener('click', () => {
+      banner.style.display = 'none';
+      localStorage.setItem('bannerClosed', '1');
     });
+  }
+
+  // Theme Toggle (Dark/Light)
+  const themeToggle = document.getElementById('theme-toggle');
+  const applyTheme = (dark) => {
+    document.body.classList.toggle('dark-mode', dark);
+    themeToggle.innerHTML = dark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', dark ? '1' : '0');
+  };
+  applyTheme(localStorage.getItem('darkMode') === '1');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => applyTheme(!document.body.classList.contains('dark-mode')));
+  }
+
+  // Smooth Scroll for nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', ev => {
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('#')) {
+        ev.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Tooltips
+  try {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+  } catch (e) {
+    console.warn('Tooltip init failed');
+  }
+
+  // Scroll Reveal for Projects
+  const cards = document.querySelectorAll('#projects .card');
+  const reveal = () => {
+    const triggerBottom = window.innerHeight * 0.9;
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom) card.classList.add('fade-in');
+    });
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
+
+  // Particles Background
+  if (window.particlesJS) {
+    try {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 25 },
+          color: { value: '#007bff' },
+          size: { value: 3 },
+          move: { speed: 1.5 }
+        },
+        interactivity: { events: { onhover: { enable: true, mode: 'repulse' } } }
+      });
+    } catch (e) {
+      console.warn('Particles init failed');
+    }
+  }
+
+  // Contact Form Submission (Formspree)
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        alert("Danke! Deine Nachricht wurde gesendet.");
+        form.reset();
+      } else {
+        alert("Hoppla! Etwas ist schiefgelaufen.");
+      }
+    });
+  }
 });
