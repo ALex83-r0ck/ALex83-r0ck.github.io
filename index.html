@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Alexander Rothe – Portfolio. Python, KivyMD, Web, KI. Verfügbar ab 01.01.2026." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alexander Rothe – Portfolio. Python, KivyMD, Web, KI. Verfügbar ab 01.01.2026.">
   <title>Alexander Rothe – Anwendungsentwickler (Web & Mobile)</title>
 
   <!-- Fonts / Icons / CSS -->
@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Availability Banner -->
   <div id="availability-banner" class="availability-banner" role="region" aria-label="Verfügbarkeit">
     <div class="container d-flex justify-content-between align-items-center">
@@ -24,7 +23,7 @@
     </div>
   </div>
 
-  <!-- Particles background -->
+  <!-- Particles Background -->
   <div id="particles-js" class="particles-bg" aria-hidden="true"></div>
 
   <!-- Header -->
@@ -35,10 +34,7 @@
         <p class="lead">Anwendungsentwickler – Python, KivyMD, Web & KI. Verfügbar ab 01.01.2026.</p>
       </div>
       <div class="header-photo">
-        <picture id="profile-picture">
-          <source id="dark-img" srcset="image/overlay.png" media="(prefers-color-scheme: dark)">
-          <img id="profile-pic" src="image/profil1.png" alt="Profilfoto Alexander Rothe" class="img-fluid rounded-circle shadow">
-        </picture>
+        <img id="profile-pic" src="image/profil1.png" alt="Profilfoto Alexander Rothe" class="img-fluid rounded-circle shadow">
       </div>
     </div>
 
@@ -49,7 +45,6 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigation umschalten">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="#about">Über mich</a></li>
@@ -59,9 +54,7 @@
               <li class="nav-item"><a class="nav-link" href="#lebenslauf">Lebenslauf</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle dark/light mode" data-bs-toggle="tooltip" title="Dark/Light Mode">
-              🌙
-            </button>
+            <button id="theme-toggle" aria-label="Dark/Light Mode umschalten" data-bs-toggle="tooltip" title="Dark/Light Mode">🌙</button>
           </div>
         </div>
       </nav>
@@ -73,10 +66,8 @@
     <section id="about" class="mb-5">
       <h2>Über mich</h2>
       <p><strong>Hi — ich bin Alexander, 42, verheiratet und Vater von zwei Kids.</strong> Aktuell auf der Zielgerade meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung und programmiere leidenschaftlich gern. Ich baue Dinge, die sinnvoll sind — von einfachen Tools bis zu GUI-Apps.</p>
-
       <h4>Mein technischer Fokus</h4>
       <p>Ich arbeite hauptsächlich mit <strong>Python</strong> (Desktop-Apps mit <em>Kivy/KivyMD</em>), habe Grundlagen in <strong>Java</strong> und praktische Erfahrung in <strong>HTML/CSS/JavaScript</strong>. Ich experimentiere mit KI/LLMs und setze Tools ein, um schneller zu lernen und produktiver zu sein.</p>
-
       <h4>Was mich antreibt</h4>
       <p>Ich lege Wert auf sauberen Code, nutzerfreundliche Oberflächen und praktikable Lösungen. Ich arbeite strukturiert, lerne schnell und gehe Herausforderungen offen an.</p>
     </section>
@@ -84,31 +75,38 @@
     <!-- Tech Stack -->
     <section id="tech-stack" class="mb-5">
       <h2>Tech Stack</h2>
+      <p>Hier sind die Technologien, mit denen ich arbeite, aufgeteilt in meinen Hauptfokus und weitere Technologien, die ich bereits genutzt habe.</p>
+      <h4>Regelmäßig genutzt</h4>
+      <h5>Frontend</h5>
       <div class="d-flex flex-wrap gap-3 mb-3">
-        <span class="badge bg-primary badge-tech" title="Python – Backend & Desktop Apps" aria-label="Python – Backend & Desktop Apps">Python</span>
-        <span class="badge bg-success badge-tech" title="Kotlin – Android & Backend" aria-label="Kotlin – Android & Backend">Kotlin</span>
-        <span class="badge bg-info text-dark badge-tech" title="PHP – Web & Backend" aria-label="PHP – Web & Backend">PHP</span>
-        <span class="badge bg-secondary badge-tech" title="WordPress – CMS & Websites" aria-label="WordPress – CMS & Websites">WordPress</span>
-        <span class="badge bg-warning text-dark badge-tech" title="HTML – Struktur & Content" aria-label="HTML – Struktur & Content">HTML</span>
-        <span class="badge bg-warning text-dark badge-tech" title="CSS – Styling & Layout" aria-label="CSS – Styling & Layout">CSS</span>
-        <span class="badge bg-danger badge-tech" title="JavaScript – Interaktivität" aria-label="JavaScript – Interaktivität">JavaScript</span>
-        <span class="badge bg-dark text-light badge-tech" title="KivyMD – Desktop UI" aria-label="KivyMD – Desktop UI">KivyMD</span>
-        <span class="badge bg-dark text-light badge-tech" title="Jetpack Compose – Android UI" aria-label="Jetpack Compose – Android UI">Jetpack Compose</span>
-        <span class="badge bg-success badge-tech" title="TensorFlow – KI/ML" aria-label="TensorFlow – KI/ML">TensorFlow</span>
-        <span class="badge bg-danger badge-tech" title="PyTorch – KI/ML" aria-label="PyTorch – KI/ML">PyTorch</span>
-        <span class="badge bg-info text-dark badge-tech" title="Flask – Web Apps" aria-label="Flask – Web Apps">Flask</span>
-        <span class="badge bg-secondary badge-tech" title="SQLite/MySQL – Datenbanken" aria-label="SQLite/MySQL – Datenbanken">SQLite/MySQL</span>
-        <span class="badge bg-primary badge-tech" title="JSON – Datenformat" aria-label="JSON – Datenformat">JSON</span>
-        <span class="badge bg-warning text-dark badge-tech" title="XAMPP – lokale Webserver" aria-label="XAMPP – lokale Webserver">XAMPP</span>
+        <span class="badge badge-tech frontend" title="HTML5 – Struktur & Content">HTML5</span>
+        <span class="badge badge-tech frontend" title="CSS3 – Styling & Layout">CSS3</span>
+        <span class="badge badge-tech frontend" title="JavaScript – Interaktivität">JavaScript</span>
+        <span class="badge badge-tech frontend" title="WordPress – CMS & Websites">WordPress</span>
       </div>
-      <p class="small">Ich bin immer offen für neue Technologien um ständig dazu zulernen.</p>
+      <h5>Backend</h5>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <span class="badge badge-tech backend" title="Python – Backend & Desktop Apps">Python</span>
+        <span class="badge badge-tech backend" title="PHP – Web & Backend">PHP</span>
+        <span class="badge badge-tech backend" title="SQLite – Datenbanken">SQLite</span>
+      </div>
+      <h5>App (Desktop/Mobile)</h5>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <span class="badge badge-tech app" title="Kivy/KivyMD – Desktop UI">Kivy/KivyMD</span>
+        <span class="badge badge-tech app" title="Kotlin – Android & Backend">Kotlin</span>
+        <span class="badge badge-tech app" title="Jetpack Compose – Android UI">Jetpack Compose</span>
+      </div>
+      <h4>Schon mal genutzt</h4>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <span class="badge badge-tech other" title="Flask – Web Apps">Flask</span>
+        <span class="badge badge-tech other" title="TensorFlow/PyTorch – KI/ML">TensorFlow/PyTorch</span>
+      </div>
+      <p class="small">Ich bin immer offen für neue Technologien, um ständig dazuzulernen.</p>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="mb-5">
       <h2>Projekte</h2>
-
-      <!-- Protolkoli (fertig) -->
       <article class="card mb-3">
         <div class="row g-0 align-items-center">
           <div class="col-md-4 text-center p-3">
@@ -125,8 +123,6 @@
           </div>
         </div>
       </article>
-
-      <!-- LernBuddy (in Entwicklung) -->
       <article class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">LernBuddy (in Entwicklung)</h5>
@@ -135,8 +131,6 @@
           <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
         </div>
       </article>
-
-      <!-- VibeVault (in Entwicklung) -->
       <article class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">VibeVault (in Entwicklung)</h5>
@@ -145,23 +139,19 @@
           <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
         </div>
       </article>
-
-      <!-- Abby (fertig) -->
       <article class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">Abby</h5>
           <p class="card-text">Python/Pygame-Spiel für meine Tochter – kleine Spielerei & Übungsprojekt.</p>
-          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Abby" target="_blank" rel="noopener noreferrer">github.com/ALex83-r0ck/Abby</a></p>
+          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Abby" target="_blank" rel="noopener">github.com/ALex83-r0ck/Abby</a></p>
           <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
         </div>
       </article>
-
-      <!-- BirthdaySchatz (fertig) -->
       <article class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">BirthdaySchatz</h5>
           <p class="card-text">Interaktive Geburtstags-App mit Lottie-Animationen, Gutschein-Spiel & Alarmfunktion.</p>
-          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/BirthdaySchatz" target="_blank" rel="noopener noreferrer">github.com/ALex83-r0ck/BirthdaySchatz</a></p>
+          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/BirthdaySchatz" target="_blank" rel="noopener">github.com/ALex83-r0ck/BirthdaySchatz</a></p>
           <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
         </div>
       </article>
@@ -232,6 +222,11 @@
       <p class="small text-muted">Made with <i class="fas fa-heart text-danger"></i> in Germany</p>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="btn btn-primary btn-sm d-none" aria-label="Nach oben scrollen" data-bs-toggle="tooltip" title="Nach oben scrollen">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
