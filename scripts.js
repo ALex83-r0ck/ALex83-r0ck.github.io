@@ -162,38 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal();
   }
-
-  if (window.particlesJS) {
-  try {
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 50, density: { enable: true, value_area: 800 } },
-        color: { value: '#007bff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.6, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: '#007bff', opacity: 0.3, width: 1 },
-        move: { enable: true, speed: 2, direction: 'none', out_mode: 'out' }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' }
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
-        }
-      },
-      retina_detect: true
-    });
-  } catch (e) {
-    console.warn('Particles init failed:', e);
-  }
-
-  updateParticles(document.body.classList.contains('dark-mode'));
-}
+  
 // ===========================
 // PARTICLES BACKGROUND
 // ===========================
