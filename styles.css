@@ -1,4 +1,6 @@
-/* Custom Variables */
+/* ===========================
+   Custom Variables
+   =========================== */
 :root {
   --primary: #007bff; /* Blau für Frontend */
   --accent: #ff9800; /* Orange für App */
@@ -15,10 +17,14 @@
   --radius: 12px;
 }
 
-/* Fonts */
+/* ===========================
+   Fonts
+   =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@300;600;700&display=swap');
 
-/* Base Styles */
+/* ===========================
+   Base Styles
+   =========================== */
 * {
   box-sizing: border-box;
 }
@@ -30,18 +36,21 @@ body {
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.5s, color 0.5s;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* Dark Mode */
+/* ===========================
+   Dark Mode
+   =========================== */
 body.dark-mode {
   background: var(--bg-dark);
   color: var(--text-dark);
 }
 
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5 {
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5 {
   color: #ffffff;
   font-weight: 700;
 }
@@ -54,7 +63,14 @@ body.dark-mode .text-muted, body.dark-mode .small {
   color: var(--text-muted-dark);
 }
 
-/* Theme Toggle Button */
+/* Smooth transitions für alle Elemente im Darkmode */
+body, .card, .btn, input, textarea, .badge-tech, footer {
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* ===========================
+   Theme Toggle Button
+   =========================== */
 #theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -68,7 +84,6 @@ body.dark-mode .text-muted, body.dark-mode .small {
   font-size: 1.4rem;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-  transition: all 0.3s ease;
 }
 
 #theme-toggle:hover {
@@ -85,11 +100,12 @@ body.dark-mode #theme-toggle:hover {
   background: var(--primary);
 }
 
-/* Header */
+/* ===========================
+   Header
+   =========================== */
 .site-header {
   padding: 40px 0 8px;
   background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35));
-  transition: background 0.3s;
 }
 
 .display-5 {
@@ -128,51 +144,92 @@ body.dark-mode #theme-toggle:hover {
   transform: scale(1.05);
 }
 
-/* Availability Banner */
+/* ===========================
+   Availability Banner
+   =========================== */
 .availability-banner {
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100%;
-  background: linear-gradient(90deg, rgba(0,123,255,0.95), rgba(0,196,255,0.9));
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
-  padding: 12px 0;
+  padding: 1rem 0;
   z-index: 1050;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  opacity: 1;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  font-size: 1.1rem;
-}
-
-body.dark-mode .availability-banner {
-  background: linear-gradient(90deg, rgba(59,130,246,0.95), rgba(147,197,253,0.9));
-}
-
-.availability-banner.hidden {
-  opacity: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+  border-bottom: 3px solid rgba(255,255,255,0.2);
+}
+
+.availability-banner.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Banner Toggle Icon Rotation */
+#toggle-banner i {
+  transition: transform 0.3s ease;
+}
+
+#toggle-banner.collapsed i {
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   Global Toggle Button
+   =========================== */
+#global-toggle {
+  border-radius: 20px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+  transition: all 0.3s ease;
+}
+
+#global-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+/* ===========================
+    Particles Background
+   =========================== */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   pointer-events: none;
+  transition: opacity 0.3s ;
 }
 
-.availability-banner .btn {
-  border-color: rgba(255,255,255,0.4);
-  transition: all 0.3s;
-  font-size: 0.95rem;
-  padding: 6px 12px;
+.particles-bg.hidden {
+  opacity: 0;
 }
 
-.availability-banner .btn:hover {
-  background: rgba(255,255,255,0.2);
-  color: white;
-  transform: translateY(-2px);
+/* ===========================
+   Body Padding für Banner
+   =========================== */
+body.banner-open {
+  padding-top: 80px;
+  transition: padding-top 0.3s ease;
 }
 
-/* Main Container */
+/* ===========================
+   Main Container
+   =========================== */
 main.container {
   max-width: 980px;
   margin-top: 2rem;
 }
 
-/* Sections and Cards */
+/* ===========================
+   Sections & Cards
+   =========================== */
 section {
   margin-bottom: 28px;
 }
@@ -181,7 +238,6 @@ section {
   border-radius: var(--radius);
   background: var(--card-bg);
   box-shadow: 0 8px 24px rgba(2,6,23,0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 body.dark-mode .card {
@@ -193,11 +249,9 @@ body.dark-mode .card {
   box-shadow: 0 16px 32px rgba(2,6,23,0.12);
 }
 
-.card-body p {
-  margin-bottom: 0.6rem;
-}
-
-/* Project Cards */
+/* ===========================
+   Projekt Cards mit Fade-In
+   =========================== */
 #projects .card {
   opacity: 0;
   transform: translateY(20px);
@@ -209,48 +263,9 @@ body.dark-mode .card {
   transform: translateY(0);
 }
 
-#projects .card h5 {
-  color: var(--text-light);
-  font-weight: 600;
-}
-
-body.dark-mode #projects .card h5 {
-  color: #f7fafc;
-}
-
-/* Lebenslauf Section */
-#lebenslauf .list-group-item {
-  color: var(--text-light);
-  background: transparent;
-}
-
-body.dark-mode #lebenslauf .list-group-item {
-  color: var(--text-dark);
-}
-
-#lebenslauf .small.text-muted {
-  color: var(--text-muted-light);
-}
-
-body.dark-mode #lebenslauf .small.text-muted {
-  color: var(--text-muted-dark);
-  font-weight: 600;
-}
-
-/* Images */
-img.img-fluid {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-  transition: transform 0.3s ease;
-}
-
-.card:hover img.img-fluid {
-  transform: scale(1.03);
-}
-
-/* Buttons */
+/* ===========================
+   Buttons & Badges
+   =========================== */
 .btn-primary, .btn-icon {
   transition: all 0.25s ease;
 }
@@ -266,33 +281,6 @@ img.img-fluid {
   cursor: not-allowed;
 }
 
-/* Icon Buttons */
-.btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  color: var(--text-light);
-  background: rgba(0,0,0,0.05);
-  margin: 0 6px;
-  transition: all 0.3s ease;
-}
-
-body.dark-mode .btn-icon {
-  color: var(--text-dark);
-  background: rgba(255,255,255,0.08);
-}
-
-.btn-icon:hover {
-  background: var(--accent);
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Badges */
 .badge-tech {
   font-weight: 500;
   padding: 0.5em 0.8em;
@@ -301,34 +289,24 @@ body.dark-mode .btn-icon {
   color: white;
 }
 
-.badge-tech.frontend {
-  background: var(--primary);
-}
-
-.badge-tech.backend {
-  background: var(--backend);
-}
-
-.badge-tech.app {
-  background: var(--accent);
-}
-
-.badge-tech.other {
-  background: var(--other);
-}
+.badge-tech.frontend { background: var(--primary); }
+.badge-tech.backend { background: var(--backend); }
+.badge-tech.app { background: var(--accent); }
+.badge-tech.other { background: var(--other); }
 
 .badge-tech:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Form Inputs */
+/* ===========================
+   Form Inputs
+   =========================== */
 form input, form textarea {
   border-radius: 8px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
   color: var(--text-light);
   background: #fff;
-  font-size: 1rem;
 }
 
 form input::placeholder, form textarea::placeholder {
@@ -346,16 +324,8 @@ body.dark-mode form input::placeholder, body.dark-mode form textarea::placeholde
   color: var(--text-muted-dark);
 }
 
-/* Form Labels */
-form .form-label {
-  color: var(--text-light);
-}
-
-body.dark-mode form .form-label {
-  color: var(--text-dark);
-}
-
 form input:focus, form textarea:focus {
+  outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 8px rgba(0,123,255,0.25);
 }
@@ -365,80 +335,27 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
   box-shadow: 0 0 6px rgba(255,152,0,0.3);
 }
 
-/* Small Text */
-.small, .text-muted {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-muted-light);
-  font-weight: 500;
-}
-
-body.dark-mode .small, body.dark-mode .text-muted {
-  color: var(--text-muted-dark);
-  font-weight: 600;
-}
-
-/* Footer */
-footer {
-  background: transparent;
-  color: inherit;
-  transition: color 0.3s;
-}
-
-footer .small.text-muted {
-  color: var(--text-muted-light);
-}
-
-body.dark-mode footer .small.text-muted {
-  color: var(--text-muted-dark);
-  font-weight: 600;
-}
-
-body.dark-mode .text-danger {
-  color: #ff6b6b;
-}
-
-/* Particles */
-.particles-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
-
-/* Utilities */
-.lead {
-  opacity: 0.95;
-}
-
-.text-accent {
-  color: var(--accent);
-}
-
-.text-muted {
-  opacity: 0.9;
-}
-
-/* Back to Top Button */
+/* ===========================
+   Back to Top Button
+   =========================== */
 #back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-  border: none;
+  z-index: 900;
+  border: rgb(90, 205, 203) solid 2px;
   background: var(--primary);
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 18px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 5px;
+  border-radius: 80%;
+  font-size: 19px;
 }
 
 #back-to-top:hover {
   background: var(--accent);
-  transform: scale(1.1);
+  transform: scale(1.5);
+  transition: all 0.3s ease;
 }
 
 #back-to-top.d-none {
@@ -446,21 +363,53 @@ body.dark-mode .text-danger {
   pointer-events: none;
 }
 
-/* Responsive */
+/* ===========================
+   Responsive Anpassungen
+   =========================== */
 @media (max-width: 768px) {
-  .site-header {
-    padding: 28px 12px;
-  }
-  .header-flex {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .availability-banner {
-    font-size: 0.95rem;
-    padding: 8px 0;
-  }
-  .availability-banner .btn {
-    font-size: 0.85rem;
-    padding: 4px 8px;
-  }
+  .site-header { padding: 28px 12px; }
+  .header-flex { flex-direction: column-reverse; text-align: center; }
+  .availability-banner { font-size: 0.95rem; padding: 8px 0; }
+  .availability-banner .btn { font-size: 0.85rem; padding: 4px 8px; }
+  .card-body p { font-size: 0.95rem; }
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+body.dark-mode footer {
+  color: var(--text-muted-dark);
+}
+
+/* ===========================
+   Impressum Section
+   =========================== */
+#impressum {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+body.dark-mode #impressum {
+  color: var(--text-muted-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}   
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.text-muted {
+  color: var(--text-muted-light) !important;
+}
+body.dark-mode .text-muted {
+  color: var(--text-muted-dark) !important;
+}
+.small {
+  font-size: 0.875rem;
 }

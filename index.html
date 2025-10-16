@@ -2,232 +2,229 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="Alexander Rothe">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Rothe – Portfolio. Python, KivyMD, Web, KI. Verfügbar ab 01.01.2026.">
+  <meta name="description" content="Fachinformatiker für Anwendungsentwicklung (i.A.) – Python, KivyMD, Webentwicklung & KI. Ab 01.01.2026 verfügbar für neue Projekte.">
+  <meta name="keywords" content="Fachinformatiker, Python Entwickler, Webentwicklung, KivyMD, KI, Fullstack, Softwareentwickler, Alexander Rothe, Portfolio, Developer">
+  <meta name="theme-color" content="#007bff">
+  <meta property="og:title" content="Alexander Rothe – Fachinformatiker für Anwendungsentwicklung (Python & Web/Mobile)">
+  <meta property="og:description" content="Python | KivyMD | Web | KI – Verfügbar ab 01.01.2026. Jetzt kontaktieren!">
+  <meta property="og:image" content="image/profil1.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+
   <title>Alexander Rothe – Anwendungsentwickler (Web & Mobile)</title>
 
   <!-- Fonts / Icons / CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" href="image/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Availability Banner -->
-  <div id="availability-banner" class="availability-banner" role="region" aria-label="Verfügbarkeit">
+  <div id="availability-banner" class="availability-banner shadow-sm">
     <div class="container d-flex justify-content-between align-items-center">
-      <div><strong>Verfügbar ab 01.01.2026</strong> — Interesse? Ich freue mich auf Anfragen.</div>
-      <button id="banner-close" class="btn btn-sm btn-outline-light" aria-label="Banner schließen">Schließen</button>
+      <div>
+        <i class="bi bi-calendar-check me-2"></i>
+        <strong>🚀 Verfügbar ab 01.01.2026</strong>
+        <span class="ms-2">–</span>
+        <button class="btn btn-link text-white ms-2 p-0" onclick="scrollToContact()">Jetzt kontaktieren</button>
+      </div>
+      <div>
+        <button id="close-banner" class="btn-close btn-close-white me-2" aria-label="Banner schließen"></button>
+        <button id="toggle-banner" class="btn btn-sm btn-outline-light" aria-label="Banner ein-/ausblenden">
+          <i class="bi bi-chevron-down" id="toggle-icon"></i>
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- Particles Background -->
+  <!-- Toggle Button (reopen banner) -->
+  <div id="banner-toggle-header" class="position-fixed top-0 end-0 m-3 z-1030 d-none">
+    <button id="global-toggle" class="btn btn-sm btn-primary" type="button">
+      <i class="bi bi-calendar-check"></i> <span class="d-none d-md-inline">Verfügbar</span>
+    </button>
+  </div>
+
+  <!-- Background -->
   <div id="particles-js" class="particles-bg" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="site-header text-center text-md-start">
     <div class="container header-flex">
       <div class="header-text">
-        <h1 class="display-5">Hi, ich bin Alexander Rothe</h1>
-        <p class="lead">Anwendungsentwickler – Python, KivyMD, Web & KI. Verfügbar ab 01.01.2026.</p>
+        <h1 class="display-5">Willkommen auf meinem Portfolio</h1>
+        <p class="lead">
+          Ich bin <strong>Alexander Rothe</strong> – angehender <strong>Fachinformatiker für Anwendungsentwicklung</strong> 
+          mit Fokus auf <strong>Python, KivyMD</strong> und <strong>Webentwicklung</strong>.
+          <br>
+          Ab <strong>01.01.2026</strong> freue ich mich darauf, meine Leidenschaft für Softwareentwicklung, KI und moderne UI/UX-Lösungen in neue Projekte einzubringen.
+        </p>
+        <p class="availability-note mt-3">
+          <i class="bi bi-calendar-check text-success"></i> <strong>Aktuell in Umschulung – verfügbar ab 01.01.2026</strong>
+        </p>
       </div>
       <div class="header-photo">
         <img id="profile-pic" src="image/profil1.png" alt="Profilfoto Alexander Rothe" class="img-fluid rounded-circle shadow">
       </div>
     </div>
 
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Alexander Rothe</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigation umschalten">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#about">Über mich</a></li>
-              <li class="nav-item"><a class="nav-link" href="#tech-stack">Tech Stack</a></li>
-              <li class="nav-item"><a class="nav-link" href="#projects">Projekte</a></li>
-              <li class="nav-item"><a class="nav-link" href="#certificates">Zertifikate</a></li>
-              <li class="nav-item"><a class="nav-link" href="#lebenslauf">Lebenslauf</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-            </ul>
-            <button id="theme-toggle" aria-label="Dark/Light Mode umschalten" data-bs-toggle="tooltip" title="Dark/Light Mode">🌙</button>
-          </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent mt-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Alexander Rothe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" title="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-person-circle me-1"></i>Über mich</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tech-stack"><i class="bi bi-cpu me-1"></i>Tech Stack</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects"><i class="bi bi-folder-check me-1"></i>Projekte</a></li>
+            <li class="nav-item"><a class="nav-link" href="#certificates"><i class="bi bi-award me-1"></i>Zertifikate</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lebenslauf"><i class="bi bi-briefcase-fill me-1"></i>Lebenslauf</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope-paper-heart me-1"></i>Kontakt</a></li>
+          </ul>
+          <button id="theme-toggle" aria-label="Dark/Light Mode umschalten" data-bs-toggle="tooltip" title="Dark/Light Mode">🌙</button>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
+  <!-- Main -->
   <main class="container mt-5">
-    <!-- About -->
+
+    <!-- Über mich -->
     <section id="about" class="mb-5">
-      <h2>Über mich</h2>
-      <p><strong>Hi — ich bin Alexander, 42, glücklich verheiratet und Vater von zwei Mädels.</strong> Ich befinde mich auf der Zielgeraden meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung und programmiere leidenschaftlich gern. Vor allem entwickle ich Anwendungen, die sinnvoll sind und Mehrwert bieten – von einfachen Tools bis zu GUI-Apps.</p>
-      <h4>Mein technischer Fokus</h4>
-      <p>Ich arbeite hauptsächlich mit <strong>Python</strong> (Desktop-Apps mit <em>Kivy/KivyMD</em>), habe Grundlagen in <strong>Java</strong> und praktische Erfahrung in <strong>HTML5, CSS3 und JavaScript</strong>. Ich experimentiere mit KI/LLMs und nutze Tools, um effizienter zu lernen und zu arbeiten.</p>
-      <h4>Was mich antreibt</h4>
-      <p>Ich lege Wert auf sauberen Code, benutzerfreundliche Oberflächen und praxistaugliche Lösungen. Ich arbeite strukturiert, lerne schnell und gehe Herausforderungen offen an.</p>
+      <h2><i class="bi bi-person-circle me-2"></i>Über mich</h2>
+      <p><strong>Willkommen! Ich bin Alexander, 42 Jahre jung, verheiratet und Vater von zwei Kindern.</strong><br>
+      Aktuell befinde ich mich in der Abschlussphase meiner Umschulung zum <strong>Fachinformatiker für Anwendungsentwicklung</strong>.
+      Zur Softwareentwicklung bin ich über eine gesundheitlich bedingte Neuorientierung gekommen – ein Schritt, der sich als genau richtig erwiesen hat.
+      Softwareentwicklung bedeutet für mich, Ideen greifbar zu machen – in Form von klar strukturierten, nutzerfreundlichen Anwendungen.</p>
+
+      <h4>Technischer Schwerpunkt</h4>
+      <p>Mein Fokus liegt auf <strong>Python</strong> (mit Frameworks wie <em>Kivy/KivyMD</em>) sowie moderner <strong>Webentwicklung</strong>.
+      Erste Erfahrungen habe ich mit <strong>Java</strong>, <strong>PHP</strong> und <strong>SQLite</strong>.
+      Besonders spannend finde ich <strong>KI</strong> und <strong>LLMs</strong>, um Prozesse zu optimieren und Ideen schneller umzusetzen.</p>
+
+      <h4>Was mich auszeichnet</h4>
+      <p>Ich lege Wert auf sauberen Code, Zuverlässigkeit und eine strukturierte Arbeitsweise. Lernen ist für mich kein Ziel, sondern ein Dauerzustand.</p>
     </section>
 
     <!-- Tech Stack -->
     <section id="tech-stack" class="mb-5">
-      <h2>Tech Stack</h2>
-      <p>Hier sind die Technologien, mit denen ich arbeite, aufgeteilt in meinen Hauptfokus und weitere Technologien, die ich bereits genutzt habe.</p>
-      <h4>Regelmäßig genutzt</h4>
-      <h5>Frontend</h5>
-      <div class="d-flex flex-wrap gap-3 mb-3">
-        <span class="badge badge-tech frontend" title="HTML5 – Struktur & Content">HTML5</span>
-        <span class="badge badge-tech frontend" title="CSS3 – Styling & Layout">CSS3</span>
-        <span class="badge badge-tech frontend" title="JavaScript – Interaktivität">JavaScript</span>
-        <span class="badge badge-tech frontend" title="WordPress – CMS & Websites">WordPress</span>
-      </div>
-      <h5>Backend</h5>
-      <div class="d-flex flex-wrap gap-3 mb-3">
-        <span class="badge badge-tech backend" title="Python – Backend & Desktop Apps">Python</span>
-        <span class="badge badge-tech backend" title="PHP – Web & Backend">PHP</span>
-        <span class="badge badge-tech backend" title="SQLite – Datenbanken">SQLite</span>
-      </div>
-      <h5>App (Desktop/Mobile)</h5>
-      <div class="d-flex flex-wrap gap-3 mb-3">
-        <span class="badge badge-tech app" title="Kivy/KivyMD – Desktop UI">Kivy/KivyMD</span>
-        <span class="badge badge-tech app" title="Kotlin – Android & Backend">Kotlin</span>
-        <span class="badge badge-tech app" title="Jetpack Compose – Android UI">Jetpack Compose</span>
-      </div>
-      <h4>Schon mal genutzt</h4>
-      <div class="d-flex flex-wrap gap-3 mb-3">
-        <span class="badge badge-tech other" title="Flask – Web Apps">Flask</span>
-        <span class="badge badge-tech other" title="TensorFlow/PyTorch – KI/ML">TensorFlow/PyTorch</span>
-        <span class="badge badge-tech other" title="Java – Grundlagen">Java</span>
-      </div>
-      <p class="small">Ich bin immer offen für neue Technologien, um ständig dazuzulernen.</p>
+      <h2><i class="bi bi-cpu me-2"></i>Tech Stack</h2>
+      <p><b>Python • KivyMD • HTML5 • CSS3 • JavaScript • SQLite</b></p>
+      <p><b>Java • PHP • Git/GitHub • REST APIs • Bootstrap • Docker (Grundkenntnisse)</b></p>
     </section>
 
-    <!-- Projects -->
+    <!-- Projekte -->
     <section id="projects" class="mb-5">
-      <h2>Projekte</h2>
-      <article class="card mb-3">
-        <div class="row g-0 align-items-center">
-          <div class="col-md-4 text-center p-3">
-            <img src="image/Designer.png" alt="Lärmprotokoll-App" class="img-fluid rounded">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Protolkoli — Lärmprotokoll-App</h5>
-              <p class="card-text">Desktop-App in Python/KivyMD zur Erfassung von Lärmstörungen, Speicherung in SQLite und Erzeugung eines PDF-Protokolls. Zeigt UI-Design + Datenverarbeitung in einem Projekt.</p>
-              <p class="mb-1"><strong>Features:</strong> Datenerfassung, PDF-Export, einfache Auswertung.</p>
-              <p class="mb-2"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Protolkoli" target="_blank" rel="noopener">github.com/ALex83-r0ck/Protolkoli</a></p>
-              <a href="https://alex83-r0ck.github.io/Protolkoli" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live-Demo</a>
-            </div>
-          </div>
+      <h2><i class="bi bi-folder-check me-2"></i>Projekte</h2>
+      <p>Eine Auswahl meiner bisherigen Projekte – alle entstanden aus echtem Bedarf, Neugier und Lernfreude.</p>
+
+      <!-- Protokoli -->
+      <article class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-clipboard-data me-2"></i>Protokoli – Lärmprotokoll-App</h5>
+          <p><strong>Python/KivyMD</strong> App zur Erfassung und Auswertung von Lärmstörungen. Entstanden, weil ich keine passende Lösung fand – also baute ich sie. Speichert Daten in <strong>SQLite</strong> und generiert <strong>PDF-Protokolle</strong>.</p>
+          <span class="badge bg-primary">Python</span>
+          <span class="badge bg-secondary">KivyMD</span>
+          <span class="badge bg-success">SQLite</span>
+          <span class="badge bg-info text-dark">PDF Export</span>
+          <p class="mt-2"><em>Lernfokus:</em> GUI-Design, Datenverarbeitung, Dokumentation</p>
+          <a href="https://github.com/ALex83-r0ck/Protokoli" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">
+          <i class="bi bi-github"></i> GitHub
+          </a>
         </div>
       </article>
-      <article class="card mb-3">
+
+      <!-- LernBuddy -->
+      <article class="card mb-3 shadow-sm">
         <div class="card-body">
-          <h5 class="card-title">LernBuddy (in Entwicklung)</h5>
-          <p class="card-text">Eigenes Projekt: Lernkarten + Quiz, KI-Tutor für Hilfestellungen und Feedback, Import via Drag & Drop (JSON-Pipeline). Ziel: Lernenden individuell unterstützen.</p>
-          <p class="mb-1"><strong>Status:</strong> aktiv in Entwicklung</p>
-          <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
+          <h5 class="card-title"><i class="bi bi-mortarboard me-2"></i>LernBuddy (in Entwicklung)</h5>
+          <p>Mein persönlicher Lernassistent – unterstützt mich bei theoretischem Wissen während der Umschulung und danach. Geplant mit <strong>Lernkarten</strong>, <strong>Quiz</strong> und <strong>KI-Integration</strong>.</p>
+          <span class="badge bg-primary">Python</span>
+          <span class="badge bg-warning text-dark">KI geplant</span>
         </div>
       </article>
-      <article class="card mb-3">
+
+      <!-- VibeVault -->
+      <article class="card mb-3 shadow-sm">
         <div class="card-body">
-          <h5 class="card-title">VibeVault (in Entwicklung)</h5>
-          <p class="card-text">Nicotine-Pouch Tracker mit Gamification, KI-Auswertung & Gesundheitsstatistik.</p>
-          <p class="mb-1"><strong>Status:</strong> aktiv in Entwicklung</p>
-          <button class="btn btn-secondary btn-sm" disabled>Live Demo folgt</button>
-        </div>
-      </article>
-      <article class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Abby</h5>
-          <p class="card-text">Python/Pygame-Spiel für meine Tochter – kleine Spielerei & Übungsprojekt.</p>
-          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/Abby" target="_blank" rel="noopener">github.com/ALex83-r0ck/Abby</a></p>
-          <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
-        </div>
-      </article>
-      <article class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">BirthdaySchatz</h5>
-          <p class="card-text">Interaktive Geburtstags-App mit Lottie-Animationen, Gutschein-Spiel & Alarmfunktion.</p>
-          <p class="mb-1"><strong>Repo:</strong> <a href="https://github.com/ALex83-r0ck/BirthdaySchatz" target="_blank" rel="noopener">github.com/ALex83-r0ck/BirthdaySchatz</a></p>
-          <button class="btn btn-primary btn-sm" disabled>Live-Demo</button>
+          <h5 class="card-title"><i class="bi bi-bar-chart-line me-2"></i>VibeVault (in Entwicklung)</h5>
+          <p>Ein Herzensprojekt: hilft mir, meinen Nikotinkonsum im Blick zu behalten. Fokus auf <strong>Statistik</strong>, <strong>Gamification</strong> und <strong>UX</strong>.</p>
+          <span class="badge bg-success">Datenvisualisierung</span>
+          <span class="badge bg-warning text-dark">Gamification</span>
         </div>
       </article>
     </section>
 
-    <!-- Certificates -->
+    <!-- Zertifikate -->
     <section id="certificates" class="mb-5">
-      <h2>Zertifikate</h2>
-      <p>Ein paar Kurse / Micro-Certificates (z. B. Sololearn) gibt immer was zu lernen.</p>
+      <h2><i class="bi bi-award me-2"></i>Zertifikate</h2>
+      <p>Ich lerne kontinuierlich weiter – durch Online-Kurse, Zertifikate und eigene Projekte.</p>
       <div class="row g-3">
-        <div class="col-sm-6 col-md-3">
-          <figure class="figure">
-            <img src="image/py1_certificate.png" class="figure-img img-fluid rounded" alt="Python Basics">
-            <figcaption class="figure-caption text-center small">Python Basics (Sololearn)</figcaption>
-          </figure>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <figure class="figure">
-            <img src="image/py3.jpg" class="figure-img img-fluid rounded" alt="Python Core">
-            <figcaption class="figure-caption text-center small">Python Core (Sololearn)</figcaption>
-          </figure>
-        </div>
+        <div class="col-sm-6 col-md-3"><img src="image/py1_certificate.png" class="img-fluid rounded shadow-sm" alt="Python Basics Zertifikat"></div>
+        <div class="col-sm-6 col-md-3"><img src="image/py3.jpg" class="img-fluid rounded shadow-sm" alt="Python Core Zertifikat"></div>
+        <div class="col-sm-6 col-md-3"><img src="image/Tech.png" class="img-fluid rounded shadow-sm" alt="Technik Basics Zertifikat"></div>
+        <div class="col-sm-6 col-md-3"><img src="image/Java Basics.png" class="img-fluid rounded shadow-sm" alt="Java Basics Zertifikat"></div>
       </div>
     </section>
 
     <!-- Lebenslauf -->
     <section id="lebenslauf" class="mb-5">
-      <h2>Lebenslauf (Kurz)</h2>
-      <ul class="list-group list-group-flush mb-3">
-        <li class="list-group-item"><strong>2023–2025:</strong> Umschulung zum Fachinformatiker (Anwendungsentwicklung)</li>
-        <li class="list-group-item"><strong>2016–2021:</strong> Verschiedene Tätigkeiten in Logistik/Produktion</li>
+      <h2><i class="bi bi-briefcase-fill me-2"></i>Kurzlebenslauf</h2>
+      <ul class="timeline list-unstyled">
+        <li><i class="bi bi-laptop me-2 text-primary"></i><strong>2023–2025:</strong> Umschulung zum Fachinformatiker für Anwendungsentwicklung</li>
+        <li><i class="bi bi-briefcase me-2 text-secondary"></i><strong>2016–2021:</strong> Logistik & Produktion – Prozessverständnis, Teamarbeit</li>
+        <li><i class="bi bi-gear me-2 text-success"></i><strong>Davor:</strong> Technische & handwerkliche Tätigkeiten – Problemlösung & Struktur</li>
       </ul>
-      <p class="small text-muted">Detaillierter Lebenslauf auf Anfrage – ich schicke die Datei gerne privat.</p>
+      <p class="small text-muted">Detaillierter Lebenslauf auf Anfrage – gerne als PDF.</p>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="mb-5">
-      <h2>Kontakt</h2>
-      <form id="contact-form" action="https://formspree.io/f/mwprwpro" method="POST" class="needs-validation" novalidate>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="Ihr Name" required aria-required="true">
+    <!-- Kontakt -->
+    <section id="contact" class="mb-5 text-center">
+      <h2><i class="bi bi-envelope-paper-heart me-2"></i>Kontakt</h2>
+      <p class="lead">Du hast ein spannendes Projekt oder suchst einen engagierten Entwickler?  
+      <br><strong>Ich freue mich über deine Nachricht!</strong></p>
+      <form id="contact-form" action="https://formspree.io/f/mwprwpro" method="POST" class="mx-auto shadow-sm p-4 rounded bg-light" style="max-width: 600px;">
+        <div class="mb-3 text-start">
+          <label for="name" class="form-label"><i class="bi bi-person-circle"></i> Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Ihr Name" required>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">E-Mail</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail" required aria-required="true">
+        <div class="mb-3 text-start">
+          <label for="email" class="form-label"><i class="bi bi-at"></i> E-Mail</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail-Adresse" required>
         </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Nachricht</label>
-          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Ihre Nachricht" required aria-required="true"></textarea>
+        <div class="mb-3 text-start">
+          <label for="message" class="form-label"><i class="bi bi-chat-dots"></i> Nachricht</label>
+          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Ihre Nachricht..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+        <button type="submit" class="btn btn-primary btn-lg mt-2 px-4 shadow"><i class="bi bi-send-fill"></i> Nachricht senden</button>
+        <p class="mt-3"><small class="text-muted">Ich antworte in der Regel innerhalb von 24 Stunden.</small></p>
       </form>
     </section>
   </main>
 
-  <footer class="py-4 text-center">
+  <!-- Footer -->
+  <footer class="py-4 text-center border-top mt-5">
     <div class="container">
-      <p class="mb-1">© 2025 Alexander Rothe</p>
-      <div class="social-icons mb-2">
-        <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener" class="btn-icon" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-          <i class="bi bi-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6/" target="_blank" rel="noopener" class="btn-icon" data-bs-toggle="tooltip" title="LinkedIn" aria-label="LinkedIn">
-          <i class="bi bi-linkedin"></i>
-        </a>
+      <a href="#top" id="back-to-top-section1" class="btn btn-outline-primary btn-sm rounded-circle mb-3"><i class="bi bi-arrow-up"></i></a>
+      <p>© <script>document.write(new Date().getFullYear());</script> Alexander Rothe • <span class="text-muted">Anwendungsentwickler (Python & Web)</span></p>
+      <div class="social-icons mb-3">
+        <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/alex-rothe/" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn">LinkedIn</a>
+        <a href="mailto:alexander.rothe.dev@gmail.com" class="btn-icon" title="E-Mail">Kon Email</a>
       </div>
-      <p class="small text-muted">Made with <i class="fas fa-heart text-danger"></i> in Germany</p>
+      <p class="small text-muted">Made with <i class="bi bi-heart-fill text-danger"></i> & <i class="bi bi-code-slash"></i> by Alexander Rothe</p>
     </div>
   </footer>
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top" class="btn btn-primary btn-sm d-none" aria-label="Nach oben scrollen" data-bs-toggle="tooltip" title="Nach oben scrollen">
-    <i class="bi bi-arrow-up"></i>
-  </button>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
