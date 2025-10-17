@@ -176,6 +176,37 @@ const updateParticles = (dark) => {
   }
 };
 
+// ===========================
+// INIT PARTICLES BACKGROUND
+// ===========================
+if (window.particlesJS) {
+  try {
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 50, density: { enable: true, value_area: 800 } },
+        color: { value: '#007bff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.6, random: true },
+        size: { value: 3, random: true },
+        // ✨ wichtig: im Light Mode keine Linien
+        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 150, color: '#007bff', opacity: 0.3, width: 1 },
+        move: { enable: true, speed: 2, out_mode: 'out' }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: 'repulse' } },
+        modes: { repulse: { distance: 100 } }
+      },
+      retina_detect: true
+    });
+
+    // Nach dem Init gleich Farben korrekt setzen
+    updateParticles(document.body.classList.contains('dark-mode'));
+  } catch (e) {
+    console.warn('Particles init failed:', e);
+  }
+}
+
+
 
 
   // ===========================
