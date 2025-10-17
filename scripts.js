@@ -206,9 +206,6 @@ if (window.particlesJS) {
   }
 }
 
-
-
-
   // ===========================
   // CONTACT FORM SUBMISSION
   // ===========================
