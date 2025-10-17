@@ -263,6 +263,23 @@ body.dark-mode .card {
   transform: translateY(0);
 }
 
+.btn-live-demo {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7em 1.4em;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-live-demo:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
 /* ===========================
    Buttons & Badges
    =========================== */
