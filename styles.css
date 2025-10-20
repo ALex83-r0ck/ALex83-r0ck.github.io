@@ -1,3 +1,8 @@
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===========================
    Custom Variables
    =========================== */
@@ -63,10 +68,17 @@ body.dark-mode .text-muted, body.dark-mode .small {
   color: var(--text-muted-dark);
 }
 
+body.dark-mode .navbar {
+  background: rgba( 15, 23, 32, 0.8 );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
 /* Smooth transitions für alle Elemente im Darkmode */
 body, .card, .btn, input, textarea, .badge-tech, footer {
   transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
+
 
 /* ===========================
    Theme Toggle Button
@@ -156,7 +168,7 @@ body.dark-mode #theme-toggle:hover {
   color: white;
   padding: 1rem 0;
   z-index: 1050;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba( 0, 123, 255, 0.3);
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
@@ -234,6 +246,25 @@ section {
   margin-bottom: 28px;
 }
 
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+
+  background: var(--primary);
+  margin-top: 0.4rem;
+  border-radius: 4px;
+}
+
 .card {
   border-radius: var(--radius);
   background: var(--card-bg);
@@ -244,9 +275,50 @@ body.dark-mode .card {
   background: var(--card-bg-dark);
 }
 
+body.dark-mode section h2::after {
+  background: var(--accent);
+}
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(2,6,23,0.12);
+}
+
+/* ===========================
+   Focus Section
+   =========================== */
+.card, #focus .p-4 {
+  transition: all 0.3s ease;
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.05)
+}
+
+body.dark-mode #focus .p-4 {
+  background: var(--card-bg-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover, #focus .p-4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+#focus h4 {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* Fix für Fokus-Kacheln im Dark Mode */
+body.dark-mode #focus .p-4 {
+  background: var(--card-bg-dark) !important; /* dunkler Hintergrund */
+  color: var(--text-dark) !important;         /* Textfarbe sichtbar */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Überschriften & Paragraphen innerhalb der Kacheln */
+body.dark-mode #focus .p-4 h4,
+body.dark-mode #focus .p-4 p {
+  color: var(--text-dark) !important;
 }
 
 /* ===========================
@@ -367,11 +439,12 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
   padding: 5px;
   border-radius: 80%;
   font-size: 19px;
+  transition: all 0.25s ease;
 }
 
 #back-to-top:hover {
   background: var(--accent);
-  transform: scale(1.5);
+  transform: translateY(-4px) scale(1.1);
   transition: all 0.3s ease;
 }
 
@@ -395,11 +468,32 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
    Footer
    =========================== */
 footer {
+  background: rgba( 0, 0 , 0, 0.03);
+  border-top: 1px solid rgba(0,0,0,0.05);
   padding: 20px 0;
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+footer .btn-icon {
+  color: var(--primary);
+  margin: 0 0.3rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer .btn-icon:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+body.dark-mode footer .btn-icon {
+  color: var(--text-dark);
+}
+
 body.dark-mode footer {
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text-muted-dark);
 }
 
