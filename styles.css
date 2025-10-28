@@ -243,7 +243,8 @@ main.container {
    Sections & Cards
    =========================== */
 section {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 section h2 {
@@ -376,7 +377,9 @@ body.dark-mode #focus .p-4 p {
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   color: white;
+  border-radius: 20px;
 }
+
 
 .badge-tech.frontend { background: var(--primary); }
 .badge-tech.backend { background: var(--backend); }
@@ -432,26 +435,28 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
   bottom: 20px;
   right: 20px;
   z-index: 900;
-  border: rgb(90, 205, 203) solid 2px;
+  border: none;
   background: var(--primary);
   color: white;
   cursor: pointer;
-  padding: 5px;
-  border-radius: 80%;
-  font-size: 19px;
+  padding: 10px 12px;
+  border-radius: 50%;
+  font-size: 1.25rem;
   transition: all 0.25s ease;
 }
 
 #back-to-top:hover {
   background: var(--accent);
   transform: translateY(-4px) scale(1.1);
-  transition: all 0.3s ease;
+
 }
 
 #back-to-top.d-none {
   opacity: 0;
   pointer-events: none;
 }
+
+
 
 /* ===========================
    Responsive Anpassungen

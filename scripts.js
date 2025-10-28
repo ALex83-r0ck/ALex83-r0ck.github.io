@@ -26,79 +26,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   // ===========================
-  // BANNER MANAGER
-  // ===========================
-  class BannerManager {
-    constructor() {
-      this.banner = document.getElementById('availability-banner');
-      this.closeBtn = document.getElementById('close-banner');
-      this.toggleBtn = document.getElementById('toggle-banner');
-      this.toggleIcon = document.getElementById('toggle-icon');
-      this.globalToggle = document.getElementById('global-toggle');
-      this.isOpen = localStorage.getItem('bannerState') !== 'closed';
-      this.init();
+// BANNER MANAGER V2
+// ===========================
+class BannerManager {
+  constructor() {
+    this.banner = document.getElementById('availability-banner');
+    this.toggleBtn = document.getElementById('toggle-banner');
+    this.toggleIcon = document.getElementById('toggle-icon');
+    this.globalToggle = document.getElementById('global-toggle');
+    this.isOpen = localStorage.getItem('bannerState') !== 'closed';
+    this.init();
+  }
+
+  init() {
+    if (!this.banner) return;
+
+    // Initiale Anzeige
+    if (this.isOpen) {
+      this.showBanner();
+    } else {
+      this.hideBanner();
+      // Global Toggle sichtbar machen, wenn Banner geschlossen
+      if (this.globalToggle) this.globalToggle.classList.remove('d-none');
     }
 
-    init() {
-      if (this.banner) {
-      // Zeige Banner standardmäßig, wenn es nicht geschlossen ist
-      this.isOpen = localStorage.getItem('bannerState') !== 'closed';
+    // Events
+    this.toggleBtn?.addEventListener('click', () => this.toggleBanner());
+    this.globalToggle?.addEventListener('click', () => this.toggleBanner());
 
-      if (this.isOpen) {
-        this.showBanner();
-      } else {
-        this.hideBanner();
-        this.banner.style.display = 'block'; // sicherstellen, dass es sichtbar ist
+    // Kontakt-Link-Scroll
+    window.scrollToContact = () => {
+      const contact = document.getElementById('contact');
+      if (contact) {
+        const yOffset = -80;
+        const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
-    }
+    };
+  }
 
-      this.closeBtn?.addEventListener('click', () => this.closeBanner());
-      this.toggleBtn?.addEventListener('click', () => this.toggleBanner());
-      this.globalToggle?.addEventListener('click', () => this.toggleBanner());
+  showBanner() {
+    this.banner.classList.add('show');
+    document.body.classList.add('banner-open');
+    this.isOpen = true;
+    localStorage.setItem('bannerState', 'open');
+    this.toggleIcon?.classList.replace('bi-chevron-down', 'bi-chevron-up');
 
-      // Kontakt-Link-Scroll
-      window.scrollToContact = () => {
-        const contact = document.getElementById('contact');
-        if (contact) {
-          const yOffset = -80; // Header offset
-          const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      };
-    }
+    // Global Toggle verstecken
+    if (this.globalToggle) this.globalToggle.classList.add('d-none');
+  }
 
-    showBanner() {
-      this.banner.classList.add('show');
-      this.isOpen = true;
-      document.body.classList.add('banner-open');
-      localStorage.setItem('bannerState', 'open');
-      this.toggleIcon?.classList.replace('bi-chevron-down', 'bi-chevron-up');
-      if (this.globalToggle) {
-        this.globalToggle.classList.remove('d-none');
-        this.globalToggle.innerHTML = '<i class="bi bi-calendar-check"></i> <span class="d-none d-md-inline">Verfügbar</span>';
-      }
-    }
-
-    hideBanner() {
+  hideBanner() {
     this.banner.classList.remove('show');
-    this.banner.style.display = 'block'; // ← bleibt sichtbar für Toggle-Button
-    this.isOpen = false;
     document.body.classList.remove('banner-open');
+    this.isOpen = false;
     localStorage.setItem('bannerState', 'closed');
     this.toggleIcon?.classList.replace('bi-chevron-up', 'bi-chevron-down');
+
+    // Global Toggle sichtbar machen
+    if (this.globalToggle) this.globalToggle.classList.remove('d-none');
   }
 
-
-    toggleBanner() {
-      this.isOpen ? this.hideBanner() : this.showBanner();
-    }
-
-    closeBanner() {
-      this.hideBanner();
-    }
+  toggleBanner() {
+    this.isOpen ? this.hideBanner() : this.showBanner();
   }
+}
 
-  new BannerManager();
+new BannerManager();
+
+// ===========================
+// BACK TO TOP BUTTON
+// ===========================
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 
   // ===========================
   // SMOOTH SCROLL NAVIGATION
@@ -110,24 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
-          const yOffset = -80; // Header offset
+          const yOffset = -30; // Header offset
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }
     });
   });
-
-  // ===========================
-  // BACK TO TOP BUTTON
-  // ===========================
-  const backToTop = document.getElementById('back-to-top');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('d-none', window.pageYOffset <= 100);
-    });
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
 
   // ===========================
   // BOOTSTRAP TOOLTIPS
@@ -167,12 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // PARTICLES BACKGROUND
 // ===========================
 const updateParticles = (dark) => {
-  const color = dark ? '#ff9800' : '#007bff'; // Orange für Dark, Blau für Light
+  const color = dark ? '#ff9800' : '#017cff'; // Orange für Dark, Blau für Light
   if (window.pJSDom && window.pJSDom.length) {
     const pJS = window.pJSDom[0].pJS;
     pJS.particles.color.value = color;
     pJS.particles.line_linked.color = color;
-    pJS.fn.particlesRefresh(); // ← wichtig, damit es live aktualisiert!
+    pJS.fn.particlesRefresh(); 
   }
 };
 
@@ -183,18 +181,18 @@ if (window.particlesJS) {
   try {
     particlesJS('particles-js', {
       particles: {
-        number: { value: 50, density: { enable: true, value_area: 800 } },
-        color: { value: '#007bff' },
+        number: { value: 30, density: { enable: true, value_area: 900 } },
+        color: { value: '#054def' },
         shape: { type: 'circle' },
-        opacity: { value: 0.6, random: true },
-        size: { value: 3, random: true },
+        opacity: { value: 0.5, random: true },
+        size: { value: 40, random: true },
         // ✨ wichtig: im Light Mode keine Linien
         line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 150, color: '#007bff', opacity: 0.3, width: 1 },
-        move: { enable: true, speed: 2, out_mode: 'out' }
+        move: { enable: true, speed: 1.5, out_mode: 'out' }
       },
       interactivity: {
         events: { onhover: { enable: true, mode: 'repulse' } },
-        modes: { repulse: { distance: 100 } }
+        modes: { repulse: { distance: 50, duration: 0.4 } }
       },
       retina_detect: true
     });
