@@ -10,22 +10,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/legal.css">
-
-  <style>
-    #matrix-canvas {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transition: opacity 1s ease;
-    }
-    #matrix-canvas.active { opacity: 1; }
-  </style>
 </head>
 <body class="legal">
 
+  <!-- Banner -->
   <div id="availability-banner" class="availability-banner shadow-sm">
     <div class="container d-flex justify-content-between align-items-center">
       <div>
@@ -39,7 +27,8 @@
     </div>
   </div>
 
-  <main class="container py-5" style="max-width: 900px; margin: 130px auto 80px;">
+  <!-- Hauptinhalt -->
+  <main class="container py-5" style="max-width:900px; margin:130px auto 80px;">
     <div class="text-center mb-5">
       <h1 class="display-5 fw-bold">Datenschutzerklärung</h1>
       <p class="lead text-muted">Stand: November 2025</p>
@@ -56,22 +45,22 @@
         </p>
 
         <h2 class="h4 fw-bold mb-4">2. Hosting</h2>
-        <p>Diese Website wird über <strong>GitHub Pages</strong> (GitHub Inc., USA) gehostet. Es werden keine dauerhaften Server-Logfiles gespeichert und keine Cookies gesetzt. Deine IP-Adresse wird nur kurzzeitig zur Auslieferung der Seite an GitHub übertragen (EU-U.S. Data Privacy Framework).</p>
+        <p>Diese Website wird über <strong>GitHub Pages</strong> (GitHub Inc., USA) gehostet. Es werden keine dauerhaften Server-Logfiles und keine Cookies gesetzt. Deine IP-Adresse wird nur kurzzeitig zur Auslieferung der Seite übertragen (EU-U.S. Data Privacy Framework).</p>
 
         <h2 class="h4 fw-bold mb-4">3. Kontaktformular</h2>
-        <p>Das Kontaktformular leitet deine Angaben verschlüsselt an <strong>Formspree</strong> (USA, EU-U.S. DPF) weiter. Ich selbst speichere keine Formulardaten.</p>
+        <p>Das Kontaktformular leitet deine Daten verschlüsselt an <strong>Formspree</strong> (USA, EU-U.S. DPF) weiter. Ich speichere keine Formulardaten selbst.</p>
 
         <h2 class="h4 fw-bold mb-4">4. Externe Ressourcen</h2>
         <ul>
           <li>Google Fonts (fonts.googleapis.com)</li>
           <li>Bootstrap 5 & Icons über jsDelivr CDN</li>
           <li>Font Awesome über cdnjs</li>
-          <li>particles.js lokal → keine Übertragung</li>
+          <li>particles.js lokal → keine Datenübertragung</li>
         </ul>
         <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
 
         <h2 class="h4 fw-bold mb-4">5. Kein Tracking</h2>
-        <p>Keine Analytics, keine Cookies, kein Profiling – wirklich nicht</p>
+        <p>Keine Analytics, keine Cookies, kein Profiling – versprochen!</p>
 
         <h2 class="h4 fw-bold mb-4">6. Deine Rechte & Speicherdauer</h2>
         <p>Du hast alle DSGVO-Rechte. Formulardaten lösche ich nach Bearbeitung (meist innerhalb weniger Wochen).</p>
@@ -85,32 +74,23 @@
     </div>
   </main>
 
-  <!-- Matrix Regen Canvas -->
-  <canvas id="matrix-canvas"></canvas>
+  <!-- Matrix-Easter-Egg Canvas -->
+  <canvas id="matrix-canvas" style="position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:9999;transition:opacity 1s;"></canvas>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts.js"></script>
+  <script src="../scripts.js"></script>
 
   <script>
-    // Matrix aktivieren mit M A T R I X
-    let matrixKeys = [];
     const matrixCode = [77,65,84,82,73,88]; // M A T R I X
-    document.addEventListener('keydown', e => {
-      matrixKeys.push(e.keyCode);
-      if (matrixKeys.length > 6) matrixKeys.shift();
-      if (matrixKeys.join(',') === matrixCode.join(',')) {
-        document.getElementById('matrix-canvas').classList.add('active');
-        startMatrix();
-        setTimeout(() => document.getElementById('matrix-canvas').classList.remove('active'), 11000);
-        matrixKeys = [];
-      }
-    });
+    let keys = [];
+    let taps = 0;
 
-    function startMatrix() {
+    function activateMatrix() {
       const canvas = document.getElementById('matrix-canvas');
+      canvas.style.opacity = 1;
       const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
 
       const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
       const fontSize = 16;
@@ -118,21 +98,37 @@
       const drops = new Array(Math.floor(columns)).fill(1);
 
       function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(0,0,0,0.05)';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
         ctx.fillStyle = '#0f0';
         ctx.font = fontSize + 'px monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-          const text = chars[Math.floor(Math.random() * chars.length)];
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        for(let i=0;i<drops.length;i++){
+          const text = chars[Math.floor(Math.random()*chars.length)];
+          ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+          if(drops[i]*fontSize > canvas.height && Math.random()>0.975) drops[i]=0;
           drops[i]++;
         }
       }
       const interval = setInterval(draw, 35);
-      setTimeout(() => clearInterval(interval), 10500);
+      setTimeout(() => {
+        clearInterval(interval);
+        canvas.style.opacity = 0;
+      }, 10500);
     }
+
+    // Tastatur: M A T R I X
+    document.addEventListener('keydown', e => {
+      keys.push(e.keyCode);
+      if(keys.length > 6) keys.shift();
+      if(keys.join() === matrixCode.join()) activateMatrix();
+    });
+
+    // Handy: 6× schnell tippen
+    document.addEventListener('touchstart', () => {
+      taps++;
+      if(taps === 6) activateMatrix();
+      setTimeout(() => taps = 0, 1200);
+    });
   </script>
 </body>
 </html>
