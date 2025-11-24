@@ -1,0 +1,44 @@
+/* css/legal.css – macht Impressum & Datenschutz noch edler */
+.legal h1,
+.legal h2.h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+body.dark-mode .legal h1,
+body.dark-mode .legal h2.h4 { color: var(--accent); }
+
+.legal h1::after,
+.legal h2.h4::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+body.dark-mode .legal h1::after,
+body.dark-mode .legal h2.h4::after { background: var(--accent); }
+
+.legal .card {
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+body.dark-mode .legal .card { background: var(--card-bg-dark); }
+
+.legal a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+body.dark-mode .legal a { color: var(--accent); }
+.legal a:hover { opacity: 0.8; }
