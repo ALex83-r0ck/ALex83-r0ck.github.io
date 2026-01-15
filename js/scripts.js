@@ -165,7 +165,7 @@ if (backToTop) {
 // PARTICLES BACKGROUND
 // ===========================
 const updateParticles = (dark) => {
-  const color = dark ? '#ff9800' : '#017cff'; // Orange für Dark, Blau für Light
+  const color = dark ? '#ff9800' : '#054def'; // Orange für Dark, Blau für Light
   if (window.pJSDom && window.pJSDom.length) {
     const pJS = window.pJSDom[0].pJS;
     pJS.particles.color.value = color;
@@ -181,18 +181,18 @@ if (window.particlesJS) {
   try {
     particlesJS('particles-js', {
       particles: {
-        number: { value: 30, density: { enable: true, value_area: 900 } },
+        number: { value: 10, density: { enable: true, value_area: 130 } },
         color: { value: '#054def' },
         shape: { type: 'circle' },
         opacity: { value: 0.5, random: true },
-        size: { value: 40, random: true },
+        size: { value: 18, random: true },
         // ✨ wichtig: im Light Mode keine Linien
-        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 150, color: '#007bff', opacity: 0.3, width: 1 },
-        move: { enable: true, speed: 1.5, out_mode: 'out' }
+        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 100, color: '#007bff', opacity: 0.5, width: 2 },
+        move: { enable: true, speed: 2.1, out_mode: 'out' }
       },
       interactivity: {
         events: { onhover: { enable: true, mode: 'repulse' } },
-        modes: { repulse: { distance: 50, duration: 0.4 } }
+        modes: { repulse: { distance: 250, duration: 0.5 } }
       },
       retina_detect: true
     });
