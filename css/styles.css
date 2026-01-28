@@ -143,10 +143,10 @@ body.dark-mode #theme-toggle:hover {
 }
 
 .header-photo img {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 80%;
   border: 3px solid rgba(255,255,255,0.4);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
@@ -322,6 +322,34 @@ body.dark-mode #focus .p-4 p {
   color: var(--text-dark) !important;
 }
 
+.doc-preview-container {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.doc-preview-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.doc-iframe {
+    width: 100%;
+    height: 450px; /* Hier steuerst du die Sichtbarkeit */
+    border: none;
+    border-radius: 4px;
+}
+
+.doc-caption {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    display: block;
+    font-weight: 500;
+}
+
 /* ===========================
    Projekt Cards mit Fade-In
    =========================== */
@@ -456,15 +484,13 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
   pointer-events: none;
 }
 
-
-
 /* ===========================
    Responsive Anpassungen
    =========================== */
 @media (max-width: 768px) {
   .site-header { padding: 28px 12px; }
   .header-flex { flex-direction: column-reverse; text-align: center; }
-  .availability-banner { font-size: 0.95rem; padding: 8px 0; }
+  .availability-banner { font-size: 0.99rem; padding: 9px 0; }
   .availability-banner .btn { font-size: 0.85rem; padding: 4px 8px; }
   .card-body p { font-size: 0.95rem; }
 }

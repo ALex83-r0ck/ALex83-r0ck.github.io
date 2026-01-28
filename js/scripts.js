@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('darkMode', dark ? '1' : '0');
 
     if (profilePic) {
-      const newSrc = dark ? 'image/overlay.png' : 'image/profil1.png';
+      const newSrc = dark ? 'image/overlay.png' : 'image/1000057922.png';
       profilePic.src = newSrc;
       profilePic.onerror = () => console.error(`Fehler beim Laden des Bildes: ${newSrc}`);
     }
