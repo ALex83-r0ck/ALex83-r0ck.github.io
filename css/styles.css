@@ -146,14 +146,18 @@ body.dark-mode #theme-toggle:hover {
   width: 200px;
   height: 260px;
   object-fit: cover;
-  border-radius: 80%;
-  border: 3px solid rgba(255,255,255,0.4);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  border-radius: 60%; 
 }
 
 .header-photo img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+}
+
+#profile-pic {
+  border: 3px solid #007bff;
+  box-shadow: 0 0 15px rgba( 0, 123, 255, 0.5);
+  transition: transform 0.3s ease;
 }
 
 /* ===========================

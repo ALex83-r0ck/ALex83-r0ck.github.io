@@ -13,7 +13,7 @@ Ich kombiniere 15 Jahre Industrieerfahrung mit moderner Softwareentwicklung. Mei
 * **Frontend:** HTML5, CSS3 (Bootstrap 5), JavaScript
 * **Backend:** Python (KivyMD, FastAPI-Interesse), Kotlin (Jetpack Compose)
 * **AI/MLOps:** Ollama Integration, RAG Systeme (ChromaDB), Prompt Engineering
-* **Tools:** Git (Conventional Commits), Docker, GitHub Copilot/Claude/ChatGPT
+* **Tools:** Git (Conventional Commits), Docker, GitCopilot/Claude/ChatGPT
 
 ---
 
