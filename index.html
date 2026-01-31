@@ -27,27 +27,14 @@
 <body>
 
   <!-- Availability Banner -->
-  <div id="availability-banner" class="availability-banner shadow-sm" role="region" aria-live="polite">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <i class="bi bi-calendar-check me-2"></i>
-        <strong>🚀 Verfügbar ab sofort</strong>
-        <span class="ms-2">–</span>
-        <button class="btn btn-link text-white ms-2 p-0" onclick="scrollToContact()">Jetzt kontaktieren</button>
-      </div>
-      <div>
-        <button id="toggle-banner" class="btn btn-sm btn-outline-light" aria-label="Banner ein-/ausblenden">
-          <i class="bi bi-chevron-down" id="toggle-icon"></i>
-        </button>
-      </div>
+  <div id="availability-pill" class="availability-pill shadow-lg" role="banner">
+    <div class="pill-content">
+      <span class="status-indicator"></span>
+      <span class="pill-text">
+        <strong>Einsatzbereit:</strong> Junior-Entwickler mit 15 Jahren Industrieerfahrung & KI-Fokus
+      </span>
+      <button class="btn-pill-cta" onclick="scrollToContact()">Einsatzplan besprechen</button>
     </div>
-  </div>
-
-  <!-- Toggle Button (reopen banner) -->
-  <div id="banner-toggle-header" class="position-fixed top-0 end-0 m-3 z-1030 d-none">
-    <button id="global-toggle" class="btn btn-sm btn-primary" type="button">
-      <i class="bi bi-calendar-check"></i> <span class="d-none d-md-inline">Verfügbar</span>
-    </button>
   </div>
 
   <!-- Background -->
@@ -57,8 +44,14 @@
   <header class="site-header text-center text-md-start">
     <div class="container header-flex">
       <div class="header-text">
+        <div class="d-flex align-items-center mb-3">
+          <span class="pulse-dot"></span>
+          <span class="ms-2 small text-uppercase fw-bold tracking-widest text-primary">System Status: Ready for Deployment</span>
+        </div>
         <h1 class="display-5">Willkommen auf meinem Portfolio</h1>
-        <h2>AI Platform & MLOps Pragmatist</h2>
+        <h2 class="typewriter-container">
+          <span id="typewriter-text"></span><span class="cursor">/</span>
+        </h2>
         <p><i>Smart Automation | Local LLMs | 15 Years Industry Experience</i></p>
         <br>
         <p class="lead">
@@ -66,8 +59,7 @@
         <strong>Applied AI</strong> und <strong>intelligente Automatisierung</strong>. Ich bringe 15 Jahre Industrie-Erfahrung in die digitale Welt.
         <br><br>
         Mein Fokus: <strong>Apps</strong> (Python/KivyMD, Kotlin), <strong>Webentwicklung</strong> und <strong>KI-Integration</strong> (Ollama, lokale LLMs).
-        </p>
-          Ich freue mich darauf, ab <strong>sofort</strong>, meine Leidenschaft für pragmatische Softwarelösungen, moderne Tools und effiziente Workflows in neue Projekte einzubringen.
+        Ich freue mich darauf, ab <strong>sofort</strong>, meine Leidenschaft für pragmatische Softwarelösungen, moderne Tools und effiziente Workflows in neue Projekte einzubringen.
         </p>
         <p class="availability-note mt-3">
           <i class="bi bi-calendar-check text-success"></i> <strong>Verfügbar ab sofort - remote & hybrid</strong>
@@ -117,7 +109,7 @@
 
       <h4><u>Technischer Fokus</u></h4>
       <p>Mein Schwerpunkt liegt auf <strong>App-Entwicklung</strong>(Python mit Kivy/KivyMD, Kotlin mit Jetpack Compose) und <strong>Webentwicklung</strong> (Html 5, CSS 3, <i class="bi bi-javascript">JavaScript</i>, PHP, <i class="bi bi-wordpress"></i>). <br>
-      Besonders spannend finde ich <strong>Künstliche Intelligenz</strong> und lokale LLMs (Ollama). Ich nutze aktiv AI-Tools wie <i class="bi bi-github"></i>-Copilot, Grok, Claude und ChatGPT - für Code-Generierung, Refactoring, Debugging und Ideenfindung sowie zum Lernen. Das ermöglicht es mir effizient und damit auch am Puls der Zeit zu sein.</p>
+      Besonders spannend finde ich <strong>Künstliche Intelligenz</strong> und lokale LLMs (Ollama). Ich nutze aktiv <strong>Applied AI Workflows</strong>  für effizientes Refactoring und Debugging, um moderne Softwarelösungen am Puls der Zeit zu entwickeln. </p>
 
       <h4><u>Meine Arbeitsweise</u></h4>
       <p>Ich bin pragmatisch, lösungsorientiert und packe an. Sauberer, gut dokumentierter Code und strukturierte Abläufe sind mir wichtig. Lernen hört nie auf - daher ist jede Zeile Code, jedes neue Projekt eine Chance, noch besser und effektiver zu werden.</p>
@@ -131,9 +123,9 @@
               Hinter mir stehen <strong>15 Jahre Berufserfahrung</strong> in Logistik und Produktion. Das bedeutet für Sie:
             </p>
             <ul class="list-unstyled">
-              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Verlässlichkeit:</strong> Ich kenne Termindruck und Verantwortung.</li>
-              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Prozessverständnis:</strong> Ich denke in stabilen Systemen, nicht nur in Zeilen Code.</li>
-              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Belastbarkeit:</strong> Krisenerprobt und lösungsorientiert ab Tag 1.</li>
+              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Gefästigte Arbeitsethik:</strong> Absolute Verlässlichkeit und Professionalität ab dem ersten Projekttag.</li>
+              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Systematisches Denken:</strong> Ich verstehe Software als Werkzeug zur Optimierung wertschöpfender Prozessketten.</li>
+              <li><i class="bi bi-check2-circle text-info me-2"></i><strong>Belastbarkeit:</strong> Krisenerprobt, lösungsorientiert und verantwortunsgbewusst.</li>
             </ul>
           </div>
           <div class="col-md-4 text-center d-none d-md-block">
@@ -163,20 +155,20 @@
         <div class="row justify-content-center">
           <div class="col-md-4 mb-4">
             <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
-              <h4><i class="bi bi-terminal"></i> Sauberer Code</h4>
-              <p>Struktur, Lesbarkeit und Wartbarkeit stehen bei mir im Mittelpunkt. Lieber klarer Code als unnötige Komplexität.</p>
+              <h4><i class="bi bi-terminal"></i> Wartbarer Code</h4>
+              <p>Nachhaltige Entwicklung nach Clean-Code-Prinzipien - für Software, die auch im Team langfristig skalierbar bleibt.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
+              <h4><i class="bi bi-people"></i> Team-Katalysator</h4>
+              <p>Offene Kommunikation und kollegialer Wissensaustausch sind für mich die Basis für erfolgreiche Projektergebnisse.</p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
               <h4><i class="bi bi-lightbulb"></i> Lernbereitschaft</h4>
-              <p>Ich sehe jedes Projekt als Chance, dazuzulernen. Neue Technologien probiere ich mit Neugier und Geduld aus.</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
-              <h4><i class="bi bi-people"></i> Team & Kommunikation</h4>
-              <p>Ich arbeite gern im Team, tausche mich aus und helfe, Probleme gemeinsam zu lösen. Offene Kommunikation ist mir wichtig.</p>
+              <p>Ich sehe jedes Projekt als Chance zur Optimierung. Neue Technologien erschließe ich mir zielgerichtet und praxisnah.</p>
             </div>
           </div>
         </div>

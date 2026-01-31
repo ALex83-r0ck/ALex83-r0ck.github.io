@@ -7,165 +7,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const applyTheme = (dark) => {
     document.body.classList.toggle('dark-mode', dark);
-    themeToggle.textContent = dark ? '☀️' : '🌙';
+    if (themeToggle) themeToggle.textContent = dark ? '☀️' : '🌙';
     localStorage.setItem('darkMode', dark ? '1' : '0');
 
     if (profilePic) {
       const newSrc = dark ? 'image/overlay.png' : 'image/1000057922.png';
       profilePic.src = newSrc;
-      profilePic.onerror = () => console.error(`Fehler beim Laden des Bildes: ${newSrc}`);
     }
   };
 
   applyTheme(localStorage.getItem('darkMode') === '1');
-    themeToggle.addEventListener('click', () => {
+
+  themeToggle?.addEventListener('click', () => {
     const dark = !document.body.classList.contains('dark-mode');
     applyTheme(dark);
-    updateParticles(dark);
+    if (typeof updateParticles === 'function') updateParticles(dark);
   });
 
-  
   // ===========================
-// BANNER MANAGER V2
-// ===========================
-class BannerManager {
-  constructor() {
-    this.banner = document.getElementById('availability-banner');
-    this.toggleBtn = document.getElementById('toggle-banner');
-    this.toggleIcon = document.getElementById('toggle-icon');
-    this.globalToggle = document.getElementById('global-toggle');
-    this.isOpen = localStorage.getItem('bannerState') !== 'closed';
-    this.init();
-  }
-
-  init() {
-    if (!this.banner) return;
-
-    // Initiale Anzeige
-    if (this.isOpen) {
-      this.showBanner();
-    } else {
-      this.hideBanner();
-      // Global Toggle sichtbar machen, wenn Banner geschlossen
-      if (this.globalToggle) this.globalToggle.classList.remove('d-none');
-    }
-
-    // Events
-    this.toggleBtn?.addEventListener('click', () => this.toggleBanner());
-    this.globalToggle?.addEventListener('click', () => this.toggleBanner());
-
-    // Kontakt-Link-Scroll
-    window.scrollToContact = () => {
-      const contact = document.getElementById('contact');
-      if (contact) {
-        const yOffset = -80;
-        const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    };
-  }
-
-  showBanner() {
-    this.banner.classList.add('show');
-    document.body.classList.add('banner-open');
-    this.isOpen = true;
-    localStorage.setItem('bannerState', 'open');
-    this.toggleIcon?.classList.replace('bi-chevron-down', 'bi-chevron-up');
-
-    // Global Toggle verstecken
-    if (this.globalToggle) this.globalToggle.classList.add('d-none');
-  }
-
-  hideBanner() {
-    this.banner.classList.remove('show');
-    document.body.classList.remove('banner-open');
-    this.isOpen = false;
-    localStorage.setItem('bannerState', 'closed');
-    this.toggleIcon?.classList.replace('bi-chevron-up', 'bi-chevron-down');
-
-    // Global Toggle sichtbar machen
-    if (this.globalToggle) this.globalToggle.classList.remove('d-none');
-  }
-
-  toggleBanner() {
-    this.isOpen ? this.hideBanner() : this.showBanner();
-  }
-}
-
-new BannerManager();
-
-// ===========================
-// BACK TO TOP BUTTON
-// ===========================
-const backToTop = document.getElementById('back-to-top');
-if (backToTop) {
-  window.addEventListener('scroll', () => {
-    backToTop.style.display = window.pageYOffset > 200 ? 'block' : 'none';
-  });
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-
+  // BANNER MANAGER V3 + GLITCH
   // ===========================
-  // SMOOTH SCROLL NAVIGATION
-  // ===========================
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href?.startsWith('#')) {
-        e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-          const yOffset = -30; // Header offset
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
+  const pill = document.getElementById('availability-pill');
+  if (pill) {
+    // Einmaliger Glitch-Effekt beim Laden
+    pill.classList.add('glitch-effect');
+    setTimeout(() => pill.classList.remove('glitch-effect'), 500);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 150) {
+        pill.classList.add('floating');
+      } else {
+        pill.classList.remove('floating');
       }
     });
-  });
+  }
+
+  // Globaler Scroll-Handler
+  window.scrollToContact = () => {
+    const contact = document.getElementById('contact');
+    contact?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   // ===========================
-  // BOOTSTRAP TOOLTIPS
+  // BACK TO TOP BUTTON
   // ===========================
-  try {
-    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-  } catch (e) {
-    console.warn('Tooltip initialization failed:', e);
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   // ===========================
-  // SCROLL REVEAL PROJECTS (IntersectionObserver)
+  // SCROLL REVEAL PROJECTS
   // ===========================
   const cards = document.querySelectorAll('#projects .card');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('fade-in');
-      });
-    }, { threshold: 0.2 });
-    cards.forEach(card => observer.observe(card));
-  } else {
-    // fallback
-    const reveal = () => {
-      const triggerBottom = window.innerHeight * 0.8;
-      cards.forEach(card => {
-        if (card.getBoundingClientRect().top < triggerBottom) {
-          card.classList.add('fade-in');
-        }
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
-  }
-  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('fade-in');
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(card => observer.observe(card));
+
+  // ==========================
+  // TYPEWRITER INITIATION
+  // ==========================
+  type(); // Starte den Typewriter innerhalb des Main-Loaders
+});
+
 // ===========================
-// PARTICLES BACKGROUND
+// PARTICLES LOGIC
 // ===========================
 const updateParticles = (dark) => {
-  const color = dark ? '#ff9800' : '#054def'; // Orange für Dark, Blau für Light
+  const color = dark ? '#ff9800' : '#054def'; 
   if (window.pJSDom && window.pJSDom.length) {
     const pJS = window.pJSDom[0].pJS;
     pJS.particles.color.value = color;
@@ -174,68 +91,66 @@ const updateParticles = (dark) => {
   }
 };
 
-// ===========================
-// INIT PARTICLES BACKGROUND
-// ===========================
-if (window.particlesJS) {
-  try {
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 10, density: { enable: true, value_area: 130 } },
-        color: { value: '#054def' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: true },
-        size: { value: 18, random: true },
-        // ✨ wichtig: im Light Mode keine Linien
-        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 100, color: '#007bff', opacity: 0.5, width: 2 },
-        move: { enable: true, speed: 2.1, out_mode: 'out' }
-      },
-      interactivity: {
-        events: { onhover: { enable: true, mode: 'repulse' } },
-        modes: { repulse: { distance: 250, duration: 0.5 } }
-      },
-      retina_detect: true
-    });
+// ==========================
+// TYPEWRITER ENGINE
+// ==========================
+const phrases = [
+  "Junior Software Developer",
+  "Applied AI & MLOps Pragmatist",
+  "Clean Code Advocate",
+  "15 Years Industry Experience"
+];
 
-    // Nach dem Init gleich Farben korrekt setzen
-    updateParticles(document.body.classList.contains('dark-mode'));
-  } catch (e) {
-    console.warn('Particles init failed:', e);
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typeSpeed = 80;
+
+function type() {
+  const textElement = document.getElementById('typewriter-text');
+  if (!textElement) return;
+
+  const currentPhrase = phrases[phraseIndex];
+
+  if (isDeleting) {
+    textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+    typeSpeed = 40;
+  } else {
+    textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+    typeSpeed = 80;
   }
+
+  if (!isDeleting && charIndex === currentPhrase.length) {
+    isDeleting = true;
+    typeSpeed = 2000; // Lange Pause beim fertigen Wort
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    typeSpeed = 500;
+  }
+
+  setTimeout(type, typeSpeed);
 }
 
-  // ===========================
-  // CONTACT FORM SUBMISSION
-  // ===========================
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('[type="submit"]');
-      submitBtn.disabled = true;
-      const formData = new FormData(form);
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        alert(res.ok ? 'Danke! Deine Nachricht wurde gesendet.' : 'Hoppla! Etwas ist schiefgelaufen.');
-        if (res.ok) form.reset();
-      } catch (err) {
-        console.error('Form submission failed:', err);
-        alert('Hoppla! Etwas ist schiefgelaufen.');
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
+// ==========================================
+// RECRUITER EASTER EGG (Console)
+// ==========================================
+console.log(
+  `%c ⚡ SYSTEM STATUS: Alexander Rothe - Portfolio v2.1 %c`,
+  "background: #007bff; color: #fff; font-weight: bold; padding: 4px; border-radius: 4px 0 0 4px;",
+  "background: #ff9800; color: #000; font-weight: bold; padding: 4px; border-radius: 0 4px 4px 0;"
+);
 
-  // ===========================
-  // Hover-Effekt für Projektkarten (optional, CSS reicht auch)
-  // ===========================
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
-  });
-});
+console.log(
+  "%cBrauchen Sie Verstärkung? %c\nIch bin bereit für neue Herausforderungen im Bereich Python, App-Dev oder KI-Integration.",
+  "color: #007bff; font-size: 1.2rem; font-weight: bold;",
+  "color: inherit; font-size: 1rem;"
+);
+
+console.log(
+  "%cTipp:%c Schauen Sie sich meine 'Lead-Dojo' Commit-Historie an – ich liebe saubere Git-Workflows!",
+  "font-style: italic; color: #28a745;",
+  "font-style: normal;"
+);

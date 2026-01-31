@@ -20,7 +20,15 @@ html {
   --card-bg: rgba(255, 255, 255, 0.95);
   --card-bg-dark: rgba(26, 32, 44, 0.9);
   --radius: 12px;
+  --pill-blue: #007bff;
+  --pill-glow: rgba(0, 123, 255, 0.5);
 }
+
+.dark-mode {
+  --pill-blue: #ff9800; 
+  --pill-glow: rgba(255, 152, 0, 0.4); 
+}
+
 
 /* ===========================
    Fonts
@@ -37,11 +45,13 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  padding: 0;
   background: var(--bg-light);
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.5s, color 0.5s;
+  transition: padding 0.5s ease;
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -77,6 +87,23 @@ body.dark-mode .navbar {
 /* Smooth transitions für alle Elemente im Darkmode */
 body, .card, .btn, input, textarea, .badge-tech, footer {
   transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* =================================
+   TRON & GLITCH ADD-Ons
+   ================================== */
+   
+/* Der Glitch-Effekt beim Laden */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); clip-path: inset(10% 0 30% 0); }
+  40% { transform: translate(2px, -2px); clip-path: inset(40% 0 10% 0); }
+  60% { transform: translate(-1px, 1px); clip-path: inset(20% 0 50% 0); }
+  100% { transform: translate(0); }
+}
+
+.glitch-effect {
+  animation: glitch 0.4s cubic-bezier(.25, .46, .45, .94) both;
 }
 
 
@@ -160,37 +187,110 @@ body.dark-mode #theme-toggle:hover {
   transition: transform 0.3s ease;
 }
 
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #28a745;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 rgba( 40, 167, 69, 0.4 );
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba( 40, 167, 69, 0.7 );}
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba( 40, 167, 69, 0 );}
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba( 40, 167, 69, 0 );}
+}
+
+.cursor {
+  font-weight: bold;
+  color: #007bff;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0;}
+}
+
+.typewriter-container {
+  min-height: 1.2em; /* Verhindere damit das springen des Layouts */
+  color: #007bff;
+}
 /* ===========================
-   Availability Banner
+   Availability Pill
    =========================== */
-.availability-banner {
+/* Optimierung der Availability Pill */
+.availability-pill {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  width: 100%;
+  z-index: 2500; /* Höher als Navbar */
+  background: rgba(15, 23, 32, 0.9); /* Dunkler Glas-Effekt */
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--pill-blue);
+  padding: 12px 0;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.availability-pill.floating {
+  top: auto;
+  bottom: 30px;
+  width: auto;
+  max-width: 95%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  border: 1px solid var(--pill-blue);
+  border-radius: 50px; /* Vollständig abgerundet */
+  padding: 10px 25px;
+  box-shadow: 0 0 25px var(--pill-glow) !important;
+}
+
+#availability-pill:not(.floating) + #particles-js + .site-header {
+  margin-top: 60px;
+}
+
+/* Status Punkt Animation */
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background: #28a745;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #28a745;
+  flex-shrink: 0;
+}
+
+.pill-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   color: white;
-  padding: 1rem 0;
-  z-index: 1050;
-  box-shadow: 0 4px 12px rgba( 0, 123, 255, 0.3);
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
-  border-bottom: 3px solid rgba(255,255,255,0.2);
 }
 
-.availability-banner.show {
-  transform: translateY(0);
-  opacity: 1;
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background: #28a745;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #28a745;
 }
 
-/* Banner Toggle Icon Rotation */
-#toggle-banner i {
-  transition: transform 0.3s ease;
-}
+.btn-pill-cta {
+  background: var(--pill-blue);
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+} 
 
-#toggle-banner.collapsed i {
-  transform: rotate(180deg);
+.btn-pill-cta:hover {
+  transform: scale(1.05);
 }
 
 /* ===========================
@@ -420,7 +520,7 @@ body.dark-mode #focus .p-4 p {
 
 .badge-tech:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ===========================
@@ -451,12 +551,12 @@ body.dark-mode form input::placeholder, body.dark-mode form textarea::placeholde
 form input:focus, form textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 8px rgba(0,123,255,0.25);
+  box-shadow: 0 0 8px rgba( 0, 123, 255, 0.25);
 }
 
 body.dark-mode form input:focus, body.dark-mode form textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 6px rgba(255,152,0,0.3);
+  box-shadow: 0 0 6px rgba( 255, 152, 0, 0.3);
 }
 
 /* ===========================
@@ -494,9 +594,16 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
 @media (max-width: 768px) {
   .site-header { padding: 28px 12px; }
   .header-flex { flex-direction: column-reverse; text-align: center; }
-  .availability-banner { font-size: 0.99rem; padding: 9px 0; }
-  .availability-banner .btn { font-size: 0.85rem; padding: 4px 8px; }
   .card-body p { font-size: 0.95rem; }
+  .pill-text { font-size: 0.8rem; }
+  .pill-text strong { display: block; }
+  .btn-pill-cta { font-size: 0.75rem; padding: 4px 10px;}
+}
+
+@media (max-width: 576px) {
+    .availability-pill.floating { width: 90%; padding: 8px 15px; }
+    .pill-text { font-size: 0.75rem; line-height: 1.2; }
+    .btn-pill-cta { font-size: 0.7rem; padding: 4px 8px; }
 }
 
 /* ===========================
@@ -504,7 +611,7 @@ body.dark-mode form input:focus, body.dark-mode form textarea:focus {
    =========================== */
 footer {
   background: rgba( 0, 0 , 0, 0.03);
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba( 0, 0, 0, 0.05);
   padding: 20px 0;
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -528,7 +635,7 @@ body.dark-mode footer .btn-icon {
 }
 
 body.dark-mode footer {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba( 255, 255, 255, 0.08);
   color: var(--text-muted-dark);
 }
 
@@ -540,11 +647,11 @@ body.dark-mode footer {
   color: var(--text-muted);
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba( 0, 0, 0, 0.1);
 }
 body.dark-mode #impressum {
   color: var(--text-muted-dark);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba( 255, 255, 255, 0.1);
 }   
 
 /* ===========================
