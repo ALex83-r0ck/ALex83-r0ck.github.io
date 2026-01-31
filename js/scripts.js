@@ -1,88 +1,163 @@
+/**
+ * Pill-Aktion: Scroll-Up oder Kontakt
+ */
+function handlePillAction() {
+    const pill = document.getElementById('availability-pill');
+    
+    if (pill.classList.contains('minimized')) {
+        // Wenn minimiert: Nach oben scrollen
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Wenn oben: Zum Kontakt-Bereich
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // ===========================
   // THEME TOGGLE + PROFILE IMAGE
   // ===========================
   const themeToggle = document.getElementById('theme-toggle');
   const profilePic = document.getElementById('profile-pic');
+  const contactForm = document.getElementById('contact-form');
+  const nameInput = document.getElementById('name');
 
   const applyTheme = (dark) => {
     document.body.classList.toggle('dark-mode', dark);
-    if (themeToggle) themeToggle.textContent = dark ? '☀️' : '🌙';
+    themeToggle.textContent = dark ? '☀️' : '🌙';
     localStorage.setItem('darkMode', dark ? '1' : '0');
 
     if (profilePic) {
       const newSrc = dark ? 'image/overlay.png' : 'image/1000057922.png';
       profilePic.src = newSrc;
+      profilePic.onerror = () => console.error(`Fehler beim Laden des Bildes: ${newSrc}`);
     }
   };
 
   applyTheme(localStorage.getItem('darkMode') === '1');
-
-  themeToggle?.addEventListener('click', () => {
+    themeToggle.addEventListener('click', () => {
     const dark = !document.body.classList.contains('dark-mode');
     applyTheme(dark);
-    if (typeof updateParticles === 'function') updateParticles(dark);
+    updateParticles(dark);
   });
 
-  // ===========================
-  // BANNER MANAGER V3 + GLITCH
-  // ===========================
-  const pill = document.getElementById('availability-pill');
-  if (pill) {
-    // Einmaliger Glitch-Effekt beim Laden
-    pill.classList.add('glitch-effect');
-    setTimeout(() => pill.classList.remove('glitch-effect'), 500);
+  if (contactForm && nameInput) {
+  const focusObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Wenn das Formular zu 50% sichtbar ist
+      if (entry.isIntersecting) {
+        nameInput.focus({ preventScroll: true }); 
+        // Observer stoppen, damit es nur einmal passiert
+        focusObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
 
+  focusObserver.observe(contactForm);
+}
+
+  
+// ===========================
+// BANNER MANAGER V4 (new: pill ab version 4.0)
+// ===========================
+const pill = document.getElementById('availability-pill')
+if (pill) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
-        pill.classList.add('floating');
+      if (window.scrollY > 200) {
+        // Pill wird zum runden Button rechts unten
+        pill.classList.add('minimized');
+        pill.classList.remove('glitch-effect'); 
       } else {
-        pill.classList.remove('floating');
+        // Pill wird wieder zur breiten Leiste oben
+        pill.classList.remove('minimized');
       }
     });
   }
 
-  // Globaler Scroll-Handler
-  window.scrollToContact = () => {
-    const contact = document.getElementById('contact');
-    contact?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Die Action, wenn man auf die Pill klickt (egal ob Leiste oder Kreis)
+  window.handlePillAction = () => {
+    const contactSection = document.getElementById('contact');
+    const nameInput = document.getElementById('name');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      // Kleiner Delay, bis der Scrollvorgang fast fertig ist, dann Fokus
+      setTimeout(() => {
+        nameInput?.focus();
+      }, 800);
+    }
   };
 
+  window.handlePillAction = () => {
+    const pill = document.getElementById('availability-pill');
+    
+    if (pill && pill.classList.contains('minimized')) {
+        // AKTION UNTEN: Zurück nach oben
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // AKTION OBEN: Zum Kontakt
+        const contact = document.getElementById('contact');
+        contact?.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
   // ===========================
-  // BACK TO TOP BUTTON
+  // SMOOTH SCROLL NAVIGATION
   // ===========================
-  const backToTop = document.getElementById('back-to-top');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href?.startsWith('#')) {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          const yOffset = -30; // Header offset
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
     });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  });
+
+  // ===========================
+  // BOOTSTRAP TOOLTIPS
+  // ===========================
+  try {
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+  } catch (e) {
+    console.warn('Tooltip initialization failed:', e);
   }
 
   // ===========================
-  // SCROLL REVEAL PROJECTS
+  // SCROLL REVEAL PROJECTS (IntersectionObserver)
   // ===========================
   const cards = document.querySelectorAll('#projects .card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('fade-in');
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(card => observer.observe(card));
-
-  // ==========================
-  // TYPEWRITER INITIATION
-  // ==========================
-  type(); // Starte den Typewriter innerhalb des Main-Loaders
-});
-
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('fade-in');
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  } else {
+    // fallback
+    const reveal = () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      cards.forEach(card => {
+        if (card.getBoundingClientRect().top < triggerBottom) {
+          card.classList.add('fade-in');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  }
+  
 // ===========================
-// PARTICLES LOGIC
+// PARTICLES BACKGROUND
 // ===========================
 const updateParticles = (dark) => {
-  const color = dark ? '#ff9800' : '#054def'; 
+  const color = dark ? '#ff9800' : '#054def'; // Orange für Dark, Blau für Light
   if (window.pJSDom && window.pJSDom.length) {
     const pJS = window.pJSDom[0].pJS;
     pJS.particles.color.value = color;
@@ -91,66 +166,148 @@ const updateParticles = (dark) => {
   }
 };
 
-// ==========================
-// TYPEWRITER ENGINE
-// ==========================
-const phrases = [
-  "Junior Software Developer",
-  "Applied AI & MLOps Pragmatist",
-  "Clean Code Advocate",
-  "15 Years Industry Experience"
-];
+// ===========================
+// INIT PARTICLES BACKGROUND
+// ===========================
+if (window.particlesJS) {
+  try {
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 10, density: { enable: true, value_area: 130 } },
+        color: { value: '#054def' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 18, random: true },
+        // ✨ wichtig: im Light Mode keine Linien
+        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 100, color: '#007bff', opacity: 0.5, width: 2 },
+        move: { enable: true, speed: 2.1, out_mode: 'out' }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: 'repulse' } },
+        modes: { repulse: { distance: 250, duration: 0.5 } }
+      },
+      retina_detect: true
+    });
 
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 80;
-
-function type() {
-  const textElement = document.getElementById('typewriter-text');
-  if (!textElement) return;
-
-  const currentPhrase = phrases[phraseIndex];
-
-  if (isDeleting) {
-    textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-    charIndex--;
-    typeSpeed = 40;
-  } else {
-    textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-    charIndex++;
-    typeSpeed = 80;
+    // Nach dem Init gleich Farben korrekt setzen
+    updateParticles(document.body.classList.contains('dark-mode'));
+  } catch (e) {
+    console.warn('Particles init failed:', e);
   }
-
-  if (!isDeleting && charIndex === currentPhrase.length) {
-    isDeleting = true;
-    typeSpeed = 2000; // Lange Pause beim fertigen Wort
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    typeSpeed = 500;
-  }
-
-  setTimeout(type, typeSpeed);
 }
 
-// ==========================================
-// RECRUITER EASTER EGG (Console)
-// ==========================================
-console.log(
-  `%c ⚡ SYSTEM STATUS: Alexander Rothe - Portfolio v2.1 %c`,
-  "background: #007bff; color: #fff; font-weight: bold; padding: 4px; border-radius: 4px 0 0 4px;",
-  "background: #ff9800; color: #000; font-weight: bold; padding: 4px; border-radius: 0 4px 4px 0;"
-);
+  // ===========================
+  // CONTACT FORM SUBMISSION
+  // ===========================
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      const formData = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        alert(res.ok ? 'Danke! Deine Nachricht wurde gesendet.' : 'Hoppla! Etwas ist schiefgelaufen.');
+        if (res.ok) form.reset();
+      } catch (err) {
+        console.error('Form submission failed:', err);
+        alert('Hoppla! Etwas ist schiefgelaufen.');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
 
-console.log(
-  "%cBrauchen Sie Verstärkung? %c\nIch bin bereit für neue Herausforderungen im Bereich Python, App-Dev oder KI-Integration.",
-  "color: #007bff; font-size: 1.2rem; font-weight: bold;",
-  "color: inherit; font-size: 1rem;"
-);
+  // ===========================
+  // Hover-Effekt für Projektkarten (optional, CSS reicht auch)
+  // ===========================
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+  });
+});
 
-console.log(
-  "%cTipp:%c Schauen Sie sich meine 'Lead-Dojo' Commit-Historie an – ich liebe saubere Git-Workflows!",
-  "font-style: italic; color: #28a745;",
-  "font-style: normal;"
-);
+  // ==========================
+  // Typewriter Section
+  // ==========================
+  const textElement = document.getElementById('typewriter-text')
+  const phrases = [
+    "Junior Software Developer",
+    "Applied AI & MLOps Pragmatist",
+    "Clean Code"
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 80;
+
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 50;
+    } else {
+      textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause am Ende der Phrase
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed)
+  }
+
+  // Effekt start
+  document.addEventListener('DOMContentLoaded', type)
+
+  // ==========================================
+  // BOOT-LOADER 
+  // ==========================================
+  const loader = document.getElementById('boot-loader');
+  const dot = document.getElementById('global-status-dot');
+  const pill = document.getElementById('availability-pill')
+
+  // 1. BOOT-SEQUENZ & STATUS-WECHSEL
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+          const loader = document.getElementById('boot-loader');
+          const dot = document.getElementById('global-status-dot');
+
+          if (loader) {
+              loader.style.opacity = '0';
+              setTimeout(() => {
+                  loader.remove();
+                  if (dot) {
+                      console.log("DEBUG: Schalte Status auf Grün!"); 
+                      dot.classList.remove('status-red');
+                      dot.classList.add('status-green');
+                  }
+              }, 800);
+          }
+      }, 1000);
+  });
+
+    // 2. SCROLL-LOGIK FÜR DIE PILL
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            pill.classList.add('minimized');
+        } else {
+            pill.classList.remove('minimized');
+        }
+    });
+

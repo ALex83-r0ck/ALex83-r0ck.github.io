@@ -221,37 +221,64 @@ body.dark-mode #theme-toggle:hover {
    Availability Pill
    =========================== */
 /* Optimierung der Availability Pill */
+/* Grundzustand: Kapsel oben mittig */
 .availability-pill {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2500; /* Höher als Navbar */
-  background: rgba(15, 23, 32, 0.9); /* Dunkler Glas-Effekt */
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid var(--pill-blue);
-  padding: 12px 0;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.availability-pill.floating {
-  top: auto;
-  bottom: 30px;
-  width: auto;
-  max-width: 95%;
-  left: 50%;
-  transform: translateX(-50%) translateY(0);
-  border: 1px solid var(--pill-blue);
-  border-radius: 50px; /* Vollständig abgerundet */
-  padding: 10px 25px;
-  box-shadow: 0 0 25px var(--pill-glow) !important;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    z-index: 2500;
+    background: rgba(15, 23, 32, 0.95);
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#availability-pill:not(.floating) + #particles-js + .site-header {
-  margin-top: 60px;
+/* Zustand: Minimiert (Kreis unten rechts) */
+.availability-pill.minimized {
+    top: auto;
+    bottom: 30px;
+    left: auto; /* Wichtig: Hebt die 50% Linksbündigkeit auf */
+    right: 30px; /* Sicherer Abstand zum rechten Rand */
+    transform: translateX(0); /* Zentrierung aufheben */
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    background: var(--primary);
+    border: 2px solid white;
+    box-shadow: 0 0 20px var(--pill-glow) !important;
+}
+
+/* Inhalte ausblenden */
+.availability-pill.minimized .pill-text, 
+.availability-pill.minimized .status-indicator {
+    display: none;
+}
+
+/* Button-Text verstecken und Icon zeigen */
+.availability-pill.minimized .btn-pill-cta {
+    background: transparent;
+    font-size: 0; /* Versteckt "Gespräch starten" */
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.availability-pill.minimized .btn-pill-cta::before {
+    content: "\F148"; /* Bootstrap Icon Chevron Up */
+    font-family: "bootstrap-icons";
+    font-size: 1.5rem;
+    color: white;
+    display: block;
 }
 
 /* Status Punkt Animation */
@@ -274,8 +301,19 @@ body.dark-mode #theme-toggle:hover {
 .status-indicator {
   width: 10px;
   height: 10px;
-  background: #28a745;
   border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  transition: all 0.5s ease;
+}
+
+.status-red {
+  background-color: #ff4d4d !important;
+  box-shadow: 0 0 8px #ff4d4d;
+}
+
+.status-green {
+  background-color: #28a745;
   box-shadow: 0 0 8px #28a745;
 }
 
@@ -665,4 +703,55 @@ body.dark-mode .text-muted {
 }
 .small {
   font-size: 0.875rem;
+}
+
+/* ==========================================
+   ZUSATZ: BOOT LOADER (SYSTEM.INIT)
+   ========================================== */
+#boot-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Tiefschwarz für den Start */
+    z-index: 10000;   /* Über allem anderen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease-out;
+}
+
+.glitch-text {
+    color: var(--primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(3deg); text-shadow: 2px 0 #ff4d4d; }
+    20% { transform: skew(-3deg); text-shadow: -2px 0 var(--primary); }
+    40% { transform: skew(1deg); }
+    100% { transform: skew(0deg); }
+}
+
+/* ==========================================
+   RESPONSIVE FIXES
+   ========================================== */
+@media (max-width: 768px) {
+    .availability-pill.minimized {
+        left: calc(100% - 35px); /* Mehr Platz am Rand auf Mobile */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+    }
+    
+    .glitch-text {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
 }
