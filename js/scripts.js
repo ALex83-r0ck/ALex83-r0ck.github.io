@@ -3,16 +3,26 @@
  */
 function handlePillAction() {
     const pill = document.getElementById('availability-pill');
-    
-    if (pill.classList.contains('minimized')) {
+    const contactSection = document.getElementById('contact');
+    const nameInput = document.getElementById('name');
+
+    if (pill && pill.classList.contains('minimized')) {
         // Wenn minimiert: Nach oben scrollen
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-        // Wenn oben: Zum Kontakt-Bereich
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        // Wenn oben: Zum Kontakt-Bereich scrollen
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Warte kurz, bis der Scrollvorgang fast fertig ist, dann Fokus
+            setTimeout(() => {
+                if (nameInput) {
+                    nameInput.focus({ preventScroll: true });
+                }
+            }, 800); // 800ms passt meistens perfekt zur Scroll-Dauer
+        }
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   // ===========================
   // THEME TOGGLE + PROFILE IMAGE
