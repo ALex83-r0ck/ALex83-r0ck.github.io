@@ -15,6 +15,7 @@ html {
   --text-light: #1a202c;
   --text-muted-light: #2d3748;
   --bg-dark: #0f1720;
+  --bg-dark-card: #1a2533;
   --text-dark: #f7fafc;
   --text-muted-dark: #ffffff;
   --card-bg: rgba(255, 255, 255, 0.95);
@@ -64,8 +65,68 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
+body.dark-mode .form-label {
+  color: #ffffff !important;
+}
+
+body.dark-mode #contact-form.bg-light {
+  background-color: var(--bg-dark-card) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .form-control {
+  background-color: #0f1720;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-mode .doc-preview-container.bg-light {
+    background-color: var(--bg-dark-card) !important;
+    border: 1px solid #334155;
+}
+
+body.dark-mode .doc-caption {
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-live-demo {
+    background-color: var(--accent); /* Dein Orange */
+    color: #000000 !important;      /* Schwarzer Text auf Orange */
+    border: none;
+}
+
+body.dark-mode .btn-live-demo {
+    background: #ff9800; /* Kräftiges Orange */
+    color: #000000 !important;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+body.dark-mode .btn-live-demo:hover {
+    background: #e68a00;
+    transform: translateY(-2px);
+}
+
+/* 4. Karten-Hintergründe allgemein */
+body.dark-mode .card {
+    background-color: var(--bg-dark-card);
+    border-color: #334155;
+}
+
+body.dark-mode .bg-body-tertiary {
+    background-color: #1e293b !important;
+}
+
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
-body.dark-mode h4, body.dark-mode h5 {
+body.dark-mode h4, body.dark-mode h5{
   color: #ffffff;
   font-weight: 700;
 }
