@@ -247,9 +247,12 @@ if (window.particlesJS) {
   // ==========================
   const textElement = document.getElementById('typewriter-text')
   const phrases = [
-    "Junior Software Developer",
+    "Python & Kotlin",
     "Applied AI & MLOps Pragmatist",
-    "Clean Code"
+    "Clean Code",
+    "Fachinformatiker Anwendungsentwicklung",
+    "Smart Automation",
+    "Local LLMs"
   ];
 
   let phraseIndex = 0;
