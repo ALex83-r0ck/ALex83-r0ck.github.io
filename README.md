@@ -1,78 +1,80 @@
-# 🚀 Alexander Rothe | Junior Software Developer Portfolio
+# 🚀 Portfolio: Applied AI & Software Solutions
+## Technical Showcase by Alexander Rothe
 
-Dieses Repository enthält den Source Code meines persönlichen Portfolios. Es dient als zentrale Anlaufstelle, um meine Projekte, Zertifikate und meinen Werdegang als Quereinsteiger im Bereich Softwareentwicklung (Fokus: Apps, Web & KI-Integration) zu präsentieren.
+Dieses Repository enthält den Source Code meines professionellen Portfolios. Es ist nicht nur eine Visitenkarte, sondern ein technischer Showcase für **High-Performance Web-Frontends**, **Secure Coding** und **AI-Integration**.
 
-## 🎯 Fokus & Vision
+[🌐 Live Demo ansehen](https://ALex83-r0ck.github.io)
 
-Ich kombiniere 15 Jahre Industrieerfahrung mit moderner Softwareentwicklung. Mein Ziel ist es, **intelligente Automatisierung** durch lokale LLMs (Ollama) und robuste App-Architekturen greifbar zu machen.
+---
+
+## 🎯 Technical Strategy
+
+Mein Portfolio spiegelt meinen Ansatz wider: **Komplexität reduzieren, Sicherheit maximieren.** Statt auf überladene Frameworks setze ich auf ein hochperformantes, modulares System mit Fokus auf User Experience und Data-Privacy-konformer Darstellung.
+
+### 🛡️ Security & Quality Standards
+
+* **ISC2 Cybersecurity Principles:** Die gesamte Struktur folgt dem "Security-by-Design"-Ansatz.
+* **Conventional Commits:** Eine lückenlose, semantische Git-Historie zur Sicherstellung der Wartbarkeit.
+* **Clean Code:** Modulares CSS und strukturiertes JavaScript für schnelle Ladezeiten und Skalierbarkeit.
 
 ---
 
 ## 🛠 Tech Stack
 
-* **Frontend:** HTML5, CSS3 (Bootstrap 5), JavaScript
-* **Backend:** Python (KivyMD, FastAPI-Interesse), Kotlin (Jetpack Compose)
-* **AI/MLOps:** Ollama Integration, RAG Systeme (ChromaDB), Prompt Engineering
-* **Tools:** Git (Conventional Commits), Docker, GitCopilot/Claude/ChatGPT
+* **Frontend Architecture:** HTML5, CSS3 (Custom Bootstrap 5 Implementation), JavaScript (ES6+)
+* **Interaktive Elemente:** Particles.js für dynamische Hintergründe, Typewriter-Effekte & Glitch-Animationen.
+* **Asset Integration:** Optimiertes PDF-Handling für Zertifikate (Responsive iFrames & Fallback-Strategies).
+* **CI/CD:** Bereitstellung über GitHub Pages mit automatisierten Workflows.
 
 ---
 
-## 🏗 Projekt-Highlights (im Portfolio enthalten)
+## 🏗 Key Features der Implementierung
 
-| Projekt | Tech Stack | Status |
-| :--- | :--- | :--- |
-| **Lead-Dojo** | Python, Ollama, ChromaDB | Active |
-| **LernBuddy** | Python, KivyMD, AI | In Development |
-| **Miet-Protokoll** | Python, SQLite, KivyMD | Completed |
-| **Birthday Schatz** | Kotlin, Lottie | Completed |
+### 1. Advanced PDF & Asset Engine
 
----
+Um Zertifikate und Nachweise professionell zu präsentieren, nutzt das Portfolio eine hybride Lösung:
 
-## 📈 Besonderheiten dieser Implementierung
+* **Smart Preview:** Native `iframe`-Einbindungen mit optimierten Parametern (`#view=fitH`).
+* **Responsive Trust-Anchors:** Dynamische Grid-Systeme für Bild-Zertifikate, die auf allen Endgeräten eine optimale Lesbarkeit garantieren.
 
-### 1. Clean History (Conventional Commits)
+### 2. Tron-Inspired UI / UX
 
-Um professionelle Standards einzuhalten, wird dieses Projekt nach dem **Conventional Commits** Standard gepflegt. Dies erleichtert die Nachvollziehbarkeit von Features und Bugfixes.
+Ein subtiles "Cyber-Security"-Theme (inspiriert von Tron), das meine Leidenschaft für Technik und Sicherheit widerspiegelt:
 
-### 2. PDF & Assets Handling
+* **Dynamic Glow Effects:** CSS-Variable-basierte Farbschemata (Dark/Light Mode).
 
-Die Integration von Nachweisen und Zertifikaten wurde für maximale Kompatibilität optimiert:
+* **Easter Eggs:** Interaktive CLI-Elemente, die meine Affinität zur Shell-Entwicklung zeigen.
 
-* Einsatz von `iframe` Previews mit PDF-Parametern (`#view=fit`).
-* Responsive Grid für Bild-Zertifikate mittels Bootstrap 5.
+### 3. Applied AI Fokus
 
-* "Fallback"-Strategien für mobile Browser durch direkte Vollbild-Links.
-
-### 3. Tron-Theme & Easter Eggs
-
-Als Fan von Sci-Fi Klassikern enthält das Portfolio subtile Anspielungen und interaktive Elemente (Particles.js Hintergrund), die meinen persönlichen Stil widerspiegeln.
+Das Portfolio dient als Hub für meine RAG-Projekte (**Lead-Dojo**) und zeigt, wie lokale LLMs (Ollama) in modernen Software-Architekturen wertschöpfend eingesetzt werden.
 
 ---
 
-## 🚀 Installation & Local Development
+## 🚀 Local Development
 
-1. Repository klonen:
+1. **Repository klonen:**
 
    ```bash
-   git clone [https://github.com/ALex83-r0ck/dein-portfolio-repo.git](https://github.com/ALex83-r0ck/dein-portfolio-repo.git)```
+   git clone [https://github.com/ALex83-r0ck/ALex83-r0ck.github.io.git](https://github.com/ALex83-r0ck/ALex83-r0ck.github.io.git)```
 
-2. In das Verzeichnis wechseln:
+2. In das Verzeichnes wechseln:
 
-    ```bash
-    cd dein-portfolio-repo```
+   ```bash
+   cd ALex83-r0ck.github.io
+   ```
 
-3. Einfach die index.html im Browser öffnen oder einen lokalen Server starten:
+3. Lokalen Server starten:
 
     ```bash
     # Mit Python
-    python -m http.server 8000```
+    python -m http.server 8000
+   ```
 
-### 📬 Kontakt
+## 📬 Kontakt & Netzwerk
 
 LinkedIn: Alexander Rothe
 
-Email: <alexander_rothe@t-online.de>
+Email: <rothe_alexander@t-online.de>
 
-Web: Live Demo ansehen
-
-„Hindernisse und Schwierigkeiten sind Stufen, auf denen wir in die Höhe steigen.“ – Friedrich Nietzsche
+"Probleme sind Gelegenheiten in Arbeitskleidung. Ich baue die passenden Werkzeuge dafür."
