@@ -1,2 +1,14 @@
 image/1000057919.png
 Ergänzungen und fixes.txt
+.parcelrc
+package-lock.json
+package.json
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Cache
+.parcel-cache/

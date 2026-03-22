@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Lab v6.0 | Alexander Rothe Architecture</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body class="dark-mode">
+
+  <div id="scan-overlay"><div class="scan-line"></div></div>
+  <div id="particles-js" class="particles-bg"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Alexander Rothe</a>
+      <div class="ms-auto d-flex align-items-center">
+        <span class="status-bar-text me-3 d-none d-md-block">LAB_ACCESS: GRANTED</span>
+        <a href="index.html" class="btn btn-sm btn-outline-primary">Zurück zum Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <!-- 1. INTRO: MYCELIUM & DOJO -->
+    <section id="intro" class="mb-5">
+      <header class="text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3">AI Research <span class="glow-text-primary">Lab v6.0</span></h1>
+        <p class="text-muted-dark lead">Architekturen für lokale Intelligenz und systematisches Lernen.</p>
+      </header>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-3">
+          <div id="card-bayou" class="mycelium-card p-4 h-100">
+            <i class="bi bi-filter-square display-6 text-primary mb-3"></i>
+            <h5 class="fw-bold">Bayou-Filter</h5>
+            <p class="small text-muted-dark">Bereinigt Rohdaten (PDF/Text) von Rauschen & Injections.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id="card-memory" class="mycelium-card p-4 h-100">
+            <i class="bi bi-database-fill display-6 text-primary mb-3"></i>
+            <h5 class="fw-bold">Persistent Memory</h5>
+            <p class="small text-muted-dark">Wissens-Nodes in ChromaDB. Vergisst nie.</p>
+            <div class="memory-counter text-success fw-bold mt-2"><span id="mem-count">1000</span> Nodes</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id="step-reflect" class="mycelium-card p-4 h-100 text-center">
+            <div class="reflect-step d-inline-block position-relative mb-3">
+              <i class="fa-solid fa-gear cog-bg"></i>
+              <i class="fa-solid fa-brain brain-fg"></i>
+            </div>
+            <h5 class="fw-bold">Lead-Dojo Reasoning</h5>
+            <p class="small text-muted-dark">System 2 Thinking für logische Präzision.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id="node-audit" class="mycelium-card p-4 h-100">
+            <i id="flow-shield" class="fa-solid fa-user-shield display-6 text-warning mb-3"></i>
+            <h5 class="fw-bold">Bullshit-Filter</h5>
+            <p class="small text-muted-dark">Gegenprüfung auf Halluzinationen & Fakten-Check.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FAMILIEN-LERN-SZENARIO (SPACED REPETITION) -->
+    <section id="personal-learning" class="mb-5 py-5 border-top border-primary border-opacity-20">
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-primary mb-3">Hauptfokus: Realistischer Prüfungstrainer</h2>
+        <p class="text-muted-dark lead">Lokale Intelligenz für die ganze Familie – vom Vokabeltest bis zur Fahrprüfung.</p>
+      </div>
+
+      <div class="row g-4 mb-5 text-start">
+        <div class="col-md-6">
+          <div class="trainer-card p-4 h-100 shadow-glow">
+            <div class="trainer-icon-box text-primary"><i class="fa-solid fa-car"></i></div>
+            <h5 class="fw-bold">Fahrschule & Technik</h5>
+            <p class="small text-muted-dark">Training von Vorfahrtsregeln (§ 8 StVO) und technischem Wissen. Verifikation durch Lead-Dojo.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="trainer-card p-4 h-100 shadow-glow">
+            <div class="trainer-icon-box text-success"><i class="fa-solid fa-book-reader"></i></div>
+            <h5 class="fw-bold">Schule & Vokabeln</h5>
+            <p class="small text-muted-dark">Bio-Zellstrukturen oder Latein. Zerlegung in Knowledge Atoms zur Vermeidung von Bulimie-Lernen.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anti-Bulimie Pfad -->
+      <div class="text-center">
+        <h4 class="h5 fw-bold text-success mb-4"><i class="fa-solid fa-layer-group me-2"></i>Der Anti-Bulimie-Pfad (Leitner System)</h4>
+        <div class="bulimie-path mb-5">
+          <div class="timeline-connector"></div>
+          <div class="row g-0 justify-content-center">
+            <div class="col-3 path-step">
+              <div class="reasoning-icon-box pulse-blue" style="width: 50px; height: 50px; font-size: 1.2rem;"><i class="fa-solid fa-atom"></i></div>
+              <div class="day-tag">START</div>
+            </div>
+            <div class="col-3 path-step">
+              <div class="reasoning-icon-box" style="width: 50px; height: 50px; font-size: 1.2rem; opacity: 0.5;"><i class="fa-solid fa-hourglass-half"></i></div>
+              <div class="day-tag">+1 TAG</div>
+            </div>
+            <div class="col-3 path-step">
+              <div class="reasoning-icon-box" style="width: 50px; height: 50px; font-size: 1.2rem; opacity: 0.5;"><i class="fa-solid fa-calendar-day"></i></div>
+              <div class="day-tag">+3 TAGE</div>
+            </div>
+            <div class="col-3 path-step">
+              <div class="reasoning-icon-box" style="width: 50px; height: 50px; font-size: 1.2rem; opacity: 0.5;"><i class="fa-solid fa-check-double"></i></div>
+              <div class="day-tag">+7 TAGE</div>
+            </div>
+          </div>
+        </div>
+        <div class="leitner-box d-inline-block px-5 py-4 shadow-glow">
+          <div class="d-flex justify-content-center gap-3">
+            <button class="interval-btn btn-red" id="int-red">FALSCH</button>
+            <button class="interval-btn btn-yellow" id="int-yellow">UNSICHER</button>
+            <button class="interval-btn btn-green" id="int-green">GEWUSST</button>
+          </div>
+          <div id="schedule-info" class="mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULATION TERMINAL -->
+    <section class="mb-5">
+      <div class="lab-terminal shadow-lg">
+        <div class="terminal-header">
+          <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+          <span class="terminal-title">lab-simulation --mixed-mode</span>
+        </div>
+        <div id="protocol-terminal" class="terminal-body">
+          <div id="protocol-output"></div>
+          <span class="cursor"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ENTERPRISE SKALIERUNG -->
+    <section id="enterprise-solutions" class="py-5 mb-5 border-top border-primary border-opacity-20">
+      <div class="text-center mb-5">
+        <h2 class="h3 fw-bold text-info mb-2">Ausblick: Enterprise Skalierung</h2>
+        <p class="text-muted-dark lead">Die gleiche robuste Architektur für Firmen-Szenarien.</p>
+      </div>
+      <div class="row g-4 text-start">
+        <div class="col-md-4">
+          <div class="enterprise-card p-4 h-100 shadow-glow">
+            <i class="bi bi-file-earmark-lock text-primary fs-1 mb-3"></i>
+            <h5 class="fw-bold">Buchhaltung & Finanzen</h5>
+            <p class="small text-muted-dark">Automatischer Abgleich von Belegen und PDFs mit 100% lokaler DSGVO-Präzision.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="enterprise-card p-4 h-100 shadow-glow">
+            <i class="bi bi-robot text-success fs-1 mb-3"></i>
+            <h5 class="fw-bold">Souveräne Agenten</h5>
+            <p class="small text-muted-dark">Interne Copilots für Wissensmanagement ohne Datenabfluss in die Cloud.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="enterprise-card p-4 h-100 shadow-glow">
+            <i class="bi bi-clock-history text-warning fs-1 mb-3"></i>
+            <h5 class="fw-bold">Internal PDF Scraper</h5>
+            <p class="small text-muted-dark">Durchsuchbar machen von unstrukturiertem Firmenwissen über Mycelium Nodes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. STOLPERSTEINE & LÖSUNGEN -->
+    <section id="challenges-solutions" class="py-5 mb-5 border-top border-primary border-opacity-20">
+      <h2 class="h3 fw-bold mb-5 text-center">Transparenz: Stolpersteine & Lösungen</h2>
+      <div class="row g-4 text-start">
+        <div class="col-md-6">
+          <div class="challenge-box">
+            <h6 class="fw-bold"><i class="fa-solid fa-exclamation-triangle challenge-icon"></i>Hardware-Latenz</h6>
+            <p class="small text-muted-dark">Asynchrone Workflows optimieren 16GB RAM für parallele Abfragen.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="solution-box">
+            <h6 class="fw-bold"><i class="fa-solid fa-check-circle solution-icon"></i>Deterministic Guards</h6>
+            <p class="small text-muted-dark">Fakten-Verifikation durch Code-Einstreuung statt bloßem Raten.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="challenge-box">
+            <h6 class="fw-bold"><i class="fa-solid fa-exclamation-triangle challenge-icon"></i>Data-Poisoning</h6>
+            <p class="small text-muted-dark">Unstrukturierter Daten-Müll kann Vektor-Datenbanken verschlechtern.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="solution-box">
+            <h6 class="fw-bold"><i class="fa-solid fa-check-circle solution-icon"></i>Semantic Chunking</h6>
+            <p class="small text-muted-dark">Der Bayou-Filter bereinigt Input-Rauschen durch kontextuelle Analyse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION STATEMENT -->
+    <section class="text-center py-5">
+      <div class="vision-statement p-4 border-top border-bottom border-primary border-opacity-20">
+        <h2 class="h4 fw-bold glow-text-primary mb-0">Project Mycelium: Ending Digital Amnesia. Building the Collective Brain for Enterprise Continuity.</h2>
+      </div>
+    </section>
+  </main>
+
+  <div id="xp-popup" class="xp-popup shadow-glow hidden">
+    <div class="xp-content">
+      <i class="bi bi-stars text-warning display-4 mb-2"></i>
+      <h3 class="fw-bold">+500 XP</h3>
+      <p class="small mb-0">PROCESS_COMPLETE</p>
+      <p class="text-success fw-bold">WISSEN VERIFIZIERT!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="small text-muted mb-0">© 2026 Alexander Rothe | AI Lab v6.0 | Build with Heart & High Precision</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // --- PARTICLES ---
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 20, density: { enable: true, value_area: 800 } },
+            color: { value: '#3b82f6' },
+            opacity: { value: 0.2 },
+            move: { speed: 1 }
+        }
+    });
+
+    // --- SIMULATION LOGS ---
+    const logs = [
+      { text: "[INPUT] Fahrschule: Vorfahrt Rechts vor Links.", type: 'line' },
+      { text: "[PROCESS] Extracting core rules from STVO database", type: 'audit' },
+      { text: "> [SUCCESS] Rule § 8 StVO identified.", type: 'line' },
+      { text: "[AUDIT] Checking StVO consistency", type: 'audit' },
+      { text: "> [PASSED] Logic verified. No contradictions found.", type: 'line' },
+      { text: "------------------------------------------------", type: 'line' },
+      { text: "[SCALING] Architecture ready for Enterprise PDFs & Accounting.", type: 'line' },
+      { text: "> Building Knowledge Nodes for 'Finance_2026'...", type: 'line' },
+      { text: "[AUDIT] Secure Ingest Active", type: 'audit' },
+      { text: "> [PASSED] Secure Node established.", type: 'line' }
+    ];
+
+    const output = document.getElementById('protocol-output');
+    let logIdx = 0;
+
+    function typeProtocol() {
+      if (logIdx < logs.length) {
+        const entry = logs[logIdx];
+        if (entry.type === 'audit') {
+          const lineDiv = document.createElement('div');
+          lineDiv.className = 'terminal-line text-start';
+          lineDiv.innerHTML = `<span>${entry.text}</span><span class="terminal-dots"></span><span class="audit-status hidden text-success fw-bold">[PASSED]</span>`;
+          output.appendChild(lineDiv);
+          
+          triggerBullshitFilterScan();
+          
+          const dotsSpan = lineDiv.querySelector('.terminal-dots');
+          const statusSpan = lineDiv.querySelector('.audit-status');
+          let dotCount = 0;
+          const dotInterval = setInterval(() => {
+            dotsSpan.textContent += '.';
+            dotCount++;
+            if (dotCount >= 3) {
+              clearInterval(dotInterval);
+              setTimeout(() => {
+                statusSpan.classList.remove('hidden');
+                triggerAuditSuccess();
+                logIdx++;
+                setTimeout(typeProtocol, 800);
+              }, 500);
+            }
+          }, 400);
+        } else {
+          const p = document.createElement('div');
+          p.className = 'mb-1 text-start';
+          p.textContent = entry.text;
+          output.appendChild(p);
+          
+          if (entry.text.includes("[SUCCESS]")) triggerMemoryFlash();
+          if (entry.text.includes("Extracting")) triggerDataPulse('card-bayou', 'card-memory');
+          if (entry.text.includes("ready for Enterprise")) triggerRAGBeam('card-memory', 'step-reflect');
+
+          logIdx++;
+          setTimeout(typeProtocol, 1000);
+        }
+      } else {
+        showXP();
+      }
+    }
+
+    function triggerDataPulse(startId, endId) {
+      const start = document.getElementById(startId).getBoundingClientRect();
+      const end = document.getElementById(endId).getBoundingClientRect();
+      createFlowPulse(start, end, 'data-pulse');
+    }
+
+    function triggerRAGBeam(startId, endId) {
+      const start = document.getElementById(startId).getBoundingClientRect();
+      const end = document.getElementById(endId).getBoundingClientRect();
+      createFlowPulse(start, end, 'rag-beam');
+      const cog = document.querySelector('.cog-bg');
+      if (cog) cog.style.animationDuration = '1.5s';
+    }
+
+    function triggerMemoryFlash() {
+      const memNode = document.getElementById('card-memory');
+      memNode.style.boxShadow = '0 0 30px #10b981';
+      animateCounter('mem-count', 1000, 1250, 2000);
+      setTimeout(() => memNode.style.boxShadow = 'none', 1500);
+    }
+
+    function triggerBullshitFilterScan() {
+      const shield = document.getElementById('flow-shield');
+      shield.classList.add('bullshit-filter-scanning');
+    }
+
+    function triggerAuditSuccess() {
+      const shield = document.getElementById('flow-shield');
+      shield.classList.remove('bullshit-filter-scanning');
+      shield.classList.add('verification-success');
+      setTimeout(() => shield.classList.remove('verification-success'), 2000);
+    }
+
+    function triggerScheduling() {
+      const btn = document.getElementById('int-green');
+      const info = document.getElementById('schedule-info');
+      btn.classList.add('active');
+      info.innerHTML = '<span class="schedule-badge"><i class="fa-solid fa-calendar-check me-1"></i> Nächste Session: In 7 Tagen</span>';
+    }
+
+    function createFlowPulse(start, end, className) {
+      const pulse = document.createElement('div');
+      pulse.className = className;
+      const scrollY = window.scrollY;
+      pulse.style.left = `${start.left + start.width/2}px`;
+      pulse.style.top = `${start.top + start.height/2 + scrollY}px`;
+      const dx = (end.left + end.width/2) - (start.left + start.width/2);
+      const dy = (end.top + end.height/2) - (start.top + start.height/2);
+      pulse.style.setProperty('--tx', `${dx}px`);
+      pulse.style.setProperty('--ty', `${dy}px`);
+      document.body.appendChild(pulse);
+      setTimeout(() => pulse.remove(), 2000);
+    }
+
+    function animateCounter(id, start, end, duration) {
+      const obj = document.getElementById(id);
+      let current = start;
+      const range = end - start;
+      const step = Math.abs(Math.floor(duration / range));
+      const timer = setInterval(() => {
+        current++;
+        obj.textContent = current;
+        if (current >= end) clearInterval(timer);
+      }, step);
+    }
+
+    function showXP() {
+      const popup = document.getElementById('xp-popup');
+      popup.classList.remove('hidden');
+      const cog = document.querySelector('.cog-bg');
+      if (cog) cog.style.animationDuration = '8s';
+      setTimeout(() => popup.classList.add('hidden'), 4000);
+    }
+
+    window.addEventListener('load', () => setTimeout(typeProtocol, 1500));
+
+    // --- INTERVAL BTNS ---
+    document.querySelectorAll('.interval-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.interval-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const days = btn.id === 'int-red' ? '1 Tag' : (btn.id === 'int-yellow' ? '3 Tage' : '7+ Tage');
+        document.getElementById('schedule-info').innerHTML = `<span class="schedule-badge">Nächste Session: In ${days}</span>`;
+      });
+    });
+
+    // --- EASTER EGGS ---
+    let keyBuffer = '';
+    document.addEventListener('keydown', (e) => {
+        keyBuffer += e.key.toUpperCase();
+        if (keyBuffer.length > 10) keyBuffer = keyBuffer.substring(keyBuffer.length - 10);
+        if (keyBuffer.includes('MATRIX')) window.location.href = 'pages/datenschutzerklärung.html';
+        if (keyBuffer.includes('TRON')) window.location.href = 'pages/impressum.html';
+    });
+  </script>
+</body>
+</html>

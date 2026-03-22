@@ -1,4 +1,5 @@
 # 🚀 Portfolio: Applied AI & Software Solutions
+
 ## Technical Showcase by Alexander Rothe
 
 Dieses Repository enthält den Source Code meines professionellen Portfolios. Es ist nicht nur eine Visitenkarte, sondern ein technischer Showcase für **High-Performance Web-Frontends**, **Secure Coding** und **AI-Integration**.

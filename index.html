@@ -5,81 +5,114 @@
   <meta name="author" content="Alexander Rothe">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Rothe – Softwareentwickler für Smart Automation & Applied AI. 15 Jahre Industrie-Expertise kombiniert mit moderner Software-Architektur (Python & Kotlin).">
-  <meta name="keywords" content="Softwareentwickler, Junior Developer, Python, Kotlin, Appentwicklung, Webentwicklung, KI, Ollama, Fullstack, Alexander Rothe, Portfolio, Developer">
-  <meta name="theme-color" content="#007bff">
-  <meta property="og:title" content="Alexander Rothe – Softwarelösungen mit Weitblick">
-  <meta property="og:description" content="Praktische Projekte | KI-Integration | Verfügbar absofort">
+  <meta name="description" content="Alexander Rothe – AI Engineer & Software Engineer. Spezialisiert auf lokale RAG-Systeme, Agentic Workflows und datenschutzkonforme KI-Architekturen.">
+  <meta name="keywords" content="AI Engineer, RAG Specialist, LangChain, Ollama, Python, Softwareentwickler, KI-Integration, Agentic Workflows, Alexander Rothe">
+  <meta name="theme-color" content="#3b82f6">
+  <meta property="og:title" content="Alexander Rothe – AI Engineering & Smart Automation">
+  <meta property="og:description" content="Lokale RAG-Systeme | Agentic Workflows | Industrial AI">
   <meta property="og:image" content="image/1000057922.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
 
-  <title>Alexander Rothe | Smart Automation & Applied AI Expert | Softwareentwicklung (Desktop,App, Web) </title>
+  <title>Alexander Rothe | AI Engineer | RAG & Agentic Systems Expert</title>
 
   <!-- Fonts / Icons / CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alexander Rothe",
+    "jobTitle": "Softwareentwickler",
+    "description": "Softwareentwickler für Smart Automation & Applied AI. Expertise in Python & Kotlin.",
+    "url": "https://alex83-r0ck.github.io",
+    "sameAs": [
+      "https://github.com/ALex83-r0ck",
+      "https://www.linkedin.com/in/alexander-rothe-84ab112b6"
+    ],
+    "knowsAbout": ["Python", "Kotlin", "Artificial Intelligence", "Smart Automation", "Web Development"]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Boot-loader & Availability pill -->
-  <div id="boot-loader" class="boot-glitch">
-    <div class="glitch-text">SYSTEM.INIT(ALEX.DEV...)</div>
+  <!-- Scan Effect & Status Window -->
+  <div id="scan-overlay">
+    <div class="scan-line"></div>
   </div>
 
-  <div id="availability-pill" class="availability-pill shadow-lg" role="banner">
-    <div class="pill-content">
-      <span id="global-status-dot" class="status-indicator status-red"></span>
-      <span class="pill-text">
-        <strong>Einsatzbereit:</strong> Softwareentwickler für Smart Automation & Applied AI
-      </span>
-      <button id="pill-cta-btn" class="btn-pill-cta" onclick="handlePillAction()">Gespräch starten</button>
+  <div id="project-status-window" class="hidden">
+    <div class="status-header">
+      <i class="bi bi-cpu"></i> SYSTEM_SCAN_COMPLETE
     </div>
+    <div class="status-content">
+      <div class="status-item"><span class="label">PROJECT:</span> Alexander Rothe Portfolio</div>
+      <div class="status-item"><span class="label">VERSION:</span> 2026.3.22</div>
+      <div class="status-item"><span class="label">STACK:</span> AI Engineering / RAG / Kotlin</div>
+      <div class="status-item"><span class="label">STATUS:</span> <span class="text-success">SYSTEM_OPTIMIZED</span></div>
+    </div>
+    <button id="close-status-btn" class="btn-status-close">INITIALISIERE INTERFACE</button>
   </div>
 
   <!-- Background -->
   <div id="particles-js" class="particles-bg" aria-hidden="true"></div>
 
   <!-- Header -->
-  <header class="site-header text-center text-md-start">
-    <div class="container header-flex">
-      <div class="header-text">
-        <div class="d-flex align-items-center mb-3">
-        <!--  <span class="pulse-dot"></span> -->
-        <!--  <span class="ms-2 small text-uppercase fw-bold tracking-widest text-primary">System Status: Ready for Deployment</span> -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-grid">
+        <!-- Text Content -->
+        <div class="header-content text-start">
+          <div class="badge-row mb-3">
+            <span class="badge-ai-focus"><i class="bi bi-cpu" aria-hidden="true"></i> AI Engineer</span>
+            <span class="badge-ai-focus"><i class="bi bi-diagram-3"></i> RAG Specialist</span>
+            <span class="badge-ai-focus"><i class="bi bi-shield-lock"></i> Security First</span>
+          </div>
+          
+          <h1 class="display-4 fw-bold">Alexander Rothe</h1>
+          <h2 class="typewriter-container h3 mb-4">
+            <span id="typewriter-text"></span><span class="cursor">/</span>
+          </h2>
+          
+          <div class="hero-description lead mb-4">
+            <p>
+              Ich verbinde <strong>15 Jahre Industrie-Expertise</strong> mit modernstem <strong>AI Engineering</strong>. 
+              Spezialisiert auf die Implementierung von <strong>lokalen RAG-Systemen</strong> (Ollama) und autonomen <strong>Agentic Workflows</strong> für datenschutzkonforme Prozessautomatisierung.
+            </p>
+          </div>
+
+          <div class="cta-group d-flex gap-3 justify-content-start flex-wrap">
+            <a href="#projects-ai" class="btn btn-primary btn-lg shadow-sm">
+              <i class="bi bi-rocket-takeoff me-2"></i>KI-Projekte ansehen
+            </a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-chat-dots me-2"></i>Kontakt aufnehmen
+            </a>
+          </div>
+          
+          <p class="availability-status mt-4">
+            <span class="status-pulse"></span> <strong>Expertise verfügbar:</strong> Fokus auf RAG & AI-Infrastruktur
+          </p>
         </div>
 
-        <h1 class="display-5">Willkommen auf meinem Portfolio</h1>
-        <h2 class="typewriter-container">
-          <span id="typewriter-text"></span><span class="cursor">/</span>
-        </h2>
-        <p><i>Fachinformatiker Anwendungsentwicklung | Smart Automation | Applied AI | Python & Kotlin </i></p>
-        <br>
-        <p class="lead">
-        Ich verbinde <strong>15 Jahre fundierte Industrie-Expertise</strong> mit moderner Software-Architektur. 
-        Mein Fokus liegt auf der Entwicklung von <strong>intelligenten Automatisierungen</strong> und der 
-        Implementierung von <strong>Local LLMs</strong> (datenschutzkonforme KI).
-        <br><br>
-        "Ich liefere keine bloßen Codeschnipsel, sondern durchdachte Systeme für reale Geschäftsprozesse."
-        <br><br>
-        Mein Fokus: <strong>Apps</strong> (Python/KivyMD, Kotlin), <strong>Webentwicklung</strong> und <strong>KI-Integration</strong> (Ollama, lokale LLMs).
-        Ich freue mich darauf, <strong>ab sofort</strong> meine Leidenschaft für pragmatische Softwarelösungen, moderne Tools und effiziente Workflows in neue Projekte einzubringen.
-        </p>
-        <p class="availability-note mt-3">
-          <i class="bi bi-calendar-check text-success"></i> <strong>Verfügbar ab sofort - remote & hybrid</strong>
-        </p>
-      </div>
-      <div class="header-photo">
-        <img id="profile-pic" src="image/1000057922.png" alt="Profilfoto Alexander Rothe" class="img-fluid rounded-circle shadow" loading="lazy">
+        <!-- Profile Image with Tech-Effect -->
+        <div class="header-visual">
+          <div class="profile-frame shadow-lg">
+            <img id="profile-pic" src="image/1000057922.png" alt="Alexander Rothe - AI Expert" class="img-fluid" loading="lazy">            <img id="profile-pic" src="image/1000057922.png" alt="Alexander Rothe - AI Expert" class="img-fluid" loading="lazy">
+            <div class="tech-overlay"></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent mt-4" aria-label="Hauptnavigation">
+    <nav class="navbar navbar-expand-lg navbar-dark mt-4" aria-label="Hauptnavigation">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Alexander Rothe</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" title="Toggle Navigation">
@@ -87,7 +120,7 @@
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-signpost-fill me-1"></i>Über mich</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience-hub"><i class="bi bi-person-workspace me-1 text-primary" aria-hidden="true"></i>Experience Hub</a></li>
             <li class="nav-item"><a class="nav-link" href="#focus"><i class="bi bi-lightning-fill me-1"></i>Focus</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects"><i class="bi bi-folder-check-fill me-1"></i>Projekte</a></li>
             <li class="nav-item"><a class="nav-link" href="#docs"><i class="bi bi-mortarboard-fill me-1"></i>Meilensteine/Nachweise</a></li>
@@ -104,418 +137,571 @@
   <!-- Main -->
   <main class="container mt-5">
 
-    <!-- Über mich -->
-    <section id="about" class="mb-5">
-      <h2><i class="bi bi-person-circle me-2"></i>Über mich</h2>
-
-      <p><strong>Hallo, ich bin Alexander – 42 Jahre jung, glücklich verheiratet und Vater von zwei großartigen Kindern.</strong><br>
-      Als Quereinsteiger in die Softwareentwicklung habe ich von 2023 bis 2025 eine intensive Umschulung absolviert - inklusive remote Praktikum in einem Systemhaus in Baden-Baden.</p>
-      <strong>Industrie-Erfahrung trifft auf Deep Tech.</strong><br>
-      Mit über 15 Jahren Erfahrung in Logistik und Produktion verstehe ich, wie Unternehmen wirtschaftlich funktionieren. 
-      Heute nutze ich dieses Wissen, um als Softwareentwickler Lösungen zu bauen, die nicht nur technisch funktionieren, 
-      sondern echte Business-Probleme lösen.</p>
-
-      <h4><u>Mein Weg in die IT</u></h4>
-      <p>Programmieren begleitet mich schon seit 2008 (erste Schritte mit Python). Nach einer beruflichen Neuorientierung habe ich mich voll in die Entwicklung gestürzt - und meine Leidenschaft gefunden. Interesse weckte unter anderem aber auch <i>Tron</i> ♥️.<br>
-      Für mich ist Programmieren mehr als ein Beruf: Es ist die Möglichkeit, Ideen greifbar zu machen - mit klaren Strukturen, sauberem Code und Lösungen, die echten Mehrwert schaffen können.</p>
-
-      <h4><u>Technischer Fokus</u></h4>
-      <p>Mein Schwerpunkt liegt auf <strong>App-Entwicklung</strong>(Python mit Kivy/KivyMD, Kotlin mit Jetpack Compose) und <strong>Webentwicklung</strong> (Html 5, CSS 3, <i class="bi bi-javascript">JavaScript</i>, PHP, <i class="bi bi-wordpress"></i>). <br>
-      Besonders spannend finde ich <strong>Künstliche Intelligenz</strong> und lokale LLMs (Ollama). Ich nutze aktiv <strong>Applied AI Workflows</strong>  für effizientes Refactoring und Debugging, um moderne Softwarelösungen am Puls der Zeit zu entwickeln. </p>
-
-      <h4><u>Meine Arbeitsweise</u></h4>
-      <p>Ich bin pragmatisch, lösungsorientiert und packe an. Sauberer, gut dokumentierter Code und strukturierte Abläufe sind mir wichtig. Lernen hört nie auf - daher ist jede Zeile Code, jedes neue Projekt eine Chance, noch besser und effektiver zu werden.</p>
-      
-      <div class="card border-info bg-info bg-opacity-10 my-4 shadow-sm">
-        <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-lg-8">
-              <h4 class="card-title text-info-emphasis"><i class="bi bi-shield-check me-2"></i>Der Senior-Vorteil & Security-Fokus</h4>
-              <p class="card-text">
-                Hinter mir stehen <strong>15 Jahre Berufserfahrung</strong>. Das bedeutet für Sie: 
-                Prozesse verstehen statt nur Code tippen. Ergänzt durch zertifizierte Sicherheit:
-              </p>
+    <!-- Experience Hub -->
+    <section id="experience-hub" class="py-5 mb-5">
+      <div class="row align-items-center">
+        <!-- Bio -->
+        <div class="col-lg-7 text-start mb-4 mb-lg-0">
+          <h2 class="display-5 fw-bold mb-4"><i class="bi bi-person-workspace me-3 text-primary"></i>Experience Hub</h2>
+          <div class="bio-content lead">
+            <p>
+              Als <strong>AI Engineer</strong> verbinde ich fundiertes technologisches Wissen mit <strong>15 Jahren Industrie-Expertise</strong>. 
+              Mein Fokus liegt auf der Entwicklung intelligenter Systeme, die nicht nur innovativ, sondern vor allem sicher, effizient und <strong>datenschutzkonform</strong> sind.
+            </p>
+            <p>
+              Durch meine langjährige Erfahrung in Logistik und Produktion verstehe ich die spezifischen Anforderungen an Prozessstabilität und wirtschaftliche Mehrwerte. 
+              Diese Brückenfunktion ermöglicht es mir, komplexe KI-Technologien zielgerichtet in reale Business-Szenarien zu transformieren.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Showcase Card -->
+        <div class="col-lg-5">
+          <div class="card bg-dark text-white border-primary shadow-lg overflow-hidden">
+            <div class="card-body p-4 p-xl-5">
+              <h3 class="h4 card-title mb-4 d-flex align-items-center">
+                <i class="bi bi-cpu-fill me-2 text-primary"></i> Applied AI Showcase
+              </h3>
               <ul class="list-unstyled mb-0">
-                <li><i class="bi bi-patch-check-fill text-info me-2"></i><strong>Security First:</strong> Als ISC2-zertifizierter Professional entwickle ich Lösungen, die Sicherheit von Grund auf mitdenken.</li>
-                <li><i class="bi bi-patch-check-fill text-info me-2"></i><strong>Gefestigte Arbeitsethik:</strong> Absolute Verlässlichkeit und Professionalität ab dem ersten Tag.</li>
-                <li><i class="bi bi-patch-check-fill text-info me-2"></i><strong>Systematisches Denken:</strong> Ich optimiere wertschöpfende Prozessketten, keine isolierten Tools.</li>
+                <li class="mb-4 d-flex align-items-start">
+                  <i class="bi bi-diagram-3-fill text-primary mt-1 me-3 fs-5"></i>
+                  <div>
+                    <h5 class="mb-1 text-white">RAG Systems</h5>
+                    <p class="small mb-0 text-muted-dark">Retrieval Augmented Generation für präzise, kontextbasierte Wissensverarbeitung.</p>
+                  </div>
+                </li>
+                <li class="mb-4 d-flex align-items-start">
+                  <i class="bi bi-robot text-primary mt-1 me-3 fs-5"></i>
+                  <div>
+                    <h5 class="mb-1 text-white">Agentic Workflows</h5>
+                    <p class="small mb-0 text-muted-dark">Entwicklung autonomer Agenten für komplexe, mehrstufige Prozessautomatisierung.</p>
+                  </div>
+                </li>
+                <li class="mb-0 d-flex align-items-start">
+                  <i class="bi bi-shield-lock-fill text-primary mt-1 me-3 fs-5"></i>
+                  <div>
+                    <h5 class="mb-1 text-white">Local LLMs</h5>
+                    <p class="small mb-0 text-muted-dark">Datenschutz durch lokale Instanzen (Ollama) – 100% On-Premise & DSGVO-konform.</p>
+                  </div>
+                </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="col-lg-4 text-center mt-4 mt-lg-0">
-              <div class="cert-wrapper p-3 bg-white rounded shadow-sm border border-info border-opacity-25">
-                <p class="small fw-bold mb-2 text-uppercase tracking-wider">Offizielle Zertifizierung</p>
-                <div class="credly-badge-container d-flex justify-content-center">
-                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1cc50d08-787b-47ea-af4a-93e88bef1082" data-share-badge-host="https://www.credly.com"></div>
+    <!-- Senior Trust & Timeline -->
+    <section id="senior-trust" class="senior-trust-section py-5 mb-5 border-top border-white border-opacity-10">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6 text-start">
+            <h2 class="display-6 fw-bold mb-5"><i class="bi bi-shield-check me-3 text-primary"></i>Der Senior-Vorteil</h2>
+            <div class="trust-point">
+              <div class="trust-icon-box"><i class="bi bi-calendar-check"></i></div>
+              <div>
+                <h4 class="h5 fw-bold mb-1">15 Jahre Industrie-Erfahrung</h4>
+                <p class="text-muted-dark small">Tiefes Verständnis für komplexe Abläufe und wirtschaftliche Stabilität.</p>
+              </div>
+            </div>
+            <div class="trust-point">
+              <div class="trust-icon-box"><i class="bi bi-lock-fill"></i></div>
+              <div>
+                <h4 class="h5 fw-bold mb-1">Security-First Mindset</h4>
+                <p class="text-muted-dark small">KI-Integration ohne Kompromisse beim Datenschutz.</p>
+              </div>
+            </div>
+            <div id="isc2-badge" class="badge-pulse-glow mt-4">
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1cc50d08-787b-47ea-af4a-93e88bef1082" data-share-badge-host="https://www.credly.com"></div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-start">
+            <h3 class="h4 fw-bold mb-4"><i class="bi bi-clock-history me-2 text-primary"></i>Kurzlebenslauf</h3>
+            <div class="timeline-list">
+              <div class="timeline-list-item">
+                <i class="bi bi-code-slash timeline-list-icon"></i>
+                <div>
+                  <h5 class="mb-1 fw-bold">2026: Spezialisierung AI Engineering</h5>
+                  <p class="small text-muted-dark">Fokus auf lokale RAG-Systeme & Agentic Workflows.</p>
                 </div>
-                <p class="mt-2 mb-0"><span class="badge bg-dark">ISC2 Certified Cybersecurity</span></p>
+              </div>
+              <div class="timeline-list-item">
+                <i class="bi bi-display timeline-list-icon"></i>
+                <div>
+                  <h5 class="mb-1 fw-bold">2023 - 2025: IT-Weiterbildung & Umschulung</h5>
+                  <p class="small text-muted-dark">Fachinformatiker Anwendungsentwicklung (Python, Java, SQL).</p>
+                </div>
+              </div>
+              <div class="timeline-list-item">
+                <i class="bi bi-briefcase timeline-list-icon"></i>
+                <div>
+                  <h5 class="mb-1 fw-bold">2016 - 2021: Senior Operations & Logistik</h5>
+                  <p class="small text-muted-dark">Prozessoptimierung und operative Verantwortung in der Industrie.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <h4><u>Aktuell:</u></h4>
-      <p>Nach meiner Umschulung nutze ich die aktuelle Phase zur gezielten Vertiefung meiner Expertise in <strong>Python</strong> und <strong>Applied AI</strong> sowie für die Zertifizierung beim <strong>ISC2 Certified Cybersecurity (CC)</strong>. Mein Ziel ist es, KI nicht nur als Werkzeug zu nutzen, sondern sie als festen, datenschutzkonformen Bestandteil in produktive Anwendungen zu integrieren.</p>
-      <p class="mt-4 fst-italic text-muted">„Hindernisse und Schwierigkeiten sind Stufen, auf denen wir in die Höhe steigen.“ – Friedrich Nietzsche
-      </p>
     </section>
 
     <!-- ======= Mein Fokus Section ======= -->
     <section id="focus" class="py-5 text-center">
       <div class="container">
-        <h2 class="mb-4">Mein Fokus</h2>
-        <p class="mb-5">
-          Ich bin neugierig, offen und immer bereit, Neues zu lernen. <br>
-          Dabei lege ich Wert auf sauberen Code, gute Kommunikation und gemeinsames Arbeiten im Team.
-        </p>
-
+        <h2 class="mb-5 fw-bold">Strategischer Fokus</h2>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-4">
-            <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
-              <h4><i class="bi bi-terminal"></i> Wartbarer Code</h4>
-              <p>Nachhaltige Entwicklung nach Clean-Code-Prinzipien - für Software, die auch im Team langfristig skalierbar bleibt.</p>
+            <div class="p-4 rounded-3 shadow-sm h-100 focus-card">
+              <i class="bi bi-cpu fs-1 text-primary mb-3 d-block"></i>
+              <h4>Robust AI Engineering</h4>
+              <p>Fokus: Skalierbare Agentic Workflows & Clean Code für produktionsreife KI-Systeme.</p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
-              <h4><i class="bi bi-people"></i> Team-Katalysator</h4>
-              <p>Offene Kommunikation und kollegialer Wissensaustausch sind für mich die Basis für erfolgreiche Projektergebnisse.</p>
+            <div class="p-4 rounded-3 shadow-sm h-100 focus-card">
+              <i class="bi bi-diagram-3 fs-1 text-primary mb-3 d-block"></i>
+              <h4>Bridge-Builder</h4>
+              <p>Fokus: Transfer von komplexen Industrie-Prozessen in effiziente KI-Logik.</p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="p-4 rounded-3 shadow-sm h-100 bg-body-tertiary dark:bg-dark">
-              <h4><i class="bi bi-lightbulb"></i> Lernbereitschaft</h4>
-              <p>Ich sehe jedes Projekt als Chance zur Optimierung. Neue Technologien erschließe ich mir zielgerichtet und praxisnah.</p>
+            <div class="p-4 rounded-3 shadow-sm h-100 focus-card">
+              <i class="bi bi-rocket-takeoff fs-1 text-primary mb-3 d-block"></i>
+              <h4>Rapid AI Adoption</h4>
+              <p>Fokus: Praxisnahe Integration und Evaluierung neuester LLM-Technologien (SOTA).</p>
             </div>
           </div>
         </div>
-        <p class="mt-4 fst-italic">"On the other side of the screen, it all looks so easy." - Kevin Flynn (Tron, 1982)</p>
+        
+        <!-- Terminal Quote Container -->
+        <div class="terminal-quote shadow-lg">
+          <div class="terminal-header-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="terminal-prompt">alex@dev:~$</span>
+            <span id="terminal-quote-text" class="terminal-text"></span>
+            <span class="terminal-cursor"></span>
+            <div id="terminal-hint" class="terminal-hint" style="opacity: 0; transition: opacity 2s ease; font-size: 0.75rem; margin-top: 12px; color: var(--text-muted-dark); font-family: 'Fira Code', monospace;">
+              // Type 'MATRIX' or 'TRON' for system protocols
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Projekte -->
-    <section id="projects" class="mb-5">
-      <h2><i class="bi bi-folder-check me-2"></i>Projekte</h2>
-      <p>Eine Auswahl meiner bisherigen Projekte – alle entstanden aus echtem Bedarf, Neugier und Lernfreude.</p>
-      
-      <!-- Lead-Dojo -->
-      <article class="card mb-4 shadow-sm border-primary">
-      <div class="card-body">
-          <header class="mb-3">
-              <h5 class="card-title d-flex align-items-center justify-content-center gap-2 text-primary">
-                  <i class="bi bi-robot"></i>
-                  Lead-Dojo: Hybrid RAG System
-              </h5>
-          </header>
-
-          <p class="mb-2">
-            <strong>Entwicklung eines Hybrid RAG Systems</strong> zur autarken Datenanalyse. 
-            Implementierung von lokalen Sprachmodellen (LLMs) unter Einhaltung höchster 
-            <strong>DSGVO-Standards</strong>. Optimierung für begrenzte Hardware-Ressourcen 
-            durch effizientes MLOps-Design.
-          </p>
-
-          <div class="mb-3">
-              <span class="badge rounded-pill bg-success mb-2"><i class="bi bi-shield-lock-fill me-1"></i> 100% DSGVO-konform (Local AI)</span>
-              <span class="badge-tech ai">Hybrid RAG</span>
-              <span class="badge-tech backend">MLOps</span>
-              <span class="badge-tech app">RAG</span>
-              <span class="badge-tech frontend">Ollama</span>
-              <span class="badge-tech backend">Vector DB</span>
-              <span class="badge-tech app">Docker</span>
+    <section id="projects" class="mb-5 position-relative">
+      <div id="projects-ai" class="ecosystem-container">
+        <!-- Visual Connecting Lines -->
+        <div class="ecosystem-lines" aria-hidden="true"></div>
+        
+        <header class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3"><i class="bi bi-stack me-3 text-primary"></i>AI <span class="glow-text-primary">Ecosystem</span></h2>
+          <p class="text-muted-dark lead">Vom Gehirn über die Logik bis zum Interface – Eine synergetische KI-Architektur.</p>
+          <div class="mt-4">
+            <a href="lab.html" class="btn btn-outline-primary btn-lg px-5 shadow-glow">
+              <i class="bi bi-microscope me-2"></i>Explore AI Lab 🔬
+            </a>
           </div>
-
-          <p class="mt-2"><em>Tech-Highlight:</em> ReAct-Pattern Logik für autonome Agenten-Entscheidungen.</p>
-          <p class="mt-2"><em>Fokus:</em> Datensicherheit durch 100% lokales Deployment – keine Datenübertragung an externe Cloud-KIs.</p>
-
-          <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
-              <a href="https://github.com/ALex83-r0ck/Lead-Dojo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                 <i class="bi bi-github"></i> Code & Readme ansehen
+        </header>
+        
+        <div class="row g-4 justify-content-center">
+          <!-- Card 1: Project Mycelium (Gehirn) -->
+          <div class="col-lg-4">
+            <article class="project-glass-card h-100 p-4 position-relative border-primary border-opacity-50">
+              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm">
+                <i class="bi bi-flask me-1" aria-hidden="true"></i> New/Research
+              </span>
+              <div class="project-header mb-4 text-start">
+                <div class="mb-3"><i class="bi bi-diagram-3-fill display-5 text-primary" aria-hidden="true"></i></div>
+                <h3 class="h4 fw-bold text-white mb-1">Project Mycelium</h3>
+                <span class="text-primary small fw-bold text-uppercase tracking-wider">Status: Active Research 🧪</span>
+              </div>
+              <p class="text-muted-dark mb-4 text-start">
+                Überwindung der "digitalen Amnesie" lokaler LLMs durch <strong>cross-project Intelligence</strong> und persistente Wissensgraphen.
+              </p>
+              <ul class="list-unstyled mb-4 small text-start">
+                <li class="mb-2 text-muted-dark"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Bayou-Filter:</strong> Intelligente Datenveredelung</li>
+                <li class="mb-0 text-muted-dark"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Keyword-Wurzeln:</strong> Advanced Hybrid Search</li>
+              </ul>
+              <a href="lab.html#mycelium" class="btn btn-sm btn-outline-primary mb-3 w-100">
+                <i class="bi bi-microscope me-1"></i>Explore AI Lab 🔬
               </a>
+              <div class="tech-stack mt-auto border-top border-white border-opacity-10 pt-3 text-start">
+                <span class="badge-tech ai">Python 3.13</span>
+                <span class="badge-tech ai">Gemma2</span>
+                <span class="badge-tech ai">ChromaDB</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Lead-Dojo (Logik) -->
+          <div class="col-lg-4">
+            <article class="project-glass-card h-100 p-4 border-info border-opacity-50">
+              <div class="project-header mb-4 text-start">
+                <div class="mb-3"><i class="bi bi-cpu-fill display-5 text-info"></i></div>
+                <h3 class="h4 fw-bold text-white mb-1">Lead-Dojo</h3>
+                <span class="text-info small fw-bold text-uppercase tracking-wider">Status: Core Engine 🥋</span>
+              </div>
+              <p class="text-muted-dark mb-4 text-start">
+                <strong>System 2 Thinking</strong> für lokale KI. Autonome Reasoning-Chains zum Analysieren, Reflektieren und Verifizieren.
+              </p>
+              <ul class="list-unstyled mb-4 small text-start">
+                <li class="mb-2 text-muted-dark"><i class="bi bi-check2-circle text-info me-2"></i><strong>ReAct-Pattern:</strong> Logisches Schließen</li>
+                <li class="mb-0 text-muted-dark"><i class="bi bi-check2-circle text-info me-2"></i><strong>100% Local:</strong> Absolute DSGVO-Konformität</li>
+              </ul>
+              <a href="lab.html#lead-dojo" class="btn btn-sm btn-outline-info mb-3 w-100 text-info">
+                <i class="bi bi-microscope me-1"></i>Explore AI Lab 🔬
+              </a>
+              <div class="tech-stack mt-auto border-top border-white border-opacity-10 pt-3 text-start">
+                <span class="badge-tech ai">AsyncIO</span>
+                <span class="badge-tech ai">Ollama</span>
+                <span class="badge-tech ai">LangChain</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: LernBuddy (Interface) -->
+          <div class="col-lg-4">
+            <article class="project-glass-card h-100 p-4 border-success border-opacity-50">
+              <div class="project-header mb-4 text-start">
+                <div class="mb-3"><i class="bi bi-mortarboard-fill display-5 text-success"></i></div>
+                <h3 class="h4 fw-bold text-white mb-1">LernBuddy</h3>
+                <span class="text-success small fw-bold text-uppercase tracking-wider">Status: Flagship App 📚</span>
+              </div>
+              <p class="text-muted-dark mb-4 text-start">
+                <strong>Offline-first Lernplattform.</strong> Automatische Generierung von Lernmaterialien mit integriertem KI-Tutor.
+              </p>
+              <ul class="list-unstyled mb-4 small text-start">
+                <li class="mb-2 text-muted-dark"><i class="bi bi-check2-circle text-success me-2"></i><strong>Gamification:</strong> Motivations-gesteuertes Lernen</li>
+                <li class="mb-0 text-muted-dark"><i class="bi bi-check2-circle text-success me-2"></i><strong>Logic Integration:</strong> Powered by Lead-Dojo</li>
+              </ul>
+              <div class="tech-stack mt-auto border-top border-white border-opacity-10 pt-3 text-start">
+                <span class="badge-tech ai">KivyMD</span>
+                <span class="badge-tech ai">SQLite</span>
+                <span class="badge-tech ai">Python</span>
+              </div>
+            </article>
           </div>
         </div>
-      </article>
+      </div>
 
-      <!-- Miet-Störungsprotokoll -->
-      <article class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <header class="mb-3">
-            <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-clipboard-data"></i>
-              Miet-Störungsprotokoll
-            </h5>
-          </header>
-
-          <p class="mb-2">
-            <strong>Python / KivyMD</strong> – Effiziente Beweissicherung im Mietrecht: 
-            Diese App digitalisiert die Dokumentation von Wohnungsmängeln und überführt 
-            lose Notizen in rechtssichere PDF-Protokolle.
-          </p>
-
-          <div class="mb-3">
-            <span class="badge-tech frontend">Python</span>
-            <span class="badge-tech backend">KivyMD</span>
-            <span class="badge-tech backend">SQLite</span>
-            <span class="badge-tech app">PDF Export</span>
-          </div>
-
-          <p class="mt-2"><em>Lernfokus:</em> GUI-Design, Datenverarbeitung, Dokumentation</p>
-
-          <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
-            <a href="https://github.com/ALex83-r0ck/MietStoerungsProtokoll" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              <i class="bi bi-github"></i> GitHub
-            </a>
-          </div>
-
-          <footer class="mt-3 small text-muted fst-italic">
-            🧩 Eigenständiges Lernprojekt – entwickelt aus persönlichem Bedarf.
-          </footer>
+    <!-- Engineering & Security -->
+    <section id="engineering" class="mb-5 pt-5 border-top border-white border-opacity-10">
+      <header class="text-start mb-4">
+        <h2 class="fw-bold text-navy-dark"><i class="bi bi-shield-lock-fill me-3 text-primary"></i>🛠️ Applied Engineering & Security</h2>
+      </header>
+      <div class="row g-4">
+        <!-- Card 1: DeerSecure -->
+        <div class="col-md-6">
+          <article class="project-glass-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="bi bi-shield-shaded fs-2 text-primary"></i>
+              <h4 class="h5 fw-bold text-white mb-0 text-start">DeerSecure</h4>
+            </div>
+            <p class="small text-muted-dark mb-4 text-start">
+              Hybride Sicherheitslösung für Windows. Echtzeit-Monitoring, VirusTotal-Anbindung & Windows Defender Integration für maximalen Schutz.
+            </p>
+            <div class="tech-stack mt-auto text-start">
+              <span class="badge-tech backend">Python</span>
+              <span class="badge-tech app">KivyMD</span>
+              <span class="badge-tech backend">SQLite</span>
+            </div>
+          </article>
         </div>
-      </article>
-
-      <!-- Birthday Schatz -->
-      <article class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <header class="mb-3">
-            <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-gift"></i>
-              Happy Birthday Schatz
-            </h5>
-          </header>
-
-          <p class="mb-2">
-            <strong>Kotlin</strong> – App als Geburtstagsüberraschung für meine Frau ♥️. 
-            Startet automatisch zu einem bestimmten Zeitpunkt und enthält Animationen mit <em>Lottie</em>.
-          </p>
-
-          <div class="mb-3">
-            <span class="badge-tech backend">Kotlin</span>
-            <span class="badge-tech frontend">Lottie</span>
-          </div>
-
-          <p class="mt-2"><em>Lernfokus:</em> Android Entwicklung, Datenverarbeitung, Automatisierung, Animation</p>
-
-          <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
-            <a href="https://github.com/ALex83-r0ck/BirthdaySchatz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              <i class="bi bi-github"></i> GitHub
-            </a>
-          </div>
-
-          <footer class="mt-3 small text-muted fst-italic">
-            🎁 Kleines Herzensprojekt – entstanden aus Spaß & Liebe.
-          </footer>
+        <!-- Card 2: Miet-Störungsprotokoll -->
+        <div class="col-md-6">
+          <article class="project-glass-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="bi bi-clipboard2-check fs-2 text-primary"></i>
+              <h4 class="h5 fw-bold text-white mb-0 text-start">Miet-Störungsprotokoll</h4>
+            </div>
+            <p class="small text-muted-dark mb-4 text-start">
+              Zeitgestempelte Beweissicherung für Mieter. Automatischer PDF-Export & Statistiken zur rechtssicheren Dokumentation von Wohnungsmängeln.
+            </p>
+            <div class="tech-stack mt-auto text-start">
+              <span class="badge-tech backend">Python</span>
+              <span class="badge-tech app">KivyMD</span>
+              <span class="badge-tech backend">SQLModel</span>
+            </div>
+          </article>
         </div>
-      </article>
-
-      <!-- Tribute Ozzy Osbourne -->
-      <article class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <header class="mb-3">
-            <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-megaphone"></i>
-              Tribute an Ozzy Osbourne
-            </h5>
-          </header>
-
-          <p class="mb-2">
-            <strong>HTML / CSS / JS</strong> – Multipage-Tribute-Seite für Ozzy Osbourne. 
-            Enthält Zitate, Quizze und Videos.
-          </p>
-
-          <div class="mb-3">
-            <span class="badge-tech frontend">HTML5</span>
-            <span class="badge-tech frontend">CSS3</span>
-            <span class="badge-tech backend">JavaScript</span>
-          </div>
-
-          <p class="mt-2"><em>Lernfokus:</em> Webentwicklung, Responsive Design, Animationen</p>
-
-          <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
-            <a href="https://github.com/ALex83-r0ck/Tribute-to-Ozzy-Osbourne" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              <i class="bi bi-github"></i> GitHub
-            </a>
-
-            <a href="https://alex83-r0ck.github.io/Tribute-to-Ozzy-Osbourne/" target="_blank" rel="noopener noreferrer" class="btn-live-demo">
-              🎸 Live Demo ansehen 🚧
-            </a>
-          </div>
-
-          <footer class="mt-3 small text-muted fst-italic">
-            ❗ Dieses Projekt dient ausschließlich Lern- & Hobbyzwecken, nicht kommerzieller Nutzung. ❗
-          </footer>
-        </div>
-      </article>
-
-      <!-- LernBuddy -->
-      <article class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <header class="mb-3">
-            <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-mortarboard"></i>
-              LernBuddy (in Entwicklung)
-            </h5>
-          </header>
-
-          <p class="mb-2">
-          Persönlicher Lernassistent (Tutor) mit Frage-Management, Quiz-Funktion und <strong>KI-Integration via Ollama</strong> (lokale LLMs für smarte Erklärungen und Frage-Generierung). 
-          </p>
-
-          <div class="mb-3">
-            <span class="badge-tech backend">Python</span>
-            <span class="badge-tech frontend">KivyMD</span>
-            <span class="badge-tech backend">SQLite</span>
-            <span class="badge-tech app">Ollama (KI)</span>
-          </div>
-
-          <p class="mt-2"><em>Lernfokus:</em> KI-Integration, Prompt-Engineering, Tool-Design</p>
-
-          <footer class="mt-3 small text-muted fst-italic">
-            📚 Aktuell mein KI-Flagschiff – wird laufend erweitert.
-          </footer>
-        </div>
-      </article>
-
-      <!-- VibeVault -->
-      <article class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <header class="mb-3">
-            <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-bar-chart-line"></i>
-              VibeVault (in Entwicklung)
-            </h5>
-          </header>
-
-          <p class="mb-2">
-            Ein Herzensprojekt: hilft mir, meinen Nikotinkonsum im Blick zu behalten. 
-            Fokus auf <strong>Statistik</strong>, <strong>Gamification</strong> und <strong>UX</strong>.
-          </p>
-
-          <div class="mb-3">
-            <span class="badge-tech backend">Kotlin</span>
-            <span class="badge-tech app">Datenvisualisierung</span>
-            <span class="badge-tech frontend">Gamification</span>
-          </div>
-
-          <p class="mt-2"><em>Lernfokus:</em> Statistik, UX-Design, Motivation durch Gamification</p>
-
-          <footer class="mt-3 small text-muted fst-italic">
-            🚀 Aktuell in Planung – Fokus auf Nutzerfreundlichkeit & Motivation.
-          </footer>
-        </div>
-      </article>
+      </div>
     </section>
+
+    <!-- Creative Lab -->
+    <section id="creative-lab" class="mb-5 pt-5 border-top border-white border-opacity-10">
+      <header class="text-start mb-4">
+        <h2 class="fw-bold text-navy-dark"><i class="bi bi-brush-fill me-3 text-info"></i>🎨 Mobile & Creative Lab</h2>
+      </header>
+      
+      <!-- Mobile Suite Grouping -->
+      <div class="mobile-suite-container p-4 rounded-4 mb-4 border border-white border-opacity-10 bg-dark bg-opacity-25">
+        <h3 class="h5 fw-bold text-info mb-4 text-start"><i class="bi bi-phone-vibrate me-2"></i>Mobile-Suite</h3>
+        <div class="row g-4">
+          <!-- Card 1: BirthdaySchatz -->
+          <div class="col-md-4">
+            <article class="project-glass-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+              <h5 class="fw-bold text-white mb-3 text-start">BirthdaySchatz</h5>
+              <p class="small text-muted-dark mb-3 text-start">Smarte Geburtstagsverwaltung mit Fokus auf Datenschutz und lokale Speicherung.</p>
+              <div class="tech-stack text-start">
+                <span class="badge-tech frontend">Kotlin</span>
+                <span class="badge-tech frontend">Compose</span>
+              </div>
+            </article>
+          </div>
+          <!-- Card 2: VibeVault -->
+          <div class="col-md-4">
+            <article class="project-glass-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h5 class="fw-bold text-white mb-0 text-start">VibeVault</h5>
+                <span class="badge bg-warning text-dark small">WIP</span>
+              </div>
+              <p class="small text-muted-dark mb-3 text-start">Gamifizierter Habit-Tracker. Fokus auf intuitive UX und interaktive Belohnungssysteme.</p>
+              <div class="tech-stack text-start">
+                <span class="badge-tech frontend">Kotlin</span>
+                <span class="badge-tech frontend">Compose</span>
+              </div>
+            </article>
+          </div>
+          <!-- Card 3: Pax-Mantis -->
+          <div class="col-md-4">
+            <article class="project-glass-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h5 class="fw-bold text-white mb-0 text-start">Pax-Mantis</h5>
+                <span class="badge bg-info text-dark small">WIP</span>
+              </div>
+              <p class="small text-muted-dark mb-3 text-start">First-Aid App bei Angststörungen. Diskrete Hilfe und Stabilisierungstechniken in akuten Situationen.</p>
+              <div class="tech-stack text-start">
+                <span class="badge-tech frontend">Kotlin</span>
+                <span class="badge-tech frontend">Compose</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative Side Projects -->
+      <div class="row g-4 justify-content-start">
+        <!-- Card: Ozzy Tribute -->
+        <div class="col-md-4">
+          <a href="https://alex83-r0ck.github.io/Tribute-to-Ozzy-Osbourne/" target="_blank" class="text-decoration-none" rel="noopener noreferrer">
+            <article class="project-glass-card ozzy-card p-4 h-100 border-white border-opacity-10 bg-opacity-50">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h5 class="fw-bold text-white mb-0 text-start">Ozzy Osbourne Tribute</h5>
+                <span class="badge bg-success text-white small">Live</span>
+              </div>
+              <p class="small text-muted-dark mb-3 text-start">Interaktives Fan-Dashboard mit Quiz-System und dynamischen 'Crazy Train' Animationen.</p>
+              <div class="tech-stack text-start">
+                <span class="badge-tech frontend">HTML5</span>
+                <span class="badge-tech frontend">JS</span>
+                <span class="badge-tech frontend">CSS3</span>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
 
 
   <!-- Docs  -->
   <section id="docs" class="mb-5">
     <h2><i class="bi bi-award me-2"></i>Meilensteine / Nachweise</h2>
-    <p class="mb-4">Klicken Sie auf ein Dokument, um es in voller Größe zu öffnen.</p>      
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="doc-preview-container text-center shadow-sm p-2 rounded bg-light">
-          <iframe src="assets/docs/TEILNAHMEBESCHEINIGUNG ALEXANDER ROTHE.pdf#toolbar=0&navpanes=0" class="doc-iframe w-100" style="height: 250px;" title="Teilnahmebescheinigung GFN"></iframe>
-          <span class="doc-caption d-block mt-2 small">Teilnahmebescheinigung Umschulung (2023-2025)</span>
-          <a href="assets/docs/TEILNAHMEBESCHEINIGUNG ALEXANDER ROTHE.pdf" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-            <i class="bi bi-fullscreen"></i> Vollbild 
-          </a>
+        <div class="milestone-card shadow-sm">
+          <i class="bi bi-mortarboard-fill milestone-icon"></i>
+          <span class="doc-title">Teilnahmebescheinigung Umschulung</span>
+          <div class="d-flex gap-2 mt-auto">
+            <a href="assets/docs/TEILNAHMEBESCHEINIGUNG ALEXANDER ROTHE.pdf" target="_blank" class="btn btn-sm btn-primary">Ansehen</a>
+            <button class="btn btn-sm btn-outline-success" onclick="runAIShowcase('doc_umschulung')">KI-Info</button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="doc-preview-container text-center shadow-sm p-2 rounded bg-light">
-          <iframe src="assets/docs/Zeugnis-Umschulung_Alexander_Rothe.pdf#toolbar=0&navpanes=0" class="doc-iframe w-100" style="height: 250px;" title="Zeugnis GFN"></iframe>
-          <span class="doc-caption d-block mt-2 small">Zeugnis Umschulung</span>
-          <a href="assets/docs/Zeugnis-Umschulung_Alexander_Rothe.pdf" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-            <i class="bi bi-fullscreen"></i> Vollbild 
-          </a>
+        <div class="milestone-card shadow-sm">
+          <i class="bi bi-patch-check-fill milestone-icon"></i>
+          <span class="doc-title">Zeugnis GFN Umschulung</span>
+          <div class="d-flex gap-2 mt-auto">
+            <a href="assets/docs/Zeugnis-Umschulung_Alexander_Rothe.pdf" target="_blank" class="btn btn-sm btn-primary">Ansehen</a>
+            <button class="btn btn-sm btn-outline-success" onclick="runAIShowcase('doc_zeugnis_gfn')">KI-Info</button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="doc-preview-container text-center shadow-sm p-2 roundend bg-light">
-          <iframe src="assets/docs/Zeugnis Alexander Rothe 2025 (1).pdf#toolbar=0&navpanes=0" class="doc-iframe w-100" style="height: 250px;" title="Praktikumszeugnis"></iframe>
-          <span class="doc-caption d-block mt-2 small">Praktikumszeugnis (IT + Media Group)</span>
-          <a href="assets/docs/Zeugnis Alexander Rothe 2025 (1).pdf" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-            <i class="bi bi-fullscreen"></i> Vollbild 
-          </a>
+        <div class="milestone-card shadow-sm">
+          <i class="bi bi-hdd-network-fill milestone-icon"></i>
+          <span class="doc-title">Praktikumszeugnis (Systemhaus)</span>
+          <div class="d-flex gap-2 mt-auto">
+            <a href="assets/docs/Zeugnis Alexander Rothe 2025 (1).pdf" target="_blank" class="btn btn-sm btn-primary">Ansehen</a>
+            <button class="btn btn-sm btn-outline-success" onclick="runAIShowcase('doc_praktikum')">KI-Info</button>
+          </div>
         </div>
-       </div>
       </div>
-    </section>
-
-    <!-- Lebenslauf -->
-    <section id="lebenslauf" class="mb-5">
-      <h2><i class="bi bi-briefcase-fill me-2"></i>Kurzlebenslauf</h2><br>
-      <ul class="timeline list-unstyled">
-        <li><i class="bi bi-code-square me-2 text-primary"></i><strong>Seit 01/2026:</strong>Spezialisierung & Deep Skill Training: Python Backend & AI Integration (Fokus: LLM Workflows, Ollama, API-Design)</li>
-        <li><i class="bi bi-laptop me-2 text-primary"></i><strong>2023–2025:</strong> Intensive Weiterbildung zur Anwendungsentwicklung (inkl. 8 monatigem Remote-Praktikum in einem Systemhaus)</li>
-        <li><i class="bi bi-briefcase me-2 text-secondary"></i><strong>2016–2021:</strong> Logistik & Produktion – Prozessverständnis, Teamarbeit</li>
-        <li><i class="bi bi-gear me-2 text-success"></i><strong>Davor:</strong> Technische & handwerkliche Tätigkeiten – Problemlösung & Struktur</li>
-      </ul>
-      <p class="small text-muted">Detaillierter Lebenslauf auf Anfrage – gerne als PDF.</p>
-    </section>
-
-    <!-- Zertifikate -->
-    <section id="certificates" class="mb-5">
-     <h2><i class="bi bi-award me-2"></i>Zertifikate</h2><br>
-      <p>Ich lerne kontinuierlich weiter – durch Online-Kurse, Zertifikate und eigene Projekte.</p>
-      <div class="row g-3">
-        <h3>Sololearn</h3>
-        <div class="col-sm-6 col-md-3"><img src="image/py1_certificate.png" class="img-fluid rounded shadow-sm" alt="Python Basics Zertifikat"></div>
-        <div class="col-sm-6 col-md-3"><img src="image/py3.jpg" class="img-fluid rounded shadow-sm" alt="Python Core Zertifikat"></div>
-        <div class="col-sm-6 col-md-3"><img src="image/Tech.png" class="img-fluid rounded shadow-sm" alt="Technik Basics Zertifikat"></div>
-        <div class="col-sm-6 col-md-3"><img src="image/Java Basics.png" class="img-fluid rounded shadow-sm" alt="Java Basics Zertifikat"></div>
-      </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="contact" class="mb-5 text-center">
-      <h2><i class="bi bi-envelope-paper-heart me-2"></i>Kontakt</h2><br>
-      <p class="lead">Du hast ein spannendes Projekt oder suchst einen engagierten Entwickler?  
-      <br><strong>Ich freue mich über deine Nachricht!</strong></p>
-      <form id="contact-form" action="https://formspree.io/f/mwprwpro" method="POST" class="mx-auto shadow-sm p-4 rounded bg-light" style="max-width: 600px;">
-        <div class="mb-3 text-start">
-          <label for="name" class="form-label" ><i class="bi bi-person-circle"></i> Name</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="Ihr Name" aria-required="true" required>
-        </div>
-        <div class="mb-3 text-start">
-          <label for="email" class="form-label"><i class="bi bi-at"></i> E-Mail</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail-Adresse" aria-required="true" required>
-        </div>
-        <div class="mb-3 text-start">
-          <label for="message" class="form-label"><i class="bi bi-chat-dots"></i> Nachricht</label>
-          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Ihre Nachricht..." aria-required="true" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg mt-2 px-4 shadow"><i class="bi bi-send-fill"></i> Nachricht senden</button>
-        <p class="mt-3"><small class="text-muted">Ich freue mich über Deine Nachricht.</small></p>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="py-4 text-center border-top mt-5">
-    <div class="container">
-      
-      <div class="social-icons mb-3">
-        <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <p>© 2026 • Alexander Rothe • <span class="text-muted">Junior Developer (Apps, Web & AI)</span></p>
-      <p class="small text-muted">Made with <i class="bi bi-heart-fill text-danger"></i> & <i class="bi bi-code-slash"></i> by Alexander Rothe • version 3.0 </p>
-      <p class="small text-muted"><a href="/pages/impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a> | <a href="/pages/datenschutzerklärung.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a></p>
-      <p class="small text-muted mt-3 font-monospace opacity-70">
-
-        <i class="bi bi-megaphone"> // Tippe "TRON" oder "MATRIX", wenn dich jemand beobachtet (Versuche das im: <a href="/pages/impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a> & <a href="/pages/datenschutzerklärung.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a>) </i>
-      </p>
     </div>
-  </footer>
+  </section>
 
-  <!-- Scripts -->
+  <!-- Zertifikate -->
+  <section id="certificates" class="mb-5">
+    <h2 class="mb-5"><i class="bi bi-patch-check me-2"></i>Zertifikate</h2>
+    <div class="cert-container">
+      <!-- 365 Data Science -->
+      <div class="col-md">
+        <div class="cert-card">
+          <div class="cert-img-wrapper mb-2">
+            <span class="badge bg-primary cert-badge-floating">NEU: 2026</span>
+            <img src="image/intro-to-ai.PNG" alt="365 Data Science">
+          </div>
+          <span class="doc-title small">365 Data Science</span>
+          <a href="assets/docs/CC-9771311DD2.pdf" target="_blank" class="btn btn-sm btn-outline-primary mt-auto">Ansehen</a>
+        </div>
+      </div>
+      <!-- Python 1 -->
+      <div class="col-md">
+        <div class="cert-card">
+          <div class="cert-img-wrapper mb-2">
+            <img src="image/py1_certificate.png" alt="Python Certificate">
+          </div>
+          <span class="doc-title small">Python Basics</span>
+        </div>
+      </div>
+      <!-- Python 3 -->
+      <div class="col-md">
+        <div class="cert-card">
+          <div class="cert-img-wrapper mb-2">
+            <img src="image/py3.jpg" alt="Python Core">
+          </div>
+          <span class="doc-title small">Python Core</span>
+        </div>
+      </div>
+      <!-- Tech -->
+      <div class="col-md">
+        <div class="cert-card">
+          <div class="cert-img-wrapper mb-2">
+            <img src="image/Tech.png" alt="Tech Foundation">
+          </div>
+          <span class="doc-title small">Tech Foundation</span>
+        </div>
+      </div>
+      <!-- Java -->
+      <div class="col-md">
+        <div class="cert-card">
+          <div class="cert-img-wrapper mb-2">
+            <img src="image/Java Basics.png" alt="Java Basics">
+          </div>
+          <span class="doc-title small">Java Basics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact" class="mb-5 text-center">
+    <h2><i class="bi bi-envelope-paper-heart me-2"></i>Kontakt</h2><br>
+    <form id="contact-form" action="https://formspree.io/f/mwprwpro" method="POST" class="mx-auto shadow-sm p-4 rounded bg-light" style="max-width: 600px;">
+      <div class="mb-3 text-start">
+        <label for="name" class="form-label" ><i class="bi bi-person-circle"></i> Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Ihr Name" required>
+      </div>
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label"><i class="bi bi-at"></i> E-Mail</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Ihre E-Mail-Adresse" required>
+      </div>
+      <div class="mb-3 text-start">
+        <label for="message" class="form-label"><i class="bi bi-chat-dots"></i> Nachricht</label>
+        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Ihre Nachricht..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg mt-2 px-4 shadow"><i class="bi bi-send-fill"></i> Nachricht senden</button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Footer Left: Copyright & Focus -->
+      <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+        <div class="footer-brand-text mb-1">
+          © 2026 Alexander Rothe | <span class="text-primary fw-bold">AI Engineer</span>
+        </div>
+        <div class="footer-focus-text">
+          Spezialisiert auf lokale RAG-Systeme & Agentic Workflows.
+        </div>
+      </div>
+      
+      <!-- Footer Middle: Links -->
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <div class="footer-nav">
+          <a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener">[GitHub]</a>
+          <span class="text-muted-dark">|</span>
+          <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" target="_blank" rel="noopener">[LinkedIn]</a>
+        </div>
+      </div>
+      
+      <!-- Footer Right: Large Social Icons & Legal -->
+      <div class="col-md-4 text-center text-md-end footer-social-large">
+        <div class="mb-3">
+          <a href="https://github.com/ALex83-r0ck" target="_blank" class="footer-icon-link me-4" title="GitHub" rel="noopener">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" target="_blank" class="footer-icon-link" title="LinkedIn" rel="noopener">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+        <div class="footer-nav" style="margin-top: 0;">
+          <a href="lab.html" class="text-primary fw-bold">[Research Lab]</a>
+          <span class="text-muted-dark">|</span>
+          <a href="pages/impressum.html">Impressum</a>
+          <span class="text-muted-dark">|</span>
+          <a href="pages/datenschutzerklärung.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Easter Egg -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="easter-egg-terminal">
+          // Tippe 'TRON' oder 'MATRIX', wenn dich jemand beobachtet...
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Fixed Bottom Status Bar -->
+<div class="status-bar-fixed">
+  <span class="status-pulse" style="width: 8px; height: 8px;"></span>
+  <span class="status-bar-text">STATUS: AI ENGINEER ONLINE // RAG_SYSTEM: ACTIVE</span>
+</div>
+
+  <!-- AI Info Modal -->
+  <div id="ai-modal" class="ai-modal-overlay">
+    <div class="ai-modal-content shadow-lg">
+      <div class="ai-modal-header">
+        <span><i class="bi bi-robot"></i> AI-AGENT --ANALYSIS</span>
+        <button class="ai-modal-close" onclick="closeAIModal()">&times;</button>
+      </div>
+      <div id="ai-modal-body" class="ai-modal-body"></div>
+      <div class="ai-modal-footer"><small class="text-muted">SYSTEM.READY // RESPONSE.GENERATED</small></div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
-  <script src="/js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <div id="scroll-top" class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <i class="bi bi-chevron-up"></i>
+  </div>
+
 </body>
 </html>

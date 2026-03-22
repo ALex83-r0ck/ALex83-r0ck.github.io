@@ -1,326 +1,350 @@
 /**
- * Pill-Aktion: Scroll-Up oder Kontakt
+ * Alexander Rothe - Portfolio Scripts
+ * Refactored & Enhanced with "Wow" features.
  */
-function handlePillAction() {
-    const pill = document.getElementById('availability-pill');
-    const contactSection = document.getElementById('contact');
-    const nameInput = document.getElementById('name');
 
-    if (pill && pill.classList.contains('minimized')) {
-        // Wenn minimiert: Nach oben scrollen
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-        // Wenn oben: Zum Kontakt-Bereich scrollen
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // Warte kurz, bis der Scrollvorgang fast fertig ist, dann Fokus
-            setTimeout(() => {
-                if (nameInput) {
-                    nameInput.focus({ preventScroll: true });
-                }
-            }, 800); // 800ms passt meistens perfekt zur Scroll-Dauer
-        }
-    }
-}
 document.addEventListener('DOMContentLoaded', () => {
-  // ===========================
-  // THEME TOGGLE + PROFILE IMAGE
-  // ===========================
-  const themeToggle = document.getElementById('theme-toggle');
-  const profilePic = document.getElementById('profile-pic');
-  const contactForm = document.getElementById('contact-form');
-  const nameInput = document.getElementById('name');
-
-  const applyTheme = (dark) => {
-    document.body.classList.toggle('dark-mode', dark);
-    themeToggle.textContent = dark ? '☀️' : '🌙';
-    localStorage.setItem('darkMode', dark ? '1' : '0');
-
-    if (profilePic) {
-      const newSrc = dark ? 'image/overlay.png' : 'image/1000057922.png';
-      profilePic.src = newSrc;
-      profilePic.onerror = () => console.error(`Fehler beim Laden des Bildes: ${newSrc}`);
-    }
-  };
-
-  applyTheme(localStorage.getItem('darkMode') === '1');
-    themeToggle.addEventListener('click', () => {
-    const dark = !document.body.classList.contains('dark-mode');
-    applyTheme(dark);
-    updateParticles(dark);
-  });
-
-  if (contactForm && nameInput) {
-  const focusObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Wenn das Formular zu 50% sichtbar ist
-      if (entry.isIntersecting) {
-        nameInput.focus({ preventScroll: true }); 
-        // Observer stoppen, damit es nur einmal passiert
-        focusObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  focusObserver.observe(contactForm);
-}
-
-  
-// ===========================
-// BANNER MANAGER V4 (new: pill ab version 4.0)
-// ===========================
-const pill = document.getElementById('availability-pill')
-if (pill) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        // Pill wird zum runden Button rechts unten
-        pill.classList.add('minimized');
-        pill.classList.remove('glitch-effect'); 
-      } else {
-        // Pill wird wieder zur breiten Leiste oben
-        pill.classList.remove('minimized');
-      }
-    });
-  }
-
-  // Die Action, wenn man auf die Pill klickt (egal ob Leiste oder Kreis)
-  window.handlePillAction = () => {
-    const contactSection = document.getElementById('contact');
-    const nameInput = document.getElementById('name');
-
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-      // Kleiner Delay, bis der Scrollvorgang fast fertig ist, dann Fokus
-      setTimeout(() => {
-        nameInput?.focus();
-      }, 800);
-    }
-  };
-
-  window.handlePillAction = () => {
-    const pill = document.getElementById('availability-pill');
-    
-    if (pill && pill.classList.contains('minimized')) {
-        // AKTION UNTEN: Zurück nach oben
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-        // AKTION OBEN: Zum Kontakt
-        const contact = document.getElementById('contact');
-        contact?.scrollIntoView({ behavior: 'smooth' });
-    }
-};
-
-  // ===========================
-  // SMOOTH SCROLL NAVIGATION
-  // ===========================
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href?.startsWith('#')) {
-        e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-          const yOffset = -30; // Header offset
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }
-    });
-  });
-
-  // ===========================
-  // BOOTSTRAP TOOLTIPS
-  // ===========================
-  try {
-    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-  } catch (e) {
-    console.warn('Tooltip initialization failed:', e);
-  }
-
-  // ===========================
-  // SCROLL REVEAL PROJECTS (IntersectionObserver)
-  // ===========================
-  const cards = document.querySelectorAll('#projects .card');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('fade-in');
-      });
-    }, { threshold: 0.2 });
-    cards.forEach(card => observer.observe(card));
-  } else {
-    // fallback
-    const reveal = () => {
-      const triggerBottom = window.innerHeight * 0.8;
-      cards.forEach(card => {
-        if (card.getBoundingClientRect().top < triggerBottom) {
-          card.classList.add('fade-in');
-        }
-      });
+    // ===========================
+    // CORE ELEMENTS
+    // ===========================
+    const elements = {
+        themeToggle: document.getElementById('theme-toggle'),
+        profilePic: document.getElementById('profile-pic'),
+        contactForm: document.getElementById('contact-form'),
+        nameInput: document.getElementById('name'),
+        pill: document.getElementById('availability-pill'),
+        statusDot: document.getElementById('global-status-dot'),
+        scanOverlay: document.getElementById('scan-overlay'),
+        statusWindow: document.getElementById('project-status-window'),
+        closeStatusBtn: document.getElementById('close-status-btn'),
+        typewriterText: document.getElementById('typewriter-text'),
+        navLinks: document.querySelectorAll('.nav-link'),
+        projects: document.querySelectorAll('#projects .card'),
+        commandPalette: document.getElementById('command-palette'),
+        cmdInput: document.querySelector('.cmd-input'),
+        aiTerminal: document.getElementById('ai-terminal-content')
     };
-    window.addEventListener('scroll', reveal);
-    reveal();
-  }
-  
-// ===========================
-// PARTICLES BACKGROUND
-// ===========================
-const updateParticles = (dark) => {
-  const color = dark ? '#ff9800' : '#054def'; // Orange für Dark, Blau für Light
-  if (window.pJSDom && window.pJSDom.length) {
-    const pJS = window.pJSDom[0].pJS;
-    pJS.particles.color.value = color;
-    pJS.particles.line_linked.color = color;
-    pJS.fn.particlesRefresh(); 
-  }
-};
 
-// ===========================
-// INIT PARTICLES BACKGROUND
-// ===========================
-if (window.particlesJS) {
-  try {
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 10, density: { enable: true, value_area: 130 } },
-        color: { value: '#054def' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: true },
-        size: { value: 18, random: true },
-        // ✨ wichtig: im Light Mode keine Linien
-        line_linked: { enable: !document.body.classList.contains('dark-mode'), distance: 100, color: '#007bff', opacity: 0.5, width: 2 },
-        move: { enable: true, speed: 2.1, out_mode: 'out' }
-      },
-      interactivity: {
-        events: { onhover: { enable: true, mode: 'repulse' } },
-        modes: { repulse: { distance: 250, duration: 0.5 } }
-      },
-      retina_detect: true
+    // ===========================
+    // THEME MANAGEMENT (With Glitch)
+    // ===========================
+    const applyTheme = (isDark, withGlitch = false) => {
+        if (withGlitch) {
+            document.body.classList.add('glitch-reboot');
+            setTimeout(() => document.body.classList.remove('glitch-reboot'), 500);
+        }
+
+        document.body.classList.toggle('dark-mode', isDark);
+        if (elements.themeToggle) elements.themeToggle.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark ? '1' : '0');
+
+        if (elements.profilePic) {
+            elements.profilePic.src = isDark ? 'image/overlay.png' : 'image/1000057922.png';
+        }
+        
+        updateParticles(isDark);
+    };
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('darkMode') === '1';
+    applyTheme(savedTheme);
+
+    elements.themeToggle?.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-mode');
+        applyTheme(isDark, true);
     });
 
-    // Nach dem Init gleich Farben korrekt setzen
-    updateParticles(document.body.classList.contains('dark-mode'));
-  } catch (e) {
-    console.warn('Particles init failed:', e);
-  }
-}
+    // ===========================
+    // 3D TILT EFFECT
+    // ===========================
+    const initTilt = () => {
+        elements.projects.forEach(card => {
+            card.classList.add('tilt-card');
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
 
-  // ===========================
-  // CONTACT FORM SUBMISSION
-  // ===========================
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('[type="submit"]');
-      submitBtn.disabled = true;
-      const formData = new FormData(form);
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
         });
-        alert(res.ok ? 'Danke! Deine Nachricht wurde gesendet.' : 'Hoppla! Etwas ist schiefgelaufen.');
-        if (res.ok) form.reset();
-      } catch (err) {
-        console.error('Form submission failed:', err);
-        alert('Hoppla! Etwas ist schiefgelaufen.');
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
+    };
+    initTilt();
 
-  // ===========================
-  // Hover-Effekt für Projektkarten (optional, CSS reicht auch)
-  // ===========================
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
-  });
-});
-
-  // ==========================
-  // Typewriter Section
-  // ==========================
-  const textElement = document.getElementById('typewriter-text')
-  const phrases = [
-    "Python & Kotlin",
-    "Applied AI & MLOps Pragmatist",
-    "Clean Code",
-    "Fachinformatiker Anwendungsentwicklung",
-    "Smart Automation",
-    "Local LLMs"
-  ];
-
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typeSpeed = 80;
-
-  function type() {
-    const currentPhrase = phrases[phraseIndex];
-
-    if (isDeleting) {
-      textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-      charIndex--;
-      typeSpeed = 50;
-    } else {
-      textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-      charIndex++;
-      typeSpeed = 100;
-    }
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
-      isDeleting = true;
-      typeSpeed = 2000; // Pause am Ende der Phrase
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      typeSpeed = 500;
-    }
-
-    setTimeout(type, typeSpeed)
-  }
-
-  // Effekt start
-  document.addEventListener('DOMContentLoaded', type)
-
-  // ==========================================
-  // BOOT-LOADER 
-  // ==========================================
-  const loader = document.getElementById('boot-loader');
-  const dot = document.getElementById('global-status-dot');
-  const pill = document.getElementById('availability-pill')
-
-  // 1. BOOT-SEQUENZ & STATUS-WECHSEL
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-          const loader = document.getElementById('boot-loader');
-          const dot = document.getElementById('global-status-dot');
-
-          if (loader) {
-              loader.style.opacity = '0';
-              setTimeout(() => {
-                  loader.remove();
-                  if (dot) {
-                      console.log("DEBUG: Schalte Status auf Grün!"); 
-                      dot.classList.remove('status-red');
-                      dot.classList.add('status-green');
-                  }
-              }, 800);
-          }
-      }, 1000);
-  });
-
-    // 2. SCROLL-LOGIK FÜR DIE PILL
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            pill.classList.add('minimized');
-        } else {
-            pill.classList.remove('minimized');
+    // ===========================
+    // COMMAND PALETTE (Alt + K)
+    // ===========================
+    window.addEventListener('keydown', (e) => {
+        if (e.altKey && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            elements.commandPalette.classList.toggle('active');
+            if (elements.commandPalette.classList.contains('active')) {
+                elements.cmdInput.focus();
+            }
+        }
+        if (e.key === 'Escape') {
+            elements.commandPalette.classList.remove('active');
         }
     });
 
+    elements.cmdInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = elements.cmdInput.value.toLowerCase().trim();
+            executeCommand(cmd);
+            elements.cmdInput.value = '';
+            elements.commandPalette.classList.remove('active');
+        }
+    });
+
+    function executeCommand(cmd) {
+        const routes = {
+            'projekte': '#projects',
+            'experience': '#experience-hub',
+            'kontakt': '#contact',
+            'lebenslauf': '#lebenslauf',
+            'fokus': '#focus'
+        };
+
+        if (routes[cmd]) {
+            document.querySelector(routes[cmd])?.scrollIntoView({ behavior: 'smooth' });
+        } else if (cmd === 'matrix') {
+            if (typeof activateMatrix === 'function') activateMatrix();
+            else alert('Matrix-Modus nur auf Legal-Pages verfügbar (noch!)');
+        } else if (cmd === 'reboot') {
+            applyTheme(!document.body.classList.contains('dark-mode'), true);
+        } else {
+            alert(`Befehl "${cmd}" nicht erkannt. Versuche: projekte, kontakt, matrix, reboot.`);
+        }
+    }
+
+    // ===========================
+    // AI TERMINAL SIMULATION
+    // ===========================
+    const aiResponses = {
+        focus: "Mein Fokus liegt auf der Synergie zwischen Industrie-Know-how und modernster KI. Ich baue keine Spielzeuge, sondern Werkzeuge für echte Effizienz.",
+        experience: "15 Jahre in Logistik & Produktion haben mir eins gelehrt: Ein System ist nur so gut wie der Prozess, den es unterstützt. Ich verstehe die 'reale Welt' hinter dem Code.",
+        vision: "Software, die mitdenkt. Mein Ziel ist die nahtlose Integration von lokalen, datenschutzkonformen LLMs in alltägliche Business-Workflows.",
+        doc_umschulung: "Diese Bescheinigung markiert den Startpunkt meiner IT-Karriere (2023). Sie belegt die fundierte theoretische Basis in der Anwendungsentwicklung.",
+        doc_zeugnis_gfn: "Mein Abschlusszeugnis der Umschulung. Es spiegelt die intensive Auseinandersetzung mit Java, SQL und moderner Softwarearchitektur wider.",
+        doc_praktikum: "Mein Praktikum im Systemhaus war der Realitätscheck. Fokus: Remote-Work, Kundenprojekte und Webstack-Herausforderungen in einem professionellen Umfeld.",
+        doc_datascience: "Mein aktuellstes Zertifikat (2026). Hier habe ich meine Skills in Python für Datenanalyse und Machine Learning vertieft, um RAG-Systeme noch präziser zu bauen."
+    };
+
+    window.runAIShowcase = (topic) => {
+        const modal = document.getElementById('ai-modal');
+        const modalBody = document.getElementById('ai-modal-body');
+        if (!modal || !modalBody) return;
+
+        const text = aiResponses[topic] || "Keine Daten zu diesem Thema gefunden.";
+        
+        // Open Modal
+        modal.classList.add('active');
+        modalBody.innerHTML = `<p>> Abfrage: ${topic.toUpperCase()}...</p><p id="ai-modal-typing"></p>`;
+        
+        // Typing Effect
+        let i = 0;
+        const typingElement = document.getElementById('ai-modal-typing');
+        function type() {
+            if (i < text.length) {
+                typingElement.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 25);
+            } else {
+                typingElement.innerHTML += '<span class="ai-cursor"></span>';
+            }
+        }
+        setTimeout(type, 500);
+    };
+
+    window.closeAIModal = () => {
+        const modal = document.getElementById('ai-modal');
+        if (modal) modal.classList.remove('active');
+    };
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('ai-modal');
+        if (e.target === modal) closeAIModal();
+    });
+
+    // ===========================
+    // TYPEWRITER EFFECT (Header)
+    // ===========================
+    const phrases = ["Python & Kotlin", "Applied AI & MLOps Pragmatist", "Clean Code", "Smart Automation", "Local LLMs"];
+    let phraseIndex = 0; let charIndex = 0; let isDeleting = false; let typeSpeed = 100;
+
+    function typewriterEffect() {
+        if (!elements.typewriterText) return;
+        const currentPhrase = phrases[phraseIndex];
+        if (isDeleting) {
+            elements.typewriterText.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--; typeSpeed = 50;
+        } else {
+            elements.typewriterText.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++; typeSpeed = 100;
+        }
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true; typeSpeed = 2000;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; typeSpeed = 500;
+        }
+        setTimeout(typewriterEffect, typeSpeed);
+    }
+    if (elements.typewriterText) typewriterEffect();
+
+    // ===========================
+    // PARTICLES (OPTIMIZED)
+    // ===========================
+    function updateParticles(isDark) {
+        if (window.innerWidth < 768 || !window.pJSDom || !window.pJSDom.length) return;
+        const color = isDark ? '#f59e0b' : '#3b82f6';
+        const pJS = window.pJSDom[0].pJS;
+        if (pJS && pJS.particles) {
+            pJS.particles.color.value = color;
+            pJS.particles.line_linked.color = color;
+            pJS.fn.particlesRefresh();
+        }
+    }
+
+    if (window.particlesJS && window.innerWidth >= 768) {
+        try {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 15, density: { enable: true, value_area: 800 } },
+                    color: { value: savedTheme ? '#f59e0b' : '#3b82f6' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.3, random: true },
+                    size: { value: 10, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.1, width: 1 },
+                    move: { enable: true, speed: 1.2, out_mode: 'out' }
+                },
+                interactivity: {
+                    events: { onhover: { enable: true, mode: 'repulse' } },
+                    modes: { repulse: { distance: 100 } }
+                },
+                retina_detect: true
+            });
+        } catch (e) {}
+    }
+
+    // ===========================
+    // SCAN EFFECT & STATUS WINDOW
+    // ===========================
+    const runScanEffect = () => {
+        if (!elements.scanOverlay || !elements.statusWindow) {
+            updateStatusDot();
+            return;
+        }
+
+        elements.scanOverlay.style.display = 'block';
+        const scanLine = elements.scanOverlay.querySelector('.scan-line');
+        
+        // Run scan animation twice
+        scanLine.style.animation = 'scan-animation 1.5s linear 2';
+        
+        scanLine.addEventListener('animationend', () => {
+            elements.scanOverlay.style.transition = 'opacity 0.5s ease';
+            elements.scanOverlay.style.opacity = '0';
+            setTimeout(() => {
+                elements.scanOverlay.style.display = 'none';
+                elements.statusWindow.classList.remove('hidden');
+            }, 500);
+        });
+    };
+
+    elements.closeStatusBtn?.addEventListener('click', () => {
+        elements.statusWindow.classList.add('hidden');
+        sessionStorage.setItem('scanShown', 'true');
+        updateStatusDot();
+        // Optional: Trigger specific entrance animations
+    });
+
+    const scanShown = sessionStorage.getItem('scanShown');
+    if (!scanShown) {
+        window.addEventListener('load', () => {
+            setTimeout(runScanEffect, 500);
+        });
+    } else {
+        if (elements.scanOverlay) elements.scanOverlay.style.display = 'none';
+        if (elements.statusWindow) elements.statusWindow.classList.add('hidden');
+        updateStatusDot();
+    }
+
+    function updateStatusDot() {
+        if (elements.statusDot) {
+            elements.statusDot.classList.remove('status-red');
+            elements.statusDot.classList.add('status-green');
+        }
+    }
+
+    // ===========================
+    // TERMINAL QUOTE TYPEWRITER
+    // ===========================
+    const terminalQuoteText = document.getElementById('terminal-quote-text');
+    const terminalContainer = document.querySelector('.terminal-quote');
+    const quote = '"On the other side of the screen, it all looks so easy." - Kevin Flynn (Tron, 1982)';
+    let quoteIndex = 0;
+    let quoteStarted = false;
+
+    function typeQuote() {
+        if (quoteIndex < quote.length) {
+            terminalQuoteText.textContent += quote.charAt(quoteIndex);
+            quoteIndex++;
+            setTimeout(typeQuote, 50);
+        } else {
+            // Show hint after typing finishes
+            const terminalHint = document.getElementById('terminal-hint');
+            if (terminalHint) {
+                terminalHint.style.transition = 'opacity 2s ease';
+                terminalHint.style.opacity = '0.5';
+            }
+        }
+    }
+
+    const quoteObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !quoteStarted) {
+                quoteStarted = true;
+                setTimeout(typeQuote, 500);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (terminalContainer) quoteObserver.observe(terminalContainer);
+
+    // ===========================
+    // KEYBOARD EASTER EGGS
+    // ===========================
+    let keyBuffer = '';
+    document.addEventListener('keydown', (e) => {
+        keyBuffer += e.key.toUpperCase();
+        if (keyBuffer.length > 10) keyBuffer = keyBuffer.substring(keyBuffer.length - 10);
+        
+        if (keyBuffer.includes('MATRIX')) {
+            window.location.href = 'pages/datenschutzerklärung.html';
+            keyBuffer = '';
+        }
+        if (keyBuffer.includes('TRON')) {
+            window.location.href = 'pages/impressum.html';
+            keyBuffer = '';
+        }
+    });
+
+    // ===========================
+    // DYNAMIC STATUS DOT
+    // ===========================
+    function updateStatusDot() {
+        if (elements.statusDot) {
+            elements.statusDot.classList.remove('status-red');
+            elements.statusDot.classList.add('status-green');
+        }
+    }
+});

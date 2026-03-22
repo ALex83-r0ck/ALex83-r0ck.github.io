@@ -1,0 +1,253 @@
+/* AI Lab v6.0 - Master Styles */
+:root {
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --info: #0dcaf0;
+  --card-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Mycelium Cards */
+.mycelium-card {
+  background: var(--card-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  text-align: left;
+}
+
+.mycelium-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 0 25px var(--primary-glow);
+}
+
+/* Process Flow Visual */
+.process-flow-visual {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+}
+
+.flow-node {
+  width: 100px;
+  transition: all 0.5s ease;
+}
+
+.flow-line-animated {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  background-size: 200% 100%;
+  animation: move-gradient 2s linear infinite;
+}
+
+@keyframes move-gradient {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Reasoning Chain */
+.reasoning-icon-box {
+  width: 70px;
+  height: 70px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 0 auto;
+  position: relative;
+}
+
+.pulse-blue { animation: pulse-blue-glow 2s infinite; }
+.pulse-green { animation: pulse-green-glow 2s infinite; }
+
+.reflect-step { position: relative; overflow: hidden; }
+.cog-bg {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.15;
+  color: #ef4444;
+  animation: spin 8s linear infinite;
+  z-index: 1;
+}
+.brain-fg { position: relative; z-index: 2; font-size: 1.8rem; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Lab Terminal */
+.lab-terminal {
+  background: #000;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: #1e293b;
+  padding: 10px 15px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #10b981;
+  min-height: 250px;
+  line-height: 1.6;
+}
+
+.terminal-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.terminal-dots {
+  display: inline-block;
+  min-width: 20px;
+}
+
+/* Highlights: Veredelung & Bullshit-Filter */
+.dirty-data {
+  color: #475569 !important;
+  filter: blur(1px) grayscale(0.8);
+  position: relative;
+}
+
+.refined-data {
+  color: var(--primary) !important;
+  filter: drop-shadow(0 0 10px var(--primary-glow));
+  animation: pulse-primary 1s infinite alternate;
+}
+
+.bullshit-filter-scanning {
+  animation: scan-shield 0.5s infinite alternate;
+  color: var(--warning) !important;
+  filter: drop-shadow(0 0 10px var(--warning));
+}
+
+@keyframes scan-shield {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(1.1); opacity: 1; }
+}
+
+.verification-success {
+  color: var(--success) !important;
+  filter: drop-shadow(0 0 15px #10b981);
+}
+
+/* Spaced Repetition & Trainer */
+.trainer-card {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.trainer-card:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-5px);
+}
+
+.trainer-icon-box {
+  width: 50px;
+  height: 50px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.leitner-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+.interval-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.interval-btn.active { opacity: 1; box-shadow: 0 0 20px currentColor; transform: scale(1.1); }
+.btn-red { background: var(--danger); color: white; }
+.btn-yellow { background: var(--warning); color: black; }
+.btn-green { background: var(--success); color: white; }
+
+.timeline-connector {
+  position: absolute;
+  top: 35px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
+  z-index: 1;
+  opacity: 0.2;
+}
+
+/* Enterprise & Challenges */
+.enterprise-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.challenge-box { background: rgba(245, 158, 11, 0.05); border-left: 4px solid var(--warning); padding: 20px; border-radius: 0 12px 12px 0; height: 100%; text-align: left; }
+.solution-box { background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); padding: 20px; border-radius: 0 12px 12px 0; height: 100%; text-align: left; }
+
+.xp-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid var(--warning);
+  padding: 40px;
+  border-radius: 30px;
+  z-index: 9999;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  transition: all 0.5s ease;
+}
+
+.xp-popup.hidden { opacity: 0; visibility: hidden; transform: translate(-50%, -40%) scale(0.8); }
+
+.glow-text-primary { text-shadow: 0 0 10px var(--primary-glow); }
+.shadow-glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15); }
+
+@media (max-width: 768px) {
+  .reasoning-chain-visual { flex-direction: column; gap: 20px; }
+  .process-flow-visual { flex-wrap: wrap; }
+}
