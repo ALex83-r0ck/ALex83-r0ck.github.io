@@ -22,8 +22,8 @@ Mein Portfolio spiegelt meinen Ansatz wider: **Komplexität reduzieren, Sicherhe
 
 ## 🛠 Tech Stack
 
-* **Frontend Architecture:** HTML5, CSS3 (Custom Bootstrap 5 Implementation), JavaScript (ES6+)
-* **Interaktive Elemente:** Particles.js für dynamische Hintergründe, Typewriter-Effekte & Glitch-Animationen.
+* **Frontend Architecture:** HTML5, framework-freies CSS3 mit Design-Tokens (Custom Properties), Vanilla JavaScript (ES6+). Das AI Lab nutzt Bootstrap 5.
+* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; Particles.js im AI Lab.
 * **Asset Integration:** Optimiertes PDF-Handling für Zertifikate (Responsive iFrames & Fallback-Strategies).
 * **CI/CD:** Bereitstellung über GitHub Pages mit automatisierten Workflows.
 
@@ -42,7 +42,7 @@ Um Zertifikate und Nachweise professionell zu präsentieren, nutzt das Portfolio
 
 Ein subtiles "Cyber-Security"-Theme (inspiriert von Tron), das meine Leidenschaft für Technik und Sicherheit widerspiegelt:
 
-* **Dynamic Glow Effects:** CSS-Variable-basierte Farbschemata (Dark/Light Mode).
+* **Dynamic Glow Effects:** CSS-Variable-basierte Farbschemata (Dark/Light Mode), inklusive Porträtwechsel rein über CSS.
 
 * **Easter Eggs:** Interaktive CLI-Elemente, die meine Affinität zur Shell-Entwicklung zeigen.
 
