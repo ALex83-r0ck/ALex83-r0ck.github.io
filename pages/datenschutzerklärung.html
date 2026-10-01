@@ -3,40 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
   <title>Datenschutzerklärung – Alexander Rothe</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('darkMode'); } catch (e) {}
+      var dark = saved === null ? window.matchMedia('(prefers-color-scheme: dark)').matches : saved === '1';
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/legal.css">
+  <link rel="stylesheet" href="../css/main.css?v=2">
 </head>
-<body class="legal">
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <!-- Banner -->
-  <div id="availability-banner" class="availability-banner shadow-sm">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <i class="bi bi-calendar-check me-2"></i>
-        <strong>Verfügbar ab sofort</strong>
-        <a href="/" class="btn btn-link text-white ms-2 p-0">← Zurück zum Portfolio</a>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html" aria-label="Zur Startseite">
+        <span class="brand-mark" aria-hidden="true">AR</span>
+        <span class="brand-name">Alexander Rothe</span>
+      </a>
+      <div class="nav-actions" style="margin-left:auto">
+        <a href="../index.html" class="btn btn-ghost"><i class="bi bi-arrow-left" aria-hidden="true"></i> Portfolio</a>
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Farbschema wechseln" title="Hell/Dunkel">
+          <i class="bi bi-moon-stars icon-dark" aria-hidden="true"></i>
+          <i class="bi bi-sun icon-light" aria-hidden="true"></i>
+        </button>
       </div>
-      <button id="toggle-banner" class="btn btn-sm btn-outline-light">
-        <i class="bi bi-chevron-down" id="toggle-icon"></i>
-      </button>
     </div>
-  </div>
+  </header>
 
-  <!-- Hauptinhalt -->
-  <main class="container py-5" style="max-width:900px; margin:130px auto 80px;">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">Datenschutzerklärung</h1>
-      <p class="lead text-muted">Stand: November 2025</p>
-    </div>
+  <main id="main" class="legal-main">
+    <div class="container">
+      <p class="eyebrow mono">~/legal/datenschutz</p>
+      <h1>Datenschutzerklärung</h1>
+      <p class="section-lead">Stand: Oktober 2026</p>
 
-    <div class="card shadow-sm border-0">
-      <div class="card-body p-5">
-        <h2 class="h4 fw-bold mb-4">1. Verantwortlicher</h2>
+      <div class="legal-card">
+        <h2>1. Verantwortlicher</h2>
         <p>
           Alexander Rothe<br>
           Gertrud Str. 28<br>
@@ -44,41 +53,47 @@
           E-Mail: <a href="mailto:rothe_alexander@t-online.de">rothe_alexander@t-online.de</a>
         </p>
 
-        <h2 class="h4 fw-bold mb-4">2. Hosting</h2>
+        <h2>2. Hosting</h2>
         <p>Diese Website wird über <strong>GitHub Pages</strong> (GitHub Inc., USA) gehostet. Es werden keine dauerhaften Server-Logfiles und keine Cookies gesetzt. Deine IP-Adresse wird nur kurzzeitig zur Auslieferung der Seite übertragen (EU-U.S. Data Privacy Framework).</p>
 
-        <h2 class="h4 fw-bold mb-4">3. Kontaktformular</h2>
+        <h2>3. Kontaktformular</h2>
         <p>Das Kontaktformular leitet deine Daten verschlüsselt an <strong>Formspree</strong> (USA, EU-U.S. DPF) weiter. Ich speichere keine Formulardaten selbst.</p>
 
-        <h2 class="h4 fw-bold mb-4">4. Externe Ressourcen</h2>
+        <h2>4. Externe Ressourcen</h2>
+        <p>Beim Aufruf werden Schriften und Bibliotheken von folgenden Anbietern geladen. Dabei wird deine IP-Adresse an den jeweiligen Anbieter übertragen:</p>
         <ul>
-          <li>Google Fonts (fonts.googleapis.com)</li>
-          <li>Bootstrap 5 & Icons über jsDelivr CDN</li>
-          <li>Font Awesome über cdnjs</li>
-          <li>particles.js lokal → keine Datenübertragung</li>
+          <li>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</li>
+          <li>Bootstrap Icons über jsDelivr CDN; auf der AI-Lab-Seite zusätzlich Bootstrap 5 und particles.js</li>
+          <li>Font Awesome über cdnjs (nur AI-Lab-Seite)</li>
+          <li>Credly (Einbindung des ISC2-Badges auf der Startseite)</li>
         </ul>
         <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
 
-        <h2 class="h4 fw-bold mb-4">5. Kein Tracking</h2>
+        <h2>5. Kein Tracking</h2>
         <p>Keine Analytics, keine Cookies, kein Profiling – versprochen!</p>
 
-        <h2 class="h4 fw-bold mb-4">6. Deine Rechte & Speicherdauer</h2>
+        <h2>6. Deine Rechte & Speicherdauer</h2>
         <p>Du hast alle DSGVO-Rechte. Formulardaten lösche ich nach Bearbeitung (meist innerhalb weniger Wochen).</p>
       </div>
-    </div>
 
-    <div class="text-center mt-5">
-      <a href="/" class="btn btn-primary btn-lg px-5 shadow">
-        <i class="bi bi-arrow-left-circle me-2"></i>Zurück zum Portfolio
-      </a>
+      <a href="../index.html" class="btn btn-primary legal-back"><i class="bi bi-arrow-left" aria-hidden="true"></i> Zurück zum Portfolio</a>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Alexander Rothe</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutzerklärung.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
 
   <!-- Matrix-Easter-Egg Canvas -->
   <canvas id="matrix-canvas" style="position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:9999;transition:opacity 1s;"></canvas>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/scripts.js"></script>
+    <script src="../js/main.js?v=2"></script>
 
   <script>
     const matrixCode = [77,65,84,82,73,88]; // M A T R I X
