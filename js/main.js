@@ -1,7 +1,7 @@
 /**
  * Alexander Rothe – Portfolio
  * Theme-Umschaltung, mobile Navigation, Scroll-Effekte und Easter Eggs.
- * Wird von der Startseite und den Legal-Seiten genutzt.
+ * Wird von Startseite, AI Lab und Legal-Seiten genutzt.
  */
 (function () {
     'use strict';
@@ -90,12 +90,13 @@
     // ===========================
     // KEYBOARD EASTER EGGS
     // ===========================
-    // Nur auf der Startseite: Die Legal-Seiten haben eigene Animationen,
-    // und die relativen Weiterleitungen würden dort ins Leere führen.
-    const isHomePage = !!document.getElementById('about');
+    // Nur auf Seiten im Wurzelverzeichnis, die das per data-easter-eggs erlauben:
+    // Die Legal-Seiten haben eigene Animationen, und die relativen
+    // Weiterleitungen würden dort ins Leere führen.
+    const eggsEnabled = document.body.hasAttribute('data-easter-eggs');
     let keyBuffer = '';
     document.addEventListener('keydown', (e) => {
-        if (!isHomePage || e.key.length !== 1) return;
+        if (!eggsEnabled || e.key.length !== 1) return;
         // Wer "Elektronik" ins Kontaktformular tippt, soll nicht weitergeleitet werden.
         if (e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
         keyBuffer = (keyBuffer + e.key.toUpperCase()).slice(-10);
