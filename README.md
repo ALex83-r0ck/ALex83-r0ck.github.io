@@ -22,8 +22,8 @@ Mein Portfolio spiegelt meinen Ansatz wider: **Komplexität reduzieren, Sicherhe
 
 ## 🛠 Tech Stack
 
-* **Frontend Architecture:** HTML5, framework-freies CSS3 mit Design-Tokens (Custom Properties), Vanilla JavaScript (ES6+). Das AI Lab nutzt Bootstrap 5.
-* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; Particles.js im AI Lab.
+* **Frontend Architecture:** HTML5, framework-freies CSS3 mit Design-Tokens (Custom Properties), Vanilla JavaScript (ES6+).
+* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; im AI Lab eine Live-Simulation von Project Mycelium und ein interaktiver Decay-Regler.
 * **Asset Integration:** Optimiertes PDF-Handling für Zertifikate (Responsive iFrames & Fallback-Strategies).
 * **CI/CD:** Bereitstellung über GitHub Pages mit automatisierten Workflows.
 
@@ -48,7 +48,7 @@ Ein subtiles "Cyber-Security"-Theme (inspiriert von Tron), das meine Leidenschaf
 
 ### 3. Applied AI Fokus
 
-Das Portfolio dient als Hub für meine RAG-Projekte (**Lead-Dojo**) und zeigt, wie lokale LLMs (Ollama) in modernen Software-Architekturen wertschöpfend eingesetzt werden.
+Das Portfolio dient als Hub für meine KI-Projekte – allen voran **Project Mycelium**, ein lokales, bio-inspiriertes Langzeitgedächtnis für LLMs, dazu **Lead-Dojo** und **LernBuddy**. Es zeigt, wie lokale LLMs (Ollama) in modernen Software-Architekturen wertschöpfend eingesetzt werden.
 
 ---
 
