@@ -23,7 +23,7 @@ Mein Portfolio spiegelt meinen Ansatz wider: **Komplexität reduzieren, Sicherhe
 ## 🛠 Tech Stack
 
 * **Frontend Architecture:** HTML5, framework-freies CSS3 mit Design-Tokens (Custom Properties), Vanilla JavaScript (ES6+).
-* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; im AI Lab eine Live-Simulation von Project Mycelium und ein interaktiver Decay-Regler.
+* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; im AI Lab eine kurze Live-Simulation von Project Mycelium und ein interaktiver Decay-Regler.
 * **Asset Integration:** Optimiertes PDF-Handling für Zertifikate (Responsive iFrames & Fallback-Strategies).
 * **CI/CD:** Bereitstellung über GitHub Pages mit automatisierten Workflows.
 
