@@ -1315,6 +1315,7 @@ body.dark-mode #contact-form .form-control:focus {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
   z-index: 1000;
   box-shadow: var(--shadow);
   transition: all 0.3s ease;

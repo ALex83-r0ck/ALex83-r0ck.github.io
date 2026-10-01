@@ -1,6 +1,5 @@
 /**
  * Alexander Rothe - Portfolio Scripts
- * Refactored & Enhanced with "Wow" features.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,19 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = {
         themeToggle: document.getElementById('theme-toggle'),
         profilePic: document.getElementById('profile-pic'),
-        contactForm: document.getElementById('contact-form'),
-        nameInput: document.getElementById('name'),
-        pill: document.getElementById('availability-pill'),
-        statusDot: document.getElementById('global-status-dot'),
         scanOverlay: document.getElementById('scan-overlay'),
         statusWindow: document.getElementById('project-status-window'),
         closeStatusBtn: document.getElementById('close-status-btn'),
-        typewriterText: document.getElementById('typewriter-text'),
-        navLinks: document.querySelectorAll('.nav-link'),
-        projects: document.querySelectorAll('#projects .card'),
-        commandPalette: document.getElementById('command-palette'),
-        cmdInput: document.querySelector('.cmd-input'),
-        aiTerminal: document.getElementById('ai-terminal-content')
+        typewriterText: document.getElementById('typewriter-text')
     };
 
     // ===========================
@@ -39,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('darkMode', isDark ? '1' : '0');
 
         if (elements.profilePic) {
-            elements.profilePic.src = isDark ? 'image/overlay.png' : 'image/1000057922.png';
+            elements.profilePic.src = isDark ? 'image/profile-dark.webp' : 'image/profile.webp';
         }
         
         updateParticles(isDark);
@@ -53,77 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const isDark = !document.body.classList.contains('dark-mode');
         applyTheme(isDark, true);
     });
-
-    // ===========================
-    // 3D TILT EFFECT
-    // ===========================
-    const initTilt = () => {
-        elements.projects.forEach(card => {
-            card.classList.add('tilt-card');
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-        });
-    };
-    initTilt();
-
-    // ===========================
-    // COMMAND PALETTE (Alt + K)
-    // ===========================
-    window.addEventListener('keydown', (e) => {
-        if (e.altKey && e.key.toLowerCase() === 'k') {
-            e.preventDefault();
-            elements.commandPalette.classList.toggle('active');
-            if (elements.commandPalette.classList.contains('active')) {
-                elements.cmdInput.focus();
-            }
-        }
-        if (e.key === 'Escape') {
-            elements.commandPalette.classList.remove('active');
-        }
-    });
-
-    elements.cmdInput?.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            const cmd = elements.cmdInput.value.toLowerCase().trim();
-            executeCommand(cmd);
-            elements.cmdInput.value = '';
-            elements.commandPalette.classList.remove('active');
-        }
-    });
-
-    function executeCommand(cmd) {
-        const routes = {
-            'projekte': '#projects',
-            'experience': '#experience-hub',
-            'kontakt': '#contact',
-            'lebenslauf': '#lebenslauf',
-            'fokus': '#focus'
-        };
-
-        if (routes[cmd]) {
-            document.querySelector(routes[cmd])?.scrollIntoView({ behavior: 'smooth' });
-        } else if (cmd === 'matrix') {
-            if (typeof activateMatrix === 'function') activateMatrix();
-            else alert('Matrix-Modus nur auf Legal-Pages verfügbar (noch!)');
-        } else if (cmd === 'reboot') {
-            applyTheme(!document.body.classList.contains('dark-mode'), true);
-        } else {
-            alert(`Befehl "${cmd}" nicht erkannt. Versuche: projekte, kontakt, matrix, reboot.`);
-        }
-    }
 
     // ===========================
     // AI TERMINAL SIMULATION
@@ -178,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // TYPEWRITER EFFECT (Header)
     // ===========================
-    const phrases = ["Python & Kotlin", "Applied AI & MLOps Pragmatist", "Clean Code", "Smart Automation", "Local LLMs"];
+    const phrases = ["Junior AI & Full Stack Developer", "Local LLMs & RAG", "Agentic Workflows", "Next: AI Orchestration", "Python & Kotlin"];
     let phraseIndex = 0; let charIndex = 0; let isDeleting = false; let typeSpeed = 100;
 
     function typewriterEffect() {
@@ -239,10 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCAN EFFECT & STATUS WINDOW
     // ===========================
     const runScanEffect = () => {
-        if (!elements.scanOverlay || !elements.statusWindow) {
-            updateStatusDot();
-            return;
-        }
+        if (!elements.scanOverlay || !elements.statusWindow) return;
 
         elements.scanOverlay.style.display = 'block';
         const scanLine = elements.scanOverlay.querySelector('.scan-line');
@@ -263,8 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.closeStatusBtn?.addEventListener('click', () => {
         elements.statusWindow.classList.add('hidden');
         sessionStorage.setItem('scanShown', 'true');
-        updateStatusDot();
-        // Optional: Trigger specific entrance animations
     });
 
     const scanShown = sessionStorage.getItem('scanShown');
@@ -275,14 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         if (elements.scanOverlay) elements.scanOverlay.style.display = 'none';
         if (elements.statusWindow) elements.statusWindow.classList.add('hidden');
-        updateStatusDot();
-    }
-
-    function updateStatusDot() {
-        if (elements.statusDot) {
-            elements.statusDot.classList.remove('status-red');
-            elements.statusDot.classList.add('status-green');
-        }
     }
 
     // ===========================
@@ -323,8 +229,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // KEYBOARD EASTER EGGS
     // ===========================
+    // Only on the start page: the legal pages run their own animations, and
+    // the relative redirect paths would break there.
+    const isHomePage = !!document.getElementById('experience-hub');
     let keyBuffer = '';
     document.addEventListener('keydown', (e) => {
+        if (!isHomePage || e.key.length !== 1) return;
+        // Typing "Elektronik" into the contact form must not navigate away.
+        if (e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
         keyBuffer += e.key.toUpperCase();
         if (keyBuffer.length > 10) keyBuffer = keyBuffer.substring(keyBuffer.length - 10);
         
@@ -337,14 +249,4 @@ document.addEventListener('DOMContentLoaded', () => {
             keyBuffer = '';
         }
     });
-
-    // ===========================
-    // DYNAMIC STATUS DOT
-    // ===========================
-    function updateStatusDot() {
-        if (elements.statusDot) {
-            elements.statusDot.classList.remove('status-red');
-            elements.statusDot.classList.add('status-green');
-        }
-    }
 });
