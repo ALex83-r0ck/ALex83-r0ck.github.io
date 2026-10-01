@@ -1,6 +1,6 @@
 /**
  * AI Lab – Project Mycelium
- * Simulation einer Anfrage, Decay-Regler und Leitner-Demo.
+ * Simulation einer Anfrage und Decay-Regler.
  */
 (function () {
     'use strict';
@@ -21,23 +21,17 @@
     // "skip" markiert Stufen, die eine freie Frage überspringt.
     const script = [
         { q: 'Wie funktionieren Klassen in Python?' },
-        { stage: 'weiche', cls: 'log-step', text: '[weiche] Thema erkannt: python → Wissen (Ähnlichkeit 0,74)' },
-        { stage: 'suche', cls: 'log-step', text: '[suche] Themen-Suche in 4 Quellen · 3 Treffer in 42 ms' },
-        { cls: 'log-tag', text: '    1. python_grundlagen.pdf › Klassen und Objekte    0,82 × Gewicht 0,93' },
-        { cls: 'log-tag', text: '    2. python_grundlagen.pdf › Der Konstruktor __init__  0,79 × Gewicht 0,88' },
-        { cls: 'log-tag', text: '    3. python_kompakt.pdf › Klassenattribute           0,77 × Gewicht 0,71' },
-        { stage: 'ausbreitung', cls: 'log-step', text: '[ausbreitung] 2 Schritte über die Kanten → +3 Nachbarn (Vererbung, Dataclasses, self)' },
-        { stage: 'lernen', cls: 'log-step', text: '[lernen] 3 Knoten +0,1 · neuer Faden „nutzung“ (Stärke 0,4)' },
-        { stage: 'antwort', cls: 'log-step', text: '[reflex] Treffer nach 0,2 s – Antwort läuft mit:' },
+        { stage: 'weiche', cls: 'log-step', text: '[weiche] Thema: python → Wissen' },
+        { stage: 'suche', cls: 'log-step', text: '[suche] 3 Treffer in 42 ms' },
+        { stage: 'lernen', cls: 'log-step', text: '[lernen] 3 Knoten gestärkt, 1 neuer Faden' },
         { stage: 'antwort', cls: 'log-answer', type: true,
-          text: 'Eine Klasse bündelt Daten (Attribute) und Verhalten (Methoden) zu einem eigenen Typ. Objekte entstehen durch Aufruf der Klasse, __init__ setzt dabei ihren Startzustand (python_grundlagen.pdf).' },
-        { stage: 'validator', cls: 'log-ok', text: '[validator] 2 / 2 Sätze belegt ✓', toast: true },
-        { cls: 'log-sep', text: '────────────────────────────────────────────────' },
+          text: 'Eine Klasse bündelt Daten und Methoden zu einem eigenen Typ; __init__ setzt den Startzustand (python_grundlagen.pdf).' },
+        { stage: 'validator', cls: 'log-ok', text: '[prüfung] 2 / 2 Sätze belegt ✓', toast: true },
+        { cls: 'log-sep', text: '──────────────────────────────' },
         { q: 'Haben Pinguine Knie?', reset: true },
-        { stage: 'weiche', cls: 'log-warn', text: '[weiche] kein Thema, Ähnlichkeit 0,41 < 0,53 → freie Frage', skip: ['suche', 'ausbreitung', 'lernen', 'validator'] },
-        { stage: 'antwort', cls: 'log-step', text: '💬 Freie Frage – nicht aus deinem Wissen' },
-        { stage: 'antwort', cls: 'log-answer', type: true, text: 'Ja – sie liegen nur gut versteckt unter Federn und Körperfett.' },
-        { cls: 'log-ok', text: '[gewebe] unverändert · keine Treffer, kein Lernen, keine Beleg-Prüfung' }
+        { stage: 'weiche', cls: 'log-warn', text: '[weiche] kein Bezug zum Wissen → freie Frage', skip: ['suche', 'lernen', 'validator'] },
+        { stage: 'antwort', cls: 'log-answer', type: true, text: 'Ja – gut versteckt unter Federn und Körperfett.' },
+        { cls: 'log-ok', text: '[gewebe] unverändert' }
     ];
 
     let runId = 0;
@@ -172,21 +166,4 @@
         range.addEventListener('input', update);
         update();
     }
-
-    // ===========================
-    // LEITNER-DEMO
-    // ===========================
-    const intervalBtns = document.querySelectorAll('.interval-btn');
-    const pathSteps = document.querySelectorAll('.leitner-path .path-step');
-    const scheduleInfo = document.getElementById('schedule-info');
-
-    intervalBtns.forEach((btn) => {
-        btn.setAttribute('aria-pressed', 'false');
-        btn.addEventListener('click', () => {
-            intervalBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-            const step = Number(btn.dataset.step);
-            pathSteps.forEach((el, i) => el.classList.toggle('is-target', i === step));
-            if (scheduleInfo) scheduleInfo.textContent = 'Nächste Wiederholung in ' + btn.dataset.label + '.';
-        });
-    });
 })();

@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/main.css?v=3">
-  <link rel="stylesheet" href="css/lab.css?v=3">
+  <link rel="stylesheet" href="css/lab.css?v=4">
 </head>
 <body data-easter-eggs>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -39,11 +39,9 @@
       </a>
 
       <nav class="nav-links" id="nav-links" aria-label="Lab-Navigation">
-        <a href="#konzept">Konzept</a>
-        <a href="#frage">Eine Frage</a>
+        <a href="#frage">So funktioniert's</a>
         <a href="#lebenszyklus">Lebenszyklus</a>
-        <a href="#loesungen">Lösungen</a>
-        <a href="#stack">Stack</a>
+        <a href="#loesungen">Bausteine</a>
         <a href="#roadmap">Roadmap</a>
         <a href="index.html" class="nav-lab"><i class="bi bi-arrow-left" aria-hidden="true"></i> Portfolio</a>
       </nav>
@@ -68,104 +66,54 @@
       <div class="container">
         <p class="eyebrow mono">~/ai-lab/mycelium</p>
         <h1>Project Mycelium</h1>
-        <p class="hero-role">Persistent Cross-Project Intelligence</p>
+        <p class="hero-role">Ein Langzeitgedächtnis für lokale LLMs</p>
         <p class="hero-lead">
-          Lokale LLMs vergessen alles, sobald der Chat endet. Mycelium überwindet diese <strong>„digitale Amnesie“</strong>
-          mit einem bio-inspirierten, ressourceneffizienten Langzeitgedächtnis – projektübergreifend und
-          <strong>vollständig lokal</strong> auf Standard-Hardware.
+          Lokale LLMs vergessen alles, sobald der Chat endet. Mycelium speichert Wissen projektübergreifend als
+          <strong>Gewebe aus Knoten und Kanten</strong>: Was genutzt wird, wird stärker – was ungenutzt bleibt, verblasst
+          und wird verdichtet, ohne verloren zu gehen. <strong>Vollständig lokal.</strong>
         </p>
 
         <dl class="stats">
-          <div><dt class="mono">Knoten im Testgewebe</dt><dd>~19.400</dd><p>aus 53 Programmier-Büchern</p></div>
-          <div><dt class="mono">Hardware</dt><dd>16 GB</dd><p>Laptop, CPU, keine Cloud</p></div>
-          <div><dt class="mono">Suche bei 1 Mio. Knoten</dt><dd>&lt; 60 ms</dd><p>statt 1,2 s – gleiche Treffer</p></div>
-          <div><dt class="mono">Tests</dt><dd>~350</dd><p>Pytest, Python 3.11 – 3.13</p></div>
+          <div><dt class="mono">Testgewebe</dt><dd>~19.400</dd><p>Knoten aus 53 Büchern</p></div>
+          <div><dt class="mono">Hardware</dt><dd>16 GB</dd><p>Laptop, keine Cloud</p></div>
+          <div><dt class="mono">Suche bei 1 Mio. Knoten</dt><dd>&lt; 60 ms</dd><p>Binär-Index &amp; Cluster</p></div>
         </dl>
       </div>
     </section>
 
-    <!-- 01 Konzept -->
-    <section id="konzept" class="section">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="eyebrow mono">01 / konzept</p>
-          <h2>Gewebe statt Tabellen</h2>
-          <p class="section-lead">
-            Mycelium ist das neuronale Bindegewebe zwischen Projekten: Wissen besteht aus <strong>Knoten</strong>,
-            die durch <strong>Kanten</strong> verbunden sind – und verhält sich wie etwas Lebendiges.
-          </p>
-        </header>
-
-        <div class="concept-grid">
-          <article class="concept reveal">
-            <i class="bi bi-diagram-3" aria-hidden="true"></i>
-            <h3>Wachsen</h3>
-            <p>Dateien (Code, Markdown, PDF, JSON) werden zu Kassetten mit Knoten. Ähnliche, aufeinanderfolgende und neuere Fassungen verknüpfen sich automatisch.</p>
-          </article>
-          <article class="concept reveal">
-            <i class="bi bi-lightning-charge" aria-hidden="true"></i>
-            <h3>Lernen</h3>
-            <p>Was genutzt wird, wird stärker. Treffer, die oft gemeinsam gebraucht werden, bekommen einen neuen Faden – Hebbsches Lernen.</p>
-          </article>
-          <article class="concept reveal">
-            <i class="bi bi-moon-stars" aria-hidden="true"></i>
-            <h3>Verblassen</h3>
-            <p>Ungenutztes verliert Gewicht und wird schrittweise verdichtet – jede Fassung bleibt im Archiv und kommt bei Bedarf zurück.</p>
-          </article>
-          <article class="concept reveal">
-            <i class="bi bi-person-check" aria-hidden="true"></i>
-            <h3>Mensch entscheidet</h3>
-            <p>Widersprüche werden gemeldet statt still aufgelöst, und vergessen wird nur, was ein Mensch freigibt.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 Eine Frage -->
+    <!-- 01 Eine Frage -->
     <section id="frage" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">02 / aktivierung</p>
-          <h2>Was passiert, wenn du eine Frage stellst</h2>
-          <p class="section-lead">Die Simulation spielt zwei Fragen durch – eine zum gespeicherten Wissen und eine freie. Die aktive Stufe leuchtet mit.</p>
+          <p class="eyebrow mono">01 / so funktioniert's</p>
+          <h2>Was bei einer Frage passiert</h2>
         </header>
 
         <ol class="pipeline reveal" aria-label="Stufen einer Anfrage">
           <li class="stage" data-stage="weiche">
-            <span class="stage-num mono">01</span>
             <i class="bi bi-signpost-split stage-icon" aria-hidden="true"></i>
             <h3>Weiche</h3>
-            <p>Gehört die Frage zum Wissen? Freie Fragen bekommen eine kurze Antwort – und verändern das Geflecht nicht.</p>
+            <p>Gehört die Frage zum Wissen?</p>
           </li>
           <li class="stage" data-stage="suche">
-            <span class="stage-num mono">02</span>
             <i class="bi bi-search stage-icon" aria-hidden="true"></i>
-            <h3>Gradient-Suche</h3>
-            <p>Namens- und Themen-Erkennung, dann Ähnlichkeit × biologisches Gewicht eines Knotens.</p>
-          </li>
-          <li class="stage" data-stage="ausbreitung">
-            <span class="stage-num mono">03</span>
-            <i class="bi bi-share stage-icon" aria-hidden="true"></i>
-            <h3>Ausbreitung</h3>
-            <p>Das Signal läuft zwei Schritte über die Kanten und zieht verknüpfte Nachbarn in den Kontext.</p>
+            <h3>Suche</h3>
+            <p>Ähnlichkeit × Gewicht</p>
           </li>
           <li class="stage" data-stage="lernen">
-            <span class="stage-num mono">04</span>
             <i class="bi bi-lightning-charge stage-icon" aria-hidden="true"></i>
             <h3>Lernen</h3>
-            <p>Treffer werden gestärkt, gemeinsam genutzte Knoten bekommen neue Fäden.</p>
+            <p>Genutztes wird stärker</p>
           </li>
           <li class="stage" data-stage="antwort">
-            <span class="stage-num mono">05</span>
             <i class="bi bi-chat-text stage-icon" aria-hidden="true"></i>
-            <h3>Reflex-Antwort</h3>
-            <p>Treffer sofort, die Antwort läuft Wort für Wort mit – mit Quellen in Klammern.</p>
+            <h3>Antwort</h3>
+            <p>Mit Quellen, Wort für Wort</p>
           </li>
           <li class="stage" data-stage="validator">
-            <span class="stage-num mono">06</span>
             <i class="bi bi-shield-check stage-icon" aria-hidden="true"></i>
-            <h3>Output-Validator</h3>
-            <p>Jeder Satz wird gegen die aktivierten Knoten geprüft; Unbelegtes wird markiert.</p>
+            <h3>Prüfung</h3>
+            <p>Jeder Satz muss belegt sein</p>
           </li>
         </ol>
 
@@ -178,21 +126,18 @@
             </button>
           </div>
           <div id="protocol-output" class="terminal-body mono" aria-live="polite"></div>
-          <figcaption class="terminal-cite mono">Vereinfachte Darstellung – Werte orientieren sich an den Standard-Schwellen mit snowflake-arctic-embed.</figcaption>
+          <figcaption class="terminal-cite mono">Vereinfachte Darstellung</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 03 Lebenszyklus -->
+    <!-- 02 Lebenszyklus -->
     <section id="lebenszyklus" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">03 / verfall &amp; verdichtung</p>
-          <h2>Der Lebenszyklus eines Knotens</h2>
-          <p class="section-lead">
-            Ungenutzte Knoten verlieren täglich an Gewicht und werden verdichtet. Zieh am Regler, um zu sehen, was mit einem
-            Knoten passiert, den niemand mehr abruft.
-          </p>
+          <p class="eyebrow mono">02 / verfall &amp; verdichtung</p>
+          <h2>Vergessen – aber umkehrbar</h2>
+          <p class="section-lead">Zieh am Regler: So verdichtet sich ein Knoten, den niemand mehr abruft. Jede Fassung bleibt im Archiv und kommt bei erneuter Nutzung zurück.</p>
         </header>
 
         <div class="decay reveal">
@@ -204,183 +149,71 @@
           </div>
 
           <ol class="decay-stages" id="decay-stages">
-            <li data-min="0.5"><span class="mono">&gt; 0,5</span><strong>1 – Voll</strong><span>Originaltext</span></li>
-            <li data-min="0.25"><span class="mono">≤ 0,5</span><strong>2 – Zusammenfassung</strong><span>LLM-Kurzfassung, max. 5 Sätze</span></li>
-            <li data-min="0.15"><span class="mono">≤ 0,25</span><strong>3 – Essenz</strong><span>1–2 Kernsätze</span></li>
-            <li data-min="0.1"><span class="mono">≤ 0,15</span><strong>4 – Meta</strong><span>nur Herkunft + Themen</span></li>
-            <li data-min="-1"><span class="mono">≤ 0,1</span><strong>Veraltet</strong><span>fällt aus der Suche</span></li>
+            <li><span class="mono">&gt; 0,5</span><strong>Voll</strong><span>Originaltext</span></li>
+            <li><span class="mono">≤ 0,5</span><strong>Zusammenfassung</strong><span>max. 5 Sätze</span></li>
+            <li><span class="mono">≤ 0,25</span><strong>Essenz</strong><span>1–2 Kernsätze</span></li>
+            <li><span class="mono">≤ 0,15</span><strong>Meta</strong><span>nur Herkunft + Themen</span></li>
+            <li><span class="mono">≤ 0,1</span><strong>Veraltet</strong><span>fällt aus der Suche</span></li>
           </ol>
         </div>
-
-        <ul class="facts reveal">
-          <li><i class="bi bi-archive" aria-hidden="true"></i><span><strong>Nichts geht verloren:</strong> Jede frühere Fassung liegt im Archiv, der Vektor bleibt unverändert.</span></li>
-          <li><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i><span><strong>Umkehrbar:</strong> Wird ein Knoten wieder genutzt, kommt die detailliertere Fassung zurück – ohne neuen LLM-Aufruf.</span></li>
-          <li><i class="bi bi-lock" aria-hidden="true"></i><span><strong>Geschützt:</strong> Markierte Kassetten verfallen nie und werden nie komprimiert.</span></li>
-        </ul>
       </div>
     </section>
 
-    <!-- 04 Probleme & Lösungen -->
+    <!-- 03 Bausteine -->
     <section id="loesungen" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">04 / transparenz</p>
-          <h2>Kern-Herausforderungen &amp; Lösungen</h2>
-          <p class="section-lead">Jedes Modul von Mycelium beantwortet ein konkretes Problem lokaler LLMs.</p>
+          <p class="eyebrow mono">03 / bausteine</p>
+          <h2>Was Mycelium besonders macht</h2>
         </header>
 
-        <div class="solutions">
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Rauschen in Vektor-Datenbanken führt zu irrelevantem Kontext.</p>
+        <div class="concept-grid">
+          <article class="concept reveal">
+            <i class="bi bi-funnel" aria-hidden="true"></i>
             <h3>Bayou-Filter</h3>
-            <p>Datenveredelung mit semantischem AST-Splitting für Python sowie PDF- und JSON-Unterstützung; Inhaltsverzeichnisse werden übersprungen.</p>
+            <p>Bereinigt Code, PDFs und Texte, bevor sie ins Gedächtnis kommen.</p>
           </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> „Lost in the Middle“ bei großen Context-Windows.</p>
-            <h3>Gradient-Suche &amp; Graph-Traversal</h3>
-            <p>Vektor-Ähnlichkeit × Gewicht eines Knotens; verknüpfte Nachbarn kommen mit in den Kontext.</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Wissen veraltet, der Speicher wächst unbegrenzt.</p>
-            <h3>Decay &amp; Komprimierung</h3>
-            <p>Zusammenfassung → Essenz → Meta. Jede Fassung bleibt im Archiv und kommt bei erneuter Nutzung zurück.</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Verschiedene Quellen sagen Verschiedenes.</p>
-            <h3>Immun-Layer</h3>
-            <p>Prüft ähnliche Knoten aus verschiedenen Quellen auf Widersprüche. Eindeutiges wird aufgelöst, der Rest gemeldet: „Quelle A sagt X, Quelle B sagt Y.“</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Lokale LLMs erfinden Fakten.</p>
+          <article class="concept reveal">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
             <h3>Output-Validator</h3>
-            <p>Jeder Satz wird gegen die aktivierten Knoten abgeglichen; erfundene Zahlen, Namen und unbelegte Aussagen werden markiert.</p>
+            <p>Markiert erfundene Fakten in jeder Antwort.</p>
           </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Webseiten veralten und können manipulierte Anweisungen enthalten.</p>
+          <article class="concept reveal">
+            <i class="bi bi-exclamation-diamond" aria-hidden="true"></i>
+            <h3>Immun-Layer</h3>
+            <p>Meldet Widersprüche zwischen Quellen – entscheiden darf der Mensch.</p>
+          </article>
+          <article class="concept reveal">
+            <i class="bi bi-globe2" aria-hidden="true"></i>
             <h3>Freundlicher Scraper</h3>
-            <p>Nur sichtbarer Text aus eingetragenen Quellen, respektiert robots.txt, entfernt Prompt-Injections, übernimmt nur echte Änderungen.</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Redundante Daten verschwenden Ressourcen.</p>
-            <h3>Deduplizierung &amp; Auto-Linking</h3>
-            <p>Content-Hashing erkennt bekannte Knoten schon vor dem Embedding.</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Nicht jede Frage gehört zum Wissen („Haben Pinguine Knie?“).</p>
-            <h3>Die Weiche</h3>
-            <p>Ordnet jede Frage ein, bevor gesucht wird – jede Entscheidung wird mit Grund protokolliert, um die Grenzwerte zu kalibrieren.</p>
-          </article>
-          <article class="solution reveal">
-            <p class="problem"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Lokale Modelle auf der CPU sind langsam.</p>
-            <h3>Reflex-Modus</h3>
-            <p>Treffer in Sekundenbruchteilen, gestreamte Antwort, vorgeladenes Modell. Binär-Index und Themen-Cluster halten die Suche bei 1 Mio. Knoten unter 60 ms.</p>
+            <p>Hält Wissen mit offiziellen Quellen aktuell und filtert Prompt-Injections.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 05 Stack -->
-    <section id="stack" class="section">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="eyebrow mono">05 / stack</p>
-          <h2>Architektur &amp; Messungen</h2>
-          <p class="section-lead">Optimiert für 16 GB RAM, läuft vollständig lokal über Ollama.</p>
-        </header>
-
-        <div class="stack-grid">
-          <dl class="stack-list reveal">
-            <div><dt>Antwort-Modell</dt><dd><code>gemma2:2b</code> – Antworten, Zusammenfassungen, Weiche</dd></div>
-            <div><dt>Prüf-Modell</dt><dd><code>qwen2.5:7b</code> (optional) – Widerspruchs- und Aktualitätsprüfung</dd></div>
-            <div><dt>Embeddings</dt><dd><code>snowflake-arctic-embed:22m</code> oder mehrsprachig <code>granite-embedding:278m</code></dd></div>
-            <div><dt>Speicher</dt><dd>DuckDB – Knoten, Kanten, Kassetten, Archiv, Konflikte und Quellen in einer Datei</dd></div>
-            <div><dt>CLI</dt><dd>Typer &amp; Rich – inkl. interaktiver HTML-Karte des Geflechts</dd></div>
-            <div><dt>Engineering</dt><dd>Python 3.11+, Pydantic V2, Pytest, GitHub Actions, Conventional Commits</dd></div>
-          </dl>
-
-          <div class="bench reveal">
-            <h3>Embedding-Modelle im Vergleich</h3>
-            <p class="bench-lead">Gemessen an zwei Programmier-Büchern mit 9 Fach- und 6 freien Fragen.</p>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr><th scope="col">Modell</th><th scope="col">Fach/frei richtig</th><th scope="col">Treffer in Top 3</th><th scope="col">Zeit/Abschnitt</th></tr>
-                </thead>
-                <tbody>
-                  <tr><th scope="row"><code>snowflake-arctic-embed:22m</code></th><td>76 %</td><td>6 / 9</td><td>0,18 s</td></tr>
-                  <tr class="is-best"><th scope="row"><code>granite-embedding:278m</code></th><td>98 %</td><td>9 / 9</td><td>0,7–0,9 s</td></tr>
-                  <tr><th scope="row"><code>bge-m3</code></th><td>96 %</td><td>9 / 9</td><td>2,3 s</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="bench-note">Der Wechsel des Embedding-Modells braucht kein neues Einlesen: Kanten, gelernte Fäden und Gewichte bleiben erhalten.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 Roadmap -->
+    <!-- 04 Stack & Roadmap -->
     <section id="roadmap" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">06 / roadmap</p>
-          <h2>Meilensteine</h2>
+          <p class="eyebrow mono">04 / stand</p>
+          <h2>Stack &amp; Roadmap</h2>
         </header>
 
+        <ul class="hero-tags stack-tags reveal" aria-label="Technologien">
+          <li>Python 3.11+</li><li>Ollama</li><li>gemma2:2b</li><li>DuckDB</li><li>Pydantic V2</li><li>Typer &amp; Rich</li><li>Pytest (~350 Tests)</li><li>GitHub Actions</li>
+        </ul>
+
         <ol class="roadmap reveal">
-          <li class="done">
-            <span class="mono">Phase 1</span>
-            <h3>Fundament</h3>
-            <p>DuckDB statt ChromaDB, Kassetten-Modell, Refactoring von Manager und Ingestor.</p>
-          </li>
-          <li class="done">
-            <span class="mono">Phase 2</span>
-            <h3>Lebendes Gewebe</h3>
-            <p>Semantische und zeitliche Kanten, Decay, Gradient-Suche, Graph-Traversal, Komprimierung mit Wiederherstellung.</p>
-          </li>
-          <li class="done">
-            <span class="mono">Phase 3</span>
-            <h3>Immunsystem &amp; Autonomie</h3>
-            <p>Immun-Layer, Output-Validator, freundlicher Scraper für offizielle Quellen.</p>
-          </li>
-          <li class="active">
-            <span class="mono">Phase 4 · in Arbeit</span>
-            <h3>Das Geflecht wird zum Index</h3>
-            <p>Binär-Index, Cluster-Ebene, Aktivierungsausbreitung, Reflex-Modus, Weiche, Umbetten. Ziel: ≥ 1 Mio. Knoten auf 16 GB.</p>
-          </li>
-          <li>
-            <span class="mono">Phase 5</span>
-            <h3>Mycelium im Unternehmen</h3>
-            <p>Das System lernt, wie eine Firma funktioniert – assistieren, zuarbeiten, erledigen, mit Freigabe durch Menschen.</p>
-          </li>
+          <li class="done"><span class="mono">Phase 1</span><h3>Fundament</h3></li>
+          <li class="done"><span class="mono">Phase 2</span><h3>Lebendes Gewebe</h3></li>
+          <li class="done"><span class="mono">Phase 3</span><h3>Immunsystem</h3></li>
+          <li class="active"><span class="mono">Phase 4 · in Arbeit</span><h3>Skalierung auf 1 Mio. Knoten</h3></li>
+          <li><span class="mono">Phase 5</span><h3>Mycelium im Unternehmen</h3></li>
         </ol>
 
-        <div class="leitner reveal" id="lern-buddy">
-          <div class="leitner-text">
-            <p class="eyebrow mono">langfristige vision</p>
-            <h3><i class="bi bi-mortarboard" aria-hidden="true"></i> Lern-Buddy mit Spaced Repetition</h3>
-            <p>
-              Mycelium erkennt schon heute eigene Wissenswelten – neben Programmierung etwa die Fahrschule. Darauf soll ein Lern-Buddy
-              aufbauen, der Wissen nach dem Leitner-System wiederholt: je sicherer die Antwort, desto später kommt die Karte wieder.
-            </p>
-            <div class="leitner-buttons" role="group" aria-label="Wie gut wusstest du die Antwort?">
-              <button type="button" class="interval-btn red" data-step="1" data-label="1 Tag">Falsch</button>
-              <button type="button" class="interval-btn yellow" data-step="2" data-label="3 Tagen">Unsicher</button>
-              <button type="button" class="interval-btn green" data-step="3" data-label="7 Tagen">Gewusst</button>
-            </div>
-            <p id="schedule-info" class="schedule-info mono" aria-live="polite">Probier es aus: Wähle eine Antwort.</p>
-          </div>
-
-          <ol class="leitner-path" aria-label="Wiederholungsintervalle">
-            <li class="path-step is-active"><i class="bi bi-stars" aria-hidden="true"></i><span class="mono">Start</span></li>
-            <li class="path-step"><i class="bi bi-hourglass-split" aria-hidden="true"></i><span class="mono">+1 Tag</span></li>
-            <li class="path-step"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="mono">+3 Tage</span></li>
-            <li class="path-step"><i class="bi bi-check2-all" aria-hidden="true"></i><span class="mono">+7 Tage</span></li>
-          </ol>
-        </div>
-
         <blockquote class="vision reveal">
-          <p>Project Mycelium: Ending Digital Amnesia. Building the Collective Brain for Enterprise Continuity.</p>
+          <p>Ending Digital Amnesia. Building the Collective Brain for Enterprise Continuity.</p>
         </blockquote>
       </div>
     </section>
@@ -390,7 +223,7 @@
     <i class="bi bi-shield-check" aria-hidden="true"></i>
     <div>
       <strong>2 / 2 Sätze belegt</strong>
-      <span class="mono">Output-Validator: keine Halluzination</span>
+      <span class="mono">Keine Halluzination gefunden</span>
     </div>
   </div>
 
@@ -412,6 +245,6 @@
   </button>
 
   <script src="js/main.js?v=3"></script>
-  <script src="js/lab.js?v=3"></script>
+  <script src="js/lab.js?v=4"></script>
 </body>
 </html>
