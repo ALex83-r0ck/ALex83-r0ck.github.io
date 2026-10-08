@@ -795,13 +795,15 @@ a:hover .link-arrow i,
   transition: background-color 0.25s ease, padding 0.35s var(--ease);
 }
 .project-list > li:hover { background: var(--accent-soft); padding-left: 16px; padding-right: 16px; }
-.pl-main h4 { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 1.1rem; margin: 0 0 4px; }
+.pl-main { min-width: 0; }
+.pl-main h4 { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 1.1rem; margin: 0 0 4px; overflow-wrap: anywhere; }
 .pl-main h4 a { color: var(--text); }
 .pl-main h4 a:hover { color: var(--accent); }
 .pl-main h4 a i { font-size: 0.8em; color: var(--accent); }
 .pl-main p { margin: 0; color: var(--text-muted); font-size: 0.93rem; }
 .pl-cat { font: 500 0.75rem var(--font-mono); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .project-list .tags { justify-content: flex-end; }
+.tags:empty { display: none; }
 .pl-repo {
   display: inline-grid;
   place-items: center;
