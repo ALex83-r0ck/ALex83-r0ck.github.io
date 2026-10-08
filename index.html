@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <meta name="description" content="Alexander Rothe – Junior AI & Full Stack Developer. Schwerpunkt: lokale RAG-Systeme, Agentic Workflows und datenschutzkonforme KI-Architekturen – auf dem Weg zum AI Orchestrator.">
   <meta name="keywords" content="AI Developer, Full Stack Developer, AI Orchestration, RAG, LangChain, Ollama, Python, Kotlin, Agentic Workflows, Alexander Rothe">
-  <meta name="theme-color" content="#0b1020">
+  <meta name="theme-color" content="#09090b">
   <meta property="og:title" content="Alexander Rothe – Junior AI & Full Stack Developer">
   <meta property="og:description" content="Lokale RAG-Systeme | Agentic Workflows | AI Orchestration">
   <meta property="og:image" content="https://alex83-r0ck.github.io/image/og-image.jpg">
@@ -29,9 +29,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="css/main.css?v=3">
+  <link rel="stylesheet" href="css/main.css?v=5">
 
   <script type="application/ld+json">
   {
@@ -52,10 +52,11 @@
 </head>
 <body data-easter-eggs>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 
   <!-- Navigation -->
   <header class="site-nav" id="top">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Alexander Rothe – zum Seitenanfang">
         <span class="brand-mark" aria-hidden="true">AR</span>
         <span class="brand-name">Alexander Rothe</span>
@@ -85,25 +86,20 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="eyebrow mono">~/alexander-rothe</p>
-          <h1>Alexander Rothe</h1>
-          <p class="hero-role">Junior AI &amp; Full Stack Developer</p>
+          <p class="status-chip"><span class="dot" aria-hidden="true"></span> Junior AI &amp; Full Stack Developer · next: AI Orchestration</p>
+          <h1>Alexander<br><span class="gradient-text">Rothe</span></h1>
           <p class="hero-lead">
-            Ich verbinde <strong>15 Jahre Industrie-Erfahrung</strong> mit KI- und Full-Stack-Entwicklung.
-            Mein Schwerpunkt: <strong>lokale RAG-Systeme</strong> mit Ollama und <strong>Agentic Workflows</strong>
-            für datenschutzkonforme Prozessautomatisierung.
+            Ich verbinde <strong>15 Jahre Industrie-Erfahrung</strong> mit KI- und Full-Stack-Entwicklung –
+            mit Fokus auf <strong>lokale RAG-Systeme</strong> und <strong>Agentic Workflows</strong>, die datenschutzkonform
+            auf eigener Hardware laufen.
           </p>
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary"><i class="bi bi-grid-1x2" aria-hidden="true"></i> Projekte ansehen</a>
+            <a href="#projects" class="btn btn-primary">Projekte ansehen <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
             <a href="https://github.com/ALex83-r0ck" class="btn btn-ghost" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
             <a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" class="btn btn-ghost" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
           </div>
-          <ul class="hero-tags" aria-label="Schwerpunkte">
-            <li>Python</li><li>Kotlin</li><li>Ollama</li><li>LangChain</li><li>RAG</li><li>Security First</li>
-          </ul>
         </div>
 
         <div class="hero-visual">
@@ -113,197 +109,207 @@
             <img src="image/profile.webp" alt="Porträt von Alexander Rothe" class="portrait-light" width="640" height="960" fetchpriority="high">
             <img src="image/profile-dark.webp" alt="Illustriertes Porträt von Alexander Rothe im Retro-Stil" class="portrait-dark" width="640" height="640">
           </div>
-          <div class="portrait-caption mono" aria-hidden="true">
-            <span class="dot"></span> next: ai_orchestration
-          </div>
         </div>
+      </div>
+
+      <!-- Tech-Laufband -->
+      <div class="marquee" aria-label="Technologien">
+        <ul class="marquee-track">
+          <li>Python</li><li>Kotlin</li><li>Ollama</li><li>LangChain</li><li>RAG</li><li>DuckDB</li><li>ChromaDB</li>
+          <li>Gemma2</li><li>Jetpack Compose</li><li>KivyMD</li><li>Java</li><li>SQL</li><li>Pytest</li><li>Security First</li>
+        </ul>
+        <ul class="marquee-track" aria-hidden="true">
+          <li>Python</li><li>Kotlin</li><li>Ollama</li><li>LangChain</li><li>RAG</li><li>DuckDB</li><li>ChromaDB</li>
+          <li>Gemma2</li><li>Jetpack Compose</li><li>KivyMD</li><li>Java</li><li>SQL</li><li>Pytest</li><li>Security First</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Über mich -->
+    <!-- Über mich: Bento -->
     <section id="about" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">01 / über mich</p>
-          <h2>Industrie-Erfahrung trifft Code</h2>
+          <p class="eyebrow">Über mich</p>
+          <h2>Industrie-Erfahrung trifft Code.</h2>
         </header>
 
-        <div class="about-grid">
-          <div class="about-text reveal">
+        <div class="bento">
+          <article class="tile tile-bio reveal">
             <p>
               Als <strong>Junior AI &amp; Full Stack Developer</strong> entwickle ich intelligente Systeme, die nicht nur
               innovativ, sondern vor allem sicher, effizient und <strong>datenschutzkonform</strong> sind.
             </p>
             <p>
               Durch meine langjährige Erfahrung in Logistik und Produktion kenne ich die Anforderungen an
-              Prozessstabilität und echten wirtschaftlichen Nutzen. Diese Brücke hilft mir, KI-Technologien
-              gezielt in reale Abläufe zu übersetzen – mein nächstes Ziel ist die Rolle als <strong>AI Orchestrator</strong>.
+              Prozessstabilität und echten wirtschaftlichen Nutzen. Diese Brücke hilft mir, KI gezielt in reale
+              Abläufe zu übersetzen – mein nächstes Ziel ist die Rolle als <strong>AI Orchestrator</strong>.
             </p>
-          </div>
+          </article>
 
-          <aside class="about-side reveal" aria-labelledby="timeline-title">
-            <h3 id="timeline-title" class="side-title"><i class="bi bi-clock-history" aria-hidden="true"></i> Kurzlebenslauf</h3>
+          <article class="tile tile-timeline reveal" aria-labelledby="timeline-title">
+            <h3 id="timeline-title" class="tile-title"><i class="bi bi-clock-history" aria-hidden="true"></i> Werdegang</h3>
             <ol class="timeline" id="lebenslauf">
               <li>
-                <span class="timeline-date mono">Aktuell</span>
+                <span class="timeline-date">Aktuell</span>
                 <h4>Junior AI &amp; Full Stack Developer</h4>
-                <p>Festanstellung mit Fokus auf lokale RAG-Systeme &amp; Agentic Workflows.</p>
+                <p>Lokale RAG-Systeme &amp; Agentic Workflows</p>
               </li>
               <li>
-                <span class="timeline-date mono">2023 – 2025</span>
-                <h4>Umschulung Fachinformatiker Anwendungsentwicklung</h4>
-                <p>Python, Java, SQL – inklusive Praktikum in einem Systemhaus.</p>
+                <span class="timeline-date">2023 – 2025</span>
+                <h4>Umschulung Fachinformatiker AE</h4>
+                <p>Python, Java, SQL – inkl. Praktikum im Systemhaus</p>
               </li>
               <li>
-                <span class="timeline-date mono">2016 – 2021</span>
+                <span class="timeline-date">2016 – 2021</span>
                 <h4>Senior Operations &amp; Logistik</h4>
-                <p>Prozessoptimierung und operative Verantwortung in der Industrie.</p>
+                <p>Prozessoptimierung und operative Verantwortung</p>
               </li>
             </ol>
-
             <div class="badge-box">
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1cc50d08-787b-47ea-af4a-93e88bef1082" data-share-badge-host="https://www.credly.com"></div>
             </div>
-          </aside>
-        </div>
+          </article>
 
-        <div class="focus-grid reveal">
-          <article class="focus-card">
+          <article class="tile tile-stat reveal">
+            <span class="stat-num gradient-text">15+</span>
+            <span class="stat-label">Jahre Industrie-Erfahrung in Logistik &amp; Produktion</span>
+          </article>
+
+          <article class="tile tile-focus reveal">
             <i class="bi bi-diagram-3" aria-hidden="true"></i>
             <h3>RAG-Systeme</h3>
-            <p>Retrieval Augmented Generation für präzise, kontextbasierte Wissensverarbeitung.</p>
+            <p>Präzise, kontextbasierte Wissensverarbeitung.</p>
           </article>
-          <article class="focus-card">
+          <article class="tile tile-focus reveal">
             <i class="bi bi-robot" aria-hidden="true"></i>
             <h3>Agentic Workflows</h3>
-            <p>Autonome Agenten für mehrstufige Prozessautomatisierung.</p>
+            <p>Autonome Agenten für mehrstufige Prozesse.</p>
           </article>
-          <article class="focus-card">
+          <article class="tile tile-focus reveal">
             <i class="bi bi-shield-lock" aria-hidden="true"></i>
             <h3>Lokale LLMs</h3>
-            <p>Datenschutz durch lokale Instanzen (Ollama) – On-Premise &amp; DSGVO-konform.</p>
+            <p>On-Premise mit Ollama – DSGVO-konform.</p>
           </article>
+
         </div>
+
+        <figure class="terminal reveal">
+          <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+          <blockquote class="terminal-body mono">
+            <span class="terminal-prompt" aria-hidden="true">alex@dev:~$</span>
+            <span>"On the other side of the screen, it all looks so easy."</span>
+          </blockquote>
+          <figcaption class="terminal-cite mono">– Kevin Flynn, Tron (1982)</figcaption>
+        </figure>
       </div>
     </section>
-
-    <!-- Terminal-Zitat -->
-    <div class="container">
-      <figure class="terminal reveal">
-        <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-        <blockquote class="terminal-body mono">
-          <span class="terminal-prompt" aria-hidden="true">alex@dev:~$</span>
-          <span>"On the other side of the screen, it all looks so easy."</span>
-        </blockquote>
-        <figcaption class="terminal-cite mono">– Kevin Flynn, Tron (1982)</figcaption>
-      </figure>
-    </div>
 
     <!-- Projekte -->
     <section id="projects" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">02 / projekte</p>
-          <h2>AI Ecosystem</h2>
+          <p class="eyebrow">Projekte</p>
+          <h2>Ein lokales KI-Ökosystem.</h2>
           <p class="section-lead">Vom Gedächtnis über die Logik bis zum Interface – drei Projekte, die ineinandergreifen.</p>
         </header>
 
-        <div class="project-grid featured">
-          <article class="project-card accent-blue reveal">
-            <div class="project-top">
-              <i class="bi bi-diagram-3-fill project-icon" aria-hidden="true"></i>
-              <span class="pill">Phase 4</span>
-            </div>
-            <h3>Project Mycelium</h3>
-            <p>Ein lokales, bio-inspiriertes <strong>Langzeitgedächtnis für LLMs</strong>: Wissen als Gewebe aus Knoten und Kanten, das durch Nutzung lernt, verblasst und verdichtet – ohne verloren zu gehen.</p>
-            <ul class="checks">
-              <li><strong>Weiche &amp; Output-Validator:</strong> gegen Halluzinationen</li>
-              <li><strong>~19.400 Knoten</strong> auf 16 GB, Suche &lt; 60 ms bei 1 Mio.</li>
-            </ul>
-            <div class="project-foot">
+        <div class="project-bento">
+          <a class="feature-card reveal" href="lab.html">
+            <div class="feature-text">
+              <div class="feature-meta">
+                <span class="pill">Flagship · Phase 4</span>
+              </div>
+              <h3>Project Mycelium</h3>
+              <p>
+                Ein lokales, bio-inspiriertes <strong>Langzeitgedächtnis für LLMs</strong>: Wissen als Gewebe aus Knoten und Kanten,
+                das durch Nutzung lernt, verblasst und verdichtet – ohne verloren zu gehen.
+              </p>
+              <dl class="feature-stats">
+                <div><dt>Knoten</dt><dd>~19.400</dd></div>
+                <div><dt>RAM</dt><dd>16 GB</dd></div>
+                <div><dt>Suche @ 1 Mio.</dt><dd>&lt; 60 ms</dd></div>
+              </dl>
               <ul class="tags"><li>Python</li><li>DuckDB</li><li>Ollama</li><li>Gemma2</li></ul>
-              <a href="lab.html" class="link-arrow">Im Lab ansehen <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <span class="link-arrow">Im AI Lab ansehen <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
             </div>
-          </article>
 
-          <article class="project-card accent-cyan reveal">
+            <!-- Kleines Geflecht als Illustration -->
+            <svg class="mycelium-graph" viewBox="0 0 320 260" aria-hidden="true">
+              <g class="edges">
+                <line x1="60" y1="60" x2="150" y2="110"/><line x1="150" y1="110" x2="250" y2="70"/>
+                <line x1="150" y1="110" x2="120" y2="200"/><line x1="150" y1="110" x2="240" y2="180"/>
+                <line x1="60" y1="60" x2="40" y2="160"/><line x1="40" y1="160" x2="120" y2="200"/>
+                <line x1="250" y1="70" x2="290" y2="140"/><line x1="290" y1="140" x2="240" y2="180"/>
+                <line x1="120" y1="200" x2="200" y2="235"/><line x1="240" y1="180" x2="200" y2="235"/>
+                <line class="learned" x1="60" y1="60" x2="250" y2="70"/>
+              </g>
+              <g class="nodes">
+                <circle cx="150" cy="110" r="11" class="hub"/>
+                <circle cx="60" cy="60" r="7" class="pulse p1"/><circle cx="250" cy="70" r="8" class="pulse p2"/>
+                <circle cx="120" cy="200" r="7"/><circle cx="240" cy="180" r="9" class="pulse p3"/>
+                <circle cx="40" cy="160" r="5" class="faded"/><circle cx="290" cy="140" r="5"/>
+                <circle cx="200" cy="235" r="5" class="faded"/>
+              </g>
+            </svg>
+          </a>
+
+          <article class="project-card reveal">
             <div class="project-top">
-              <i class="bi bi-cpu-fill project-icon" aria-hidden="true"></i>
+              <i class="bi bi-cpu project-icon" aria-hidden="true"></i>
               <span class="pill">Core Engine</span>
             </div>
             <h3>Lead-Dojo</h3>
-            <p><strong>System-2-Denken</strong> für lokale KI: autonome Reasoning-Chains zum Analysieren, Reflektieren und Verifizieren.</p>
-            <ul class="checks">
-              <li><strong>ReAct-Pattern:</strong> logisches Schließen</li>
-              <li><strong>100 % lokal:</strong> DSGVO-konform</li>
-            </ul>
-            <div class="project-foot">
-              <ul class="tags"><li>AsyncIO</li><li>Ollama</li><li>LangChain</li></ul>
-            </div>
+            <p><strong>System-2-Denken</strong> für lokale KI: Reasoning-Chains, die analysieren, reflektieren und verifizieren – 100 % lokal.</p>
+            <ul class="tags"><li>AsyncIO</li><li>Ollama</li><li>LangChain</li></ul>
           </article>
 
-          <article class="project-card accent-green reveal">
+          <article class="project-card reveal">
             <div class="project-top">
-              <i class="bi bi-mortarboard-fill project-icon" aria-hidden="true"></i>
+              <i class="bi bi-mortarboard project-icon" aria-hidden="true"></i>
               <span class="pill">Flagship App</span>
             </div>
             <h3>LernBuddy</h3>
-            <p><strong>Offline-first Lernplattform:</strong> generiert Lernmaterialien automatisch und bringt einen KI-Tutor mit.</p>
-            <ul class="checks">
-              <li><strong>Gamification:</strong> motivationsgesteuertes Lernen</li>
-              <li><strong>Logik:</strong> powered by Lead-Dojo</li>
-            </ul>
-            <div class="project-foot">
-              <ul class="tags"><li>KivyMD</li><li>SQLite</li><li>Python</li></ul>
-            </div>
+            <p><strong>Offline-first Lernplattform</strong> mit KI-Tutor, generierten Lernmaterialien und Gamification.</p>
+            <ul class="tags"><li>KivyMD</li><li>SQLite</li><li>Python</li></ul>
           </article>
         </div>
 
-        <div class="lab-banner reveal">
-          <div>
-            <h3><i class="bi bi-cpu" aria-hidden="true"></i> AI Research Lab: Project Mycelium</h3>
-            <p>Architektur, Live-Simulation einer Anfrage, Lebenszyklus eines Knotens und Messungen.</p>
-          </div>
-          <a href="lab.html" class="btn btn-primary">Lab öffnen <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-        <h3 class="sub-head reveal"><i class="bi bi-shield-lock" aria-hidden="true"></i> Engineering &amp; Security</h3>
-        <div class="project-grid two">
-          <article class="project-card compact reveal">
-            <h4>DeerSecure</h4>
-            <p>Hybride Sicherheitslösung für Windows: Echtzeit-Monitoring, VirusTotal-Anbindung und Windows-Defender-Integration.</p>
+        <h3 class="list-head reveal">Weitere Projekte</h3>
+        <ul class="project-list">
+          <li class="reveal">
+            <div class="pl-main"><h4>DeerSecure</h4><p>Hybride Windows-Sicherheitslösung mit Echtzeit-Monitoring, VirusTotal und Defender-Integration.</p></div>
+            <span class="pl-cat">Security</span>
             <ul class="tags"><li>Python</li><li>KivyMD</li><li>SQLite</li></ul>
-          </article>
-          <article class="project-card compact reveal">
-            <h4>Miet-Störungsprotokoll</h4>
-            <p>Zeitgestempelte Beweissicherung für Mieter mit PDF-Export und Statistiken zur Dokumentation von Wohnungsmängeln.</p>
+          </li>
+          <li class="reveal">
+            <div class="pl-main"><h4>Miet-Störungsprotokoll</h4><p>Zeitgestempelte Beweissicherung für Mieter mit PDF-Export und Statistiken.</p></div>
+            <span class="pl-cat">Engineering</span>
             <ul class="tags"><li>Python</li><li>KivyMD</li><li>SQLModel</li></ul>
-          </article>
-        </div>
-
-        <h3 class="sub-head reveal"><i class="bi bi-phone" aria-hidden="true"></i> Mobile &amp; Creative</h3>
-        <div class="project-grid four">
-          <article class="project-card compact reveal">
-            <h4>BirthdaySchatz</h4>
-            <p>Smarte Geburtstagsverwaltung mit Fokus auf Datenschutz und lokale Speicherung.</p>
+          </li>
+          <li class="reveal">
+            <div class="pl-main"><h4>BirthdaySchatz</h4><p>Geburtstagsverwaltung mit Fokus auf Datenschutz und lokale Speicherung.</p></div>
+            <span class="pl-cat">Mobile</span>
             <ul class="tags"><li>Kotlin</li><li>Compose</li></ul>
-          </article>
-          <article class="project-card compact reveal">
-            <div class="compact-head"><h4>VibeVault</h4><span class="pill pill-wip">WIP</span></div>
-            <p>Gamifizierter Habit-Tracker mit intuitiver UX und interaktiven Belohnungen.</p>
+          </li>
+          <li class="reveal">
+            <div class="pl-main"><h4>VibeVault <span class="pill pill-wip">WIP</span></h4><p>Gamifizierter Habit-Tracker mit interaktiven Belohnungen.</p></div>
+            <span class="pl-cat">Mobile</span>
             <ul class="tags"><li>Kotlin</li><li>Compose</li></ul>
-          </article>
-          <article class="project-card compact reveal">
-            <div class="compact-head"><h4>Pax-Mantis</h4><span class="pill pill-wip">WIP</span></div>
-            <p>Erste-Hilfe-App bei Angststörungen: diskrete Stabilisierungstechniken für akute Situationen.</p>
+          </li>
+          <li class="reveal">
+            <div class="pl-main"><h4>Pax-Mantis <span class="pill pill-wip">WIP</span></h4><p>Erste-Hilfe-App bei Angststörungen mit diskreten Stabilisierungstechniken.</p></div>
+            <span class="pl-cat">Mobile</span>
             <ul class="tags"><li>Kotlin</li><li>Compose</li></ul>
-          </article>
-          <a class="project-card compact is-link reveal" href="https://alex83-r0ck.github.io/Tribute-to-Ozzy-Osbourne/" target="_blank" rel="noopener">
-            <div class="compact-head"><h4>Ozzy Osbourne Tribute</h4><span class="pill pill-live">Live</span></div>
-            <p>Interaktives Fan-Dashboard mit Quiz-System und „Crazy Train“-Animationen.</p>
+          </li>
+          <li class="reveal is-link">
+            <div class="pl-main">
+              <h4><a href="https://alex83-r0ck.github.io/Tribute-to-Ozzy-Osbourne/" target="_blank" rel="noopener">Ozzy Osbourne Tribute <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a> <span class="pill pill-live">Live</span></h4>
+              <p>Interaktives Fan-Dashboard mit Quiz und „Crazy Train“-Animationen.</p>
+            </div>
+            <span class="pl-cat">Web</span>
             <ul class="tags"><li>HTML5</li><li>JS</li><li>CSS3</li></ul>
-          </a>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -311,34 +317,28 @@
     <section id="credentials" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">03 / nachweise</p>
-          <h2>Meilensteine &amp; Zertifikate</h2>
+          <p class="eyebrow">Nachweise</p>
+          <h2>Meilensteine &amp; Zertifikate.</h2>
         </header>
 
         <div class="doc-grid">
           <a class="doc-card reveal" href="assets/docs/Teilnahmebescheinigung_Alexander_Rothe.pdf" target="_blank" rel="noopener">
             <i class="bi bi-mortarboard" aria-hidden="true"></i>
-            <div>
-              <h3>Teilnahmebescheinigung Umschulung</h3>
-              <p>Der Startpunkt meiner IT-Laufbahn (2023): fundierte Basis in der Anwendungsentwicklung.</p>
-              <span class="link-arrow">PDF öffnen <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span>
-            </div>
+            <h3>Teilnahmebescheinigung Umschulung</h3>
+            <p>Der Startpunkt meiner IT-Laufbahn (2023).</p>
+            <span class="link-arrow">PDF öffnen <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
           </a>
           <a class="doc-card reveal" href="assets/docs/Zeugnis-Umschulung_Alexander_Rothe.pdf" target="_blank" rel="noopener">
             <i class="bi bi-patch-check" aria-hidden="true"></i>
-            <div>
-              <h3>Zeugnis GFN Umschulung</h3>
-              <p>Abschlusszeugnis mit Schwerpunkt Java, SQL und Softwarearchitektur.</p>
-              <span class="link-arrow">PDF öffnen <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span>
-            </div>
+            <h3>Zeugnis GFN Umschulung</h3>
+            <p>Abschluss mit Schwerpunkt Java, SQL und Softwarearchitektur.</p>
+            <span class="link-arrow">PDF öffnen <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
           </a>
           <a class="doc-card reveal" href="assets/docs/Praktikumszeugnis_Alexander_Rothe_2025.pdf" target="_blank" rel="noopener">
             <i class="bi bi-hdd-network" aria-hidden="true"></i>
-            <div>
-              <h3>Praktikumszeugnis (Systemhaus)</h3>
-              <p>Praxis im professionellen Umfeld: Remote-Work, Kundenprojekte und Web-Stack.</p>
-              <span class="link-arrow">PDF öffnen <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span>
-            </div>
+            <h3>Praktikumszeugnis Systemhaus</h3>
+            <p>Remote-Work, Kundenprojekte und Web-Stack.</p>
+            <span class="link-arrow">PDF öffnen <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
           </a>
         </div>
 
@@ -370,35 +370,38 @@
 
     <!-- Kontakt -->
     <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div class="reveal">
-          <p class="eyebrow mono">04 / kontakt</p>
-          <h2>Lass uns austauschen</h2>
-          <p class="section-lead">
-            Fragen zu einem Projekt, Feedback oder einfach Lust auf einen Austausch über lokale KI?
-            Schreib mir gern eine Nachricht.
-          </p>
-          <ul class="contact-links">
-            <li><a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> github.com/ALex83-r0ck</a></li>
-            <li><a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn-Profil</a></li>
-          </ul>
-        </div>
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-intro">
+            <p class="eyebrow">Kontakt</p>
+            <h2>Lass uns austauschen.</h2>
+            <p class="section-lead">
+              Fragen zu einem Projekt, Feedback oder Lust auf einen Austausch über lokale KI? Schreib mir gern.
+            </p>
+            <ul class="contact-links">
+              <li><a href="https://github.com/ALex83-r0ck" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> github.com/ALex83-r0ck</a></li>
+              <li><a href="https://www.linkedin.com/in/alexander-rothe-84ab112b6" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn-Profil</a></li>
+            </ul>
+          </div>
 
-        <form id="contact-form" class="contact-form reveal" action="https://formspree.io/f/mwprwpro" method="POST">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="Dein Name" required>
-          </div>
-          <div class="field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="name@beispiel.de" required>
-          </div>
-          <div class="field">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht …" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary"><i class="bi bi-send" aria-hidden="true"></i> Nachricht senden</button>
-        </form>
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/mwprwpro" method="POST">
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Dein Name" required>
+              </div>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="name@beispiel.de" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht …" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Nachricht senden <i class="bi bi-send" aria-hidden="true"></i></button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -414,6 +417,7 @@
         <a href="pages/datenschutzerklärung.html">Datenschutz</a>
       </nav>
     </div>
+    <p class="footer-wordmark" aria-hidden="true">Alexander Rothe</p>
     <p class="container easter-egg mono">// Tippe 'TRON' oder 'MATRIX', wenn dich jemand beobachtet …</p>
   </footer>
 
@@ -422,6 +426,6 @@
   </button>
 
   <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>
