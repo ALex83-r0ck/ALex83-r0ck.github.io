@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Project Mycelium: ein lokales, bio-inspiriertes Langzeitgedächtnis für LLMs – Wissen als Gewebe aus Knoten und Kanten, das durch Nutzung lernt, verblasst und verdichtet, ohne verloren zu gehen.">
-  <meta name="theme-color" content="#0b1020">
+  <meta name="theme-color" content="#09090b">
   <meta property="og:title" content="Project Mycelium – AI Research Lab von Alexander Rothe">
   <meta property="og:description" content="Persistentes, projektübergreifendes Gedächtnis für lokale LLMs – 100 % lokal auf 16 GB RAM.">
   <meta property="og:image" content="https://alex83-r0ck.github.io/image/og-image.jpg">
@@ -23,16 +23,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="css/main.css?v=3">
-  <link rel="stylesheet" href="css/lab.css?v=4">
+  <link rel="stylesheet" href="css/main.css?v=5">
+  <link rel="stylesheet" href="css/lab.css?v=5">
 </head>
 <body data-easter-eggs>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 
   <header class="site-nav" id="top">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Zur Startseite">
         <span class="brand-mark" aria-hidden="true">AR</span>
         <span class="brand-name">Alexander Rothe</span>
@@ -64,8 +65,8 @@
     <section class="hero lab-hero" id="mycelium">
       <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="container">
-        <p class="eyebrow mono">~/ai-lab/mycelium</p>
-        <h1>Project Mycelium</h1>
+        <p class="status-chip"><span class="dot" aria-hidden="true"></span> AI Research Lab · Phase 4 in Arbeit</p>
+        <h1>Project <span class="gradient-text">Mycelium</span></h1>
         <p class="hero-role">Ein Langzeitgedächtnis für lokale LLMs</p>
         <p class="hero-lead">
           Lokale LLMs vergessen alles, sobald der Chat endet. Mycelium speichert Wissen projektübergreifend als
@@ -85,7 +86,7 @@
     <section id="frage" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">01 / so funktioniert's</p>
+          <p class="eyebrow">So funktioniert's</p>
           <h2>Was bei einer Frage passiert</h2>
         </header>
 
@@ -135,7 +136,7 @@
     <section id="lebenszyklus" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">02 / verfall &amp; verdichtung</p>
+          <p class="eyebrow">Verfall &amp; Verdichtung</p>
           <h2>Vergessen – aber umkehrbar</h2>
           <p class="section-lead">Zieh am Regler: So verdichtet sich ein Knoten, den niemand mehr abruft. Jede Fassung bleibt im Archiv und kommt bei erneuter Nutzung zurück.</p>
         </header>
@@ -163,7 +164,7 @@
     <section id="loesungen" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">03 / bausteine</p>
+          <p class="eyebrow">Bausteine</p>
           <h2>Was Mycelium besonders macht</h2>
         </header>
 
@@ -196,7 +197,7 @@
     <section id="roadmap" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow mono">04 / stand</p>
+          <p class="eyebrow">Stand</p>
           <h2>Stack &amp; Roadmap</h2>
         </header>
 
@@ -244,7 +245,7 @@
     <i class="bi bi-arrow-up" aria-hidden="true"></i>
   </button>
 
-  <script src="js/main.js?v=3"></script>
-  <script src="js/lab.js?v=4"></script>
+  <script src="js/main.js?v=5"></script>
+  <script src="js/lab.js?v=5"></script>
 </body>
 </html>

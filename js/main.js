@@ -18,7 +18,7 @@
 
     const applyTheme = (isDark) => {
         root.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        if (themeColor) themeColor.setAttribute('content', isDark ? '#0b1020' : '#f6f7fb');
+        if (themeColor) themeColor.setAttribute('content', isDark ? '#09090b' : '#fafafa');
         try { localStorage.setItem('darkMode', isDark ? '1' : '0'); } catch (e) { /* Private Mode */ }
     };
 
@@ -43,6 +43,34 @@
     navToggle?.addEventListener('click', () => setNavOpen(!navLinks.classList.contains('open')));
     navLinks?.addEventListener('click', (e) => { if (e.target.closest('a')) setNavOpen(false); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNavOpen(false); });
+
+    // ===========================
+    // NAV-SCHATTEN BEIM SCROLLEN
+    // ===========================
+    const siteNav = document.querySelector('.site-nav');
+    if (siteNav) {
+        const onNavScroll = () => siteNav.classList.toggle('is-scrolled', window.scrollY > 20);
+        window.addEventListener('scroll', onNavScroll, { passive: true });
+        onNavScroll();
+    }
+
+    // ===========================
+    // SPOTLIGHT AUF KARTEN
+    // ===========================
+    // Ein Lichtkegel folgt dem Mauszeiger; nur bei echter Maus und ohne reduzierte Bewegung.
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canHover && !reduceMotion) {
+        const spotSelector = '.tile, .project-card, .feature-card, .doc-card, .cert-card, .concept, .stage, .stats > div';
+        document.querySelectorAll(spotSelector).forEach((el) => el.classList.add('spotlight'));
+        document.addEventListener('pointermove', (e) => {
+            const card = e.target.closest('.spotlight');
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+        }, { passive: true });
+    }
 
     // ===========================
     // SCROLL-TOP BUTTON
