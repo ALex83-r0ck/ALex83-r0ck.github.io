@@ -1,81 +1,116 @@
-# 🚀 Portfolio: Applied AI & Software Solutions
+# 🚀 Portfolio: Alexander Rothe
 
-## Technical Showcase by Alexander Rothe
+**Junior AI & Full Stack Developer** – mit Fokus auf lokale RAG-Systeme und Agentic Workflows, auf dem Weg zum AI Orchestrator.
 
-Dieses Repository enthält den Source Code meines professionellen Portfolios. Es ist nicht nur eine Visitenkarte, sondern ein technischer Showcase für **High-Performance Web-Frontends**, **Secure Coding** und **AI-Integration**.
+Dieses Repository enthält den Quellcode meines Portfolios. Es zeigt meine Projekte, meinen Werdegang und im **AI Lab** mein aktuelles Kernprojekt **Project Mycelium**.
 
-[🌐 Live Demo ansehen](https://ALex83-r0ck.github.io)
+[🌐 Zur Live-Seite](https://alex83-r0ck.github.io)
 
 ---
 
-## 🎯 Technical Strategy
+## 🎯 Ansatz
 
-Mein Portfolio spiegelt meinen Ansatz wider: **Komplexität reduzieren, Sicherheit maximieren.** Statt auf überladene Frameworks setze ich auf ein hochperformantes, modulares System mit Fokus auf User Experience und Data-Privacy-konformer Darstellung.
+**Komplexität reduzieren, Sicherheit maximieren.** Die Seite kommt ohne Framework und ohne Build-Schritt aus: reines HTML, CSS und JavaScript, schnell geladen und leicht zu warten.
 
-### 🛡️ Security & Quality Standards
+* **Security by Design:** keine Cookies, kein Tracking, keine Analytics.
+* **Conventional Commits:** eine nachvollziehbare, semantische Git-Historie.
+* **Barrierefreiheit:** Skip-Link, Tastaturbedienung, Alt-Texte und Rücksicht auf `prefers-reduced-motion`.
 
-* **ISC2 Cybersecurity Principles:** Die gesamte Struktur folgt dem "Security-by-Design"-Ansatz.
-* **Conventional Commits:** Eine lückenlose, semantische Git-Historie zur Sicherstellung der Wartbarkeit.
-* **Clean Code:** Modulares CSS und strukturiertes JavaScript für schnelle Ladezeiten und Skalierbarkeit.
+---
+
+## 🧭 Aufbau der Seite
+
+| Seite | Inhalt |
+| --- | --- |
+| `index.html` | Startseite: Hero, Über mich (Bento-Raster mit Werdegang), Projekte, Nachweise und Kontakt |
+| `lab.html` | AI Lab zu Project Mycelium: Live-Simulation einer Anfrage, interaktiver Regler zum Verfall von Wissen, Bausteine und Roadmap |
+| `pages/impressum.html` | Impressum |
+| `pages/datenschutzerklärung.html` | Datenschutzerklärung |
+
+### Projekte auf der Seite
+
+* **Project Mycelium** – lokales, bio-inspiriertes Langzeitgedächtnis für LLMs (Repository privat)
+* **[Lead-Dojo](https://github.com/ALex83-r0ck/Lead-Dojo)** – Reasoning-Chains für lokale KI
+* **[LernBuddy](https://github.com/ALex83-r0ck/Lernbuddy)** – Offline-first Lernplattform mit KI-Tutor
+* **[DeerSecure](https://github.com/ALex83-r0ck/DeerSecure)** – hybride Sicherheitslösung für Windows
+* **[Miet-Störungsprotokoll](https://github.com/ALex83-r0ck/MietStoerungsProtokoll)** – Beweissicherung für Mieter
+* **[BewerbungsTollAnschreibenAI](https://github.com/ALex83-r0ck/BewerbungsTollAnschreibenAI)** – Anschreiben passend zur Stellenbeschreibung
+* **[Bewerbungs-Automat](https://github.com/ALex83-r0ck/Bewerbungs-Automat)** – Konzept für ein semiautomatisches Bewerbungs-Tool
+* **[BirthdaySchatz](https://github.com/ALex83-r0ck/BirthdaySchatz)**, **[VibeVault](https://github.com/ALex83-r0ck/Vibe-Vault)**, **[Pax-Mantis](https://github.com/ALex83-r0ck/Pax-Mantis)** – Android-Apps mit Kotlin & Compose
+* **[Ozzy Osbourne Tribute](https://github.com/ALex83-r0ck/Tribute-to-Ozzy-Osbourne)** – interaktives Fan-Dashboard ([live](https://alex83-r0ck.github.io/Tribute-to-Ozzy-Osbourne/))
 
 ---
 
 ## 🛠 Tech Stack
 
-* **Frontend Architecture:** HTML5, framework-freies CSS3 mit Design-Tokens (Custom Properties), Vanilla JavaScript (ES6+).
-* **Interaktive Elemente:** Dezente Scroll-Animationen (mit `prefers-reduced-motion`), Dark/Light Mode ohne Flackern, Keyboard-Easter-Eggs; im AI Lab eine kurze Live-Simulation von Project Mycelium und ein interaktiver Decay-Regler.
-* **Asset Integration:** Optimiertes PDF-Handling für Zertifikate (Responsive iFrames & Fallback-Strategies).
-* **CI/CD:** Bereitstellung über GitHub Pages mit automatisierten Workflows.
+* **HTML5, CSS3, Vanilla JavaScript (ES6+)** – kein Framework, kein Build-Schritt
+* **Design-Tokens** über CSS Custom Properties für Hell- und Dunkelmodus
+* **Schriften:** Geist & Geist Mono (Google Fonts)
+* **Icons:** Bootstrap Icons
+* **Kontaktformular:** Formspree
+* **Hosting:** GitHub Pages
 
 ---
 
-## 🏗 Key Features der Implementierung
+## ✨ Design & Interaktion
 
-### 1. Advanced PDF & Asset Engine
-
-Um Zertifikate und Nachweise professionell zu präsentieren, nutzt das Portfolio eine hybride Lösung:
-
-* **Smart Preview:** Native `iframe`-Einbindungen mit optimierten Parametern (`#view=fitH`).
-* **Responsive Trust-Anchors:** Dynamische Grid-Systeme für Bild-Zertifikate, die auf allen Endgeräten eine optimale Lesbarkeit garantieren.
-
-### 2. Tron-Inspired UI / UX
-
-Ein subtiles "Cyber-Security"-Theme (inspiriert von Tron), das meine Leidenschaft für Technik und Sicherheit widerspiegelt:
-
-* **Dynamic Glow Effects:** CSS-Variable-basierte Farbschemata (Dark/Light Mode), inklusive Porträtwechsel rein über CSS.
-
-* **Easter Eggs:** Interaktive CLI-Elemente, die meine Affinität zur Shell-Entwicklung zeigen.
-
-### 3. Applied AI Fokus
-
-Das Portfolio dient als Hub für meine KI-Projekte – allen voran **Project Mycelium**, ein lokales, bio-inspiriertes Langzeitgedächtnis für LLMs, dazu **Lead-Dojo** und **LernBuddy**. Es zeigt, wie lokale LLMs (Ollama) in modernen Software-Architekturen wertschöpfend eingesetzt werden.
+* **Moderner Look:** Aurora-Farbverläufe, schwebende Glas-Navigation, Bento-Raster und ein Tech-Laufband
+* **Hell/Dunkel ohne Flackern:** Das Theme wird vor dem ersten Rendern gesetzt; ohne gespeicherte Wahl folgt die Seite dem Systemmodus
+* **Porträtwechsel rein über CSS:** Im hellen Modus erscheint das Foto, im dunklen die Retro-Illustration
+* **Spotlight-Effekt:** Ein Lichtkegel folgt dem Mauszeiger über die Karten (nur mit Maus)
+* **Scroll-Animationen:** Inhalte blenden beim Scrollen ein
+* **Easter Eggs:** Tippe `TRON` oder `MATRIX` 😉
 
 ---
 
-## 🚀 Local Development
+## ⚡ Performance
 
-1. **Repository klonen:**
+* Bilder als **WebP** (Porträts in 640 px Breite statt mehrerer MB großer PNGs)
+* Eigenes **Open-Graph-Bild** (`image/og-image.jpg`) für Link-Vorschauen
+* **Cache-Busting** über Versionsnummern an CSS und JS (`?v=…`)
+* Zertifikatsbilder werden **lazy** geladen
+
+---
+
+## 📁 Projektstruktur
+
+```text
+index.html              Startseite
+lab.html                AI Lab – Project Mycelium
+pages/                  Impressum und Datenschutzerklärung
+css/main.css            Gemeinsames Stylesheet (Design-Tokens, Layout, Komponenten)
+css/lab.css             Ergänzungen für das AI Lab
+js/main.js              Theme, Navigation, Spotlight, Scroll-Effekte, Easter Eggs
+js/lab.js               Simulation und Decay-Regler im AI Lab
+image/                  Porträts, Zertifikate und Open-Graph-Bild (WebP/JPG)
+assets/docs/            Zeugnisse und Zertifikate als PDF
+```
+
+---
+
+## 🚀 Lokal starten
+
+1. Repository klonen:
 
    ```bash
-   git clone [https://github.com/ALex83-r0ck/ALex83-r0ck.github.io.git](https://github.com/ALex83-r0ck/ALex83-r0ck.github.io.git)```
-
-2. In das Verzeichnes wechseln:
-
-   ```bash
+   git clone https://github.com/ALex83-r0ck/ALex83-r0ck.github.io.git
    cd ALex83-r0ck.github.io
    ```
 
-3. Lokalen Server starten:
+2. Lokalen Server starten:
 
-    ```bash
-    # Mit Python
-    python -m http.server 8000
+   ```bash
+   python -m http.server 8000
    ```
+
+3. Im Browser öffnen: <http://localhost:8000>
+
+---
 
 ## 📬 Kontakt & Netzwerk
 
-LinkedIn: Alexander Rothe
+* LinkedIn: [Alexander Rothe](https://www.linkedin.com/in/alexander-rothe-84ab112b6)
+* GitHub: [ALex83-r0ck](https://github.com/ALex83-r0ck)
+* E-Mail: <rothe_alexander@t-online.de>
 
-Email: <rothe_alexander@t-online.de>
-
-"Probleme sind Gelegenheiten in Arbeitskleidung. Ich baue die passenden Werkzeuge dafür."
+> „Probleme sind Gelegenheiten in Arbeitskleidung. Ich baue die passenden Werkzeuge dafür.“
